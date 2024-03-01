@@ -3,7 +3,7 @@ import heroImage from "../assets/images/img-banner.png";
 
 const Hero = () => {
   return (
-    <div className="w-full h-[90vh]">
+    <div id="hero" className="w-full h-[90vh]">
       <img
         src={heroImage}
         alt="heroImage"
@@ -20,8 +20,8 @@ const Hero = () => {
             faces!
           </p>
           <div className="text-white">
-            <button className="bg-red">Register</button>
-            <button className="opacity-80">Start Courses</button>
+            <button>Register</button>
+            <button className="opacity-80 bg-red ">Start Courses</button>
           </div>
         </div>
       </div>

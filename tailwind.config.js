@@ -37,6 +37,7 @@ module.exports = {
       greentwo: "#15803d",
       black: "#020617",
       header: "#5abea4",
+      background: "#faf8f0",
     },
     fontFamily: {
       header: ["ui-serif", "Georgia"],

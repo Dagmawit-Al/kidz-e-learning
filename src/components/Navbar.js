@@ -1,49 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/logoimagekid.jpeg";
 
 const Navbar = () => {
+  const TOP_OFFSET = 50;
   const [nav, setNav] = useState(false);
+  const [showBackground, setShowBackground] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      if (window.scrollY >= TOP_OFFSET) {
+        setShowBackground(true);
+      } else {
+        setShowBackground(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handleNavClick = () => {
     setNav(!nav);
   };
   return (
     <div className="w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white  ">
-      <div className="flex items-center justify-evenly flex-1">
+      <div
+        className={`${
+          showBackground
+            ? "bg-red flex items-center justify-around flex-1 fixed w-full top-0 opacity-70"
+            : "flex items-center justify-around flex-1 fixed w-full"
+        }`}
+      >
         <div className="flex cursor-pointer items-center -mx-4">
           {" "}
-          <img
-            href="/"
-            src={logoImage}
-            alt="Logo"
-            className="h-8 w-8 cursor-pointer rounded-full "
-          />
-          <p className=" text-black cursor-pointer pl-2 font-bold">Kidz</p>
+          <NavLink to="/" className="flex items-center">
+            <img
+              href="/"
+              src={logoImage}
+              alt="Logo"
+              className="h-8 w-8 cursor-pointer rounded-full "
+            />
+            <p className=" text-black cursor-pointer pl-2 font-bold">Kidz</p>
+          </NavLink>
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
-            <a href="/">Our Story</a>
+            <NavLink to="/">Our Story</NavLink>
           </li>
           <li>
-            <a href="#Blog">Blog</a>
+            <a href="#blog">Blog</a>
           </li>
           <li>
-            <a href="#Products">Products</a>
+            <a href="#products">Products</a>
           </li>
           <li>
-            <a href="#Programs">Programs</a>
+            <NavLink to="/Programs">Programs</NavLink>
           </li>
         </ul>
+        <div>
+          <button className=" opacity-70 bg-red ml-30">Sign Up</button>
+        </div>
       </div>
 
-      <div className="flex justify-between items-center">
-        <div className="mx-4">
-          <button className="opacity-90 bg-red">Sign Up</button>
-        </div>
+      <div className="flex justify-evenly items-center">
         {/* Hamburger Icon */}
 
         <div onClick={handleNavClick} className="sm:hidden z-10 text-black">
-          <FaBars size={20} className="mr-4 cursor-pointer" />
+          <FaBars
+            size={20}
+            className={`${
+              showBackground
+                ? "mr-4 cursor-pointer fixed top-5 right-0 z-300"
+                : "mr-4 cursor-pointer fixed top-10 right-0"
+            }`}
+          />
         </div>
         {/* Hamburger Menu */}
         <div
