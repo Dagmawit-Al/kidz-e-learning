@@ -1,8 +1,5 @@
 import React from "react";
-import { TERipple } from "tw-elements-react";
-import pediatrician from "../assets/images/female_icon.png";
-import PopupLink from "./PopupLink";
-import Profile from "./Profile";
+import PopupProfile from "./PopupProfile";
 
 function PediatricianApproved() {
   return (
@@ -37,7 +34,7 @@ function PediatricianApproved() {
         </p>
       </blockquote>
 
-      <PopupLink />
+      <PopupProfile />
     </figure>
 
 

@@ -6,8 +6,6 @@ import SummerCamp from "./components/SummerCamp";
 import PediatricianApproved from "./components/PediatricianApproved";
 import Footer from "./components/Footer";
 import Blogs from "./components/Blogs";
-import PopupLink from "./components/PopupLink";
-import Profile from "./components/Profile";
 
 const App = () => {
   return (

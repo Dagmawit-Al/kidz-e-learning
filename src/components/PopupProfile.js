@@ -1,14 +1,7 @@
 import React from "react";
-import {
-    TEPopover,
-    TEPopoverContent,
-    TEPopoverToggler,
-    TERipple,
-} from "tw-elements-react";
-import { Popover } from "flowbite";
 import pediatrician from "../assets/images/avatar.jpeg";
 
-function PopupLink() {
+function PopupProfile() {
     return (
         <div>
             <button data-popover-target="popover-right" data-popover-placement="bottom" type="button" class="text-black hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:bg-gray-100 dark:focus:ring-gay-200">Dr. Kalkidan Tesfaye</button>
@@ -93,4 +86,4 @@ function PopupLink() {
     );
 }
 
-export default PopupLink;
+export default PopupProfile;
