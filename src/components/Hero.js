@@ -20,8 +20,8 @@ const Hero = () => {
             faces!
           </p>
           <div className="text-white">
-            <button>Register</button>
-            <button className="opacity-80">Sign Up</button>
+            <button className="bg-red">Register</button>
+            <button className="opacity-80">Start Courses</button>
           </div>
         </div>
       </div>
