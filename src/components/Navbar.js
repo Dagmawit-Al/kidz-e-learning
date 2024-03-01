@@ -38,7 +38,7 @@ const Navbar = () => {
 
       <div className="flex justify-between items-center">
         <div className="mx-4">
-          <button className="opacity-90 ">Sign Up</button>
+          <button className="opacity-90 bg-red">Sign Up</button>
         </div>
         {/* Hamburger Icon */}
 

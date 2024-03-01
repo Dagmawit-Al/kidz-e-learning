@@ -10,7 +10,7 @@
 
 @layer base {
   button {
-    @apply px-8 py-4 mr-5 border rounded-full bg-gradient-to-r from-[var(--primary-dark)] to-[var(--primary-light)] text-white;
+    @apply px-8 py-4 mr-5 border rounded-full  text-black;
   }
   li {
     @apply p-4 text-sm font-bold hover:underline;
