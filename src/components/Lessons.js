@@ -33,7 +33,7 @@ const Lessons = () => {
     },
   ];
   return (
-    <div className=" md:flex flex-col items-center">
+    <div id="products" className=" md:flex flex-col items-center">
       <h1 className=" w-full text-center text-4xl font-bold font-header">
         Shop our latest videos
       </h1>
