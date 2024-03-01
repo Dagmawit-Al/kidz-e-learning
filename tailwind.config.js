@@ -4,6 +4,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
     "./node_modules/tw-elements-react/dist/js/**/*.js",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -43,5 +44,8 @@ module.exports = {
       paragraph: ["ui-monospace", "SFMono-Regular"],
     },
   },
-  plugins: [require("tw-elements-react/dist/plugin.cjs")],
+  plugins: [
+    require("tw-elements-react/dist/plugin.cjs"),
+    require('flowbite/plugin')
+  ],
 };
