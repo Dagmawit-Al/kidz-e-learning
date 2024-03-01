@@ -7,6 +7,7 @@ import PediatricianApproved from "./components/PediatricianApproved";
 import Footer from "./components/Footer";
 import Blogs from "./components/Blogs";
 import PopupLink from "./components/PopupLink";
+import Profile from "./components/Profile";
 
 const App = () => {
   return (
@@ -18,7 +19,6 @@ const App = () => {
         <Blogs />
         <div class="row-span-10 ..."></div>
         <SummerCamp />
-        <PopupLink />
         <PediatricianApproved />
         
       </div>
