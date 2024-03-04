@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/logoimagekid.jpeg";
+import Modal from "./Modal";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
   const [nav, setNav] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
+  const [showmodal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,18 +30,21 @@ const Navbar = () => {
   const handleNavClick = () => {
     setNav(!nav);
   };
+
+  const handleSignUp = () => {
+    setShowModal(true);
+  };
+
+  const handleModal = (values) => {
+    setShowModal(false);
+    console.log("input values are", values);
+  };
   return (
-    <div className="w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white  ">
-      <div
-        className={`${
-          showBackground
-            ? "bg-red flex items-center justify-around flex-1 fixed w-full top-0 opacity-70"
-            : "flex items-center justify-around flex-1 fixed w-full"
-        }`}
-      >
+    <div className="flex justify-around w-full absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
+      <div className="flex items-center justify-around flex-1 fixed w-full">
         <div className="flex cursor-pointer items-center -mx-4">
           {" "}
-          <NavLink to="/" className="flex items-center">
+          <NavLink to="/" className="flex items-center sm:flex items-center">
             <img
               href="/"
               src={logoImage}
@@ -51,42 +56,46 @@ const Navbar = () => {
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
-            <NavLink to="/">Our Story</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="#blog">Blog</a>
+            <NavLink to="/storys">Our Story</NavLink>
           </li>
           <li>
-            <a href="#products">Products</a>
+            <NavLink to="/blogs">Blog</NavLink>
           </li>
           <li>
-            <NavLink to="/Programs">Programs</NavLink>
+            <NavLink to="/lessons">Products</NavLink>
+          </li>
+          <li>
+            <NavLink to="/programs">Programs</NavLink>
           </li>
         </ul>
         <div>
-          <button className=" opacity-70 bg-red ml-30">Sign Up</button>
+          <button
+            onClick={handleSignUp}
+            className="opacity-70 bg-gray-light text-black font-bold"
+          >
+            Sign Up
+          </button>
         </div>
       </div>
 
       <div className="flex justify-evenly items-center">
         {/* Hamburger Icon */}
 
-        <div onClick={handleNavClick} className="sm:hidden z-10 text-black">
-          <FaBars
-            size={20}
-            className={`${
-              showBackground
-                ? "mr-4 cursor-pointer fixed top-5 right-0 z-300"
-                : "mr-4 cursor-pointer fixed top-10 right-0"
-            }`}
-          />
+        <div
+          onClick={handleNavClick}
+          className="sm:hidden z-10 text-black absolute right-0"
+        >
+          <FaBars size={20} className="mr-4 cursor-pointer" />
         </div>
         {/* Hamburger Menu */}
         <div
           onClick={handleNavClick}
           className={
             nav
-              ? "overflow-y-hidden md:hidden ease-in duration-300 absolute text-black left-0 w-full top-0 h-screen bg-orange/90 px-4 py-7 flex flex-col"
+              ? "overflow-y-hidden md:hidden ease-in duration-300 absolute text-black left-0 w-full top-0 h-screen bg-logo/80 px-4 py-7 flex flex-col"
               : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
           }
         >
@@ -106,6 +115,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
+      <Modal showmodal={showmodal} handleshowmodal={handleModal} />
     </div>
   );
 };

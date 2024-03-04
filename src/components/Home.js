@@ -8,10 +8,12 @@ import PediatricianApproved from "./PediatricianApproved";
 import SummerCamp from "./SummerCamp";
 import Newsletter from "./Newsletter";
 import Divider from "./Divider";
+import TobBar from "./TobBar";
 
 function Home() {
   return (
-    <div>
+    <>
+      <TobBar />
       <Navbar />
       <div className="space-y-10">
         <Hero />
@@ -24,7 +26,7 @@ function Home() {
         <Newsletter />
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

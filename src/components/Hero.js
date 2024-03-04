@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import heroImage from "../assets/images/img-banner.png";
 
 const Hero = () => {
@@ -20,8 +21,12 @@ const Hero = () => {
             faces!
           </p>
           <div className="text-white">
-            <button>Register</button>
-            <button className="opacity-80 bg-red ">Start Courses</button>
+            <button className=" bg-gray-light text-black font-bold">
+              Register
+            </button>
+            <NavLink to="/products">
+              <button className="opacity-80 bg-red ">Start Courses</button>
+            </NavLink>
           </div>
         </div>
       </div>
