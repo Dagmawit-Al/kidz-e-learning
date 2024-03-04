@@ -6,11 +6,11 @@ function PopupProfile() {
         <div>
             <button data-popover-target="popover-right" data-popover-placement="bottom" type="button" class="text-black hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:bg-gray-100 dark:focus:ring-gay-200">Dr. Kalkidan Tesfaye</button>
 
-            <div data-popover id="popover-right" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">
+            <div data-popover id="popover-right" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 space-y-8">
                 <div class="p-3">
                     <div class="flex items-center justify-between mb-2">
                         <a href="#">
-                            <img class="w-18 h-18 rounded-full" src={pediatrician} alt="Jese Leos" />
+                            <img class="w-18 h-18 rounded-full" src={pediatrician} alt="" />
                         </a>
                         <div>
                             <button
@@ -67,7 +67,7 @@ function PopupProfile() {
                         Pediatrician
                     </p>
                     <p class="mb-4 text-black text-sm">Dedicated pediatrician with a background in delivering quality pediatric care to enhance dynamic healthcare team.</p>
-                    <div class="items-center">
+                    <div class="pl-9">
                         <ul class="flex text-sm">
                             <li class="me-2">
                                 <a href="#" class="hover:underline">

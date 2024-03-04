@@ -6,6 +6,8 @@ import Lessons from "./Lessons";
 import Navbar from "./Navbar";
 import PediatricianApproved from "./PediatricianApproved";
 import SummerCamp from "./SummerCamp";
+import Newsletter from "./Newsletter";
+import Divider from "./Divider";
 
 function Home() {
   return (
@@ -18,6 +20,8 @@ function Home() {
         <div class="row-span-10 ..."></div>
         <SummerCamp />
         <PediatricianApproved />
+        <Divider />
+        <Newsletter />
       </div>
       <Footer />
     </div>
