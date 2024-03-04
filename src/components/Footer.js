@@ -3,7 +3,7 @@ import logo from "../assets/images/logoimagekid.jpeg";
 
 function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-gray-300 dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -13,6 +13,30 @@ function Footer() {
                 Kidz
               </span>
             </a>
+            <div>
+              <ul className="text-black font-medium mt-4">
+                <li>
+                  <a href="#" className="hover:underline">
+                    Our Story
+                  </a>
+                </li>
+                <li>
+                  <a href="#blog" className="hover:underline">
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a href="#products" className="hover:underline">
+                    Products
+                  </a>
+                </li>
+                <li>
+                  <a href="/Programs" className="hover:underline">
+                    Programs
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
