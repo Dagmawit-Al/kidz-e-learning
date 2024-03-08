@@ -18,7 +18,9 @@ function SummerCamp() {
         </div>
         <div className="col-span-2 ...">
           <TERipple rippleColor="light">
-            <button href="#Programs">Learn More</button>
+            <button className="bg-black text-white" href="#programs">
+              Learn More
+            </button>
           </TERipple>
         </div>
         <div className="row-span-3 ...">

@@ -1,209 +1,247 @@
 import React, { useEffect } from "react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
+import bookimage from "../../assets/images/kids-perfect.jpg";
+import book1 from "../../assets/images/book-1.png";
+import book2 from "../../assets/images/book-2.png";
+import book3 from "../../assets/images/booki-3-1.png";
+import book5 from "../../assets/images/booki-5-1.png";
+import book6 from "../../assets/images/booki-6.png";
+import book7 from "../../assets/images/booki-1-1.png";
+import book8 from "../../assets/images/booki-2-1.png";
+
+import middlesection from "../../assets/images/BookCover_YoungTrepTeenBizCourseJournal.png";
+import { NavLink } from "react-router-dom";
 
 function LessonsDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div>
-      <div className="w-full">
-        <div className="relative right-0">
-          <ul
-            className="relative flex flex-wrap p-1 list-none rounded-xl bg-blue-gray-50/60"
-            data-tabs="tabs"
-            role="list"
-          >
-            <li className="z-30 flex-auto text-center">
-              <a
-                className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-                data-tab-target=""
-                role="tab"
-                aria-selected="true"
-                aria-controls="app"
-              >
-                <span className="ml-1">App</span>
-              </a>
-            </li>
-            <li className="z-30 flex-auto text-center">
-              <a
-                className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-                data-tab-target=""
-                role="tab"
-                aria-selected="false"
-                aria-controls="message"
-              >
-                <span className="ml-1">Messages</span>
-              </a>
-            </li>
-            <li className="z-30 flex-auto text-center">
-              <a
-                className="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-                data-tab-target=""
-                role="tab"
-                aria-selected="false"
-                aria-controls="settings"
-              >
-                <span className="ml-1">Settings</span>
-              </a>
-            </li>
-          </ul>
-          <div data-tab-content="" className="p-5">
-            <div className="block opacity-100" id="app" role="tabpanel">
-              <div
-                role="tabpanel"
-                className="grid w-full grid-cols-3 gap-4 p-4 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max"
-                data-value="html"
-              >
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="hidden opacity-0" id="message" role="tabpanel">
-              <div
-                role="tabpanel"
-                className="grid w-full grid-cols-3 gap-4 p-4 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max"
-                data-value="html"
-              >
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="hidden opacity-0" id="settings" role="tabpanel">
-              <div
-                role="tabpanel"
-                className="grid w-full grid-cols-3 gap-4 p-4 font-sans text-base antialiased font-light leading-relaxed text-gray-700 h-max"
-                data-value="html"
-              >
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg"
-                    alt="image-photo"
-                  />
-                </div>
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
+    <div className="flex flex-col h-screen">
+      <div className="flex w-full items-center justify-between m-4">
+        <img src={book1} alt="book1" />
+        <div className="flex flex-col items-center">
+          <h1 className="font-bold text-6xl">Books That Empower</h1>
+          <p className="p-2">
+            Shop Children’s Books that Inspire Kids to THINK BIG
+          </p>
+        </div>
 
-                <div>
-                  <img
-                    className="w-full h-40 max-w-full rounded-lg"
-                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
-                    alt="image-photo"
-                  />
-                </div>
-              </div>
+        <img src={book2} alt="book2" />
+      </div>
+      <div className="flex items-center flex-col border-t-2 w-full">
+        <div className="flex justify-around p-2 m-2 w-[60%] h-[500px] bg-middlesection ">
+          <img
+            className="object-cover"
+            src={middlesection}
+            alt="middlesectionimage"
+          />
+          <div className="p-4 m-2 flex flex-col w-[50%] justify-around">
+            <h1 className="font-bold text-6xl">The Book That Started All</h1>
+            <p className="text-gray-light">
+              Author, Abel Dawit <br />
+              Our books are the perfect supplement for your entrepreneurship or
+              financial literacy programs. Schools and enrichment centers around
+              the world have experienced that our products even help their
+              students in
+            </p>
+            <div>
+              <button className="bg-buttoncolor px-8">Purchase Book</button>
             </div>
           </div>
         </div>
+      </div>
+      <div className=" flex items-center flex-col w-full">
+        <TabsDefault />
       </div>
     </div>
   );
 }
 
 export default LessonsDetail;
+
+export function TabsDefault() {
+  const data = [
+    {
+      label: "ALL",
+      value: "all",
+      booklist: [
+        {
+          src: book7,
+          id: 1,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book8,
+          id: 2,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book3,
+          id: 3,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book5,
+          id: 4,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book6,
+          id: 5,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book3,
+          id: 6,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book3,
+          id: 7,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+      ],
+    },
+    {
+      label: "TOODLE",
+      value: "toodle",
+      booklist: [
+        {
+          src: book7,
+          id: 8,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book8,
+          id: 9,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book3,
+          id: 10,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+      ],
+    },
+    {
+      label: "TEEN",
+      value: "teen",
+      booklist: [
+        {
+          src: book7,
+          id: 11,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+        {
+          src: book8,
+          id: 12,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+      ],
+    },
+    {
+      label: "KIDS",
+      value: "kids",
+      booklist: [
+        {
+          src: book7,
+          id: 13,
+          des: "some description about book",
+          age: "6-12 years",
+          page: "64 pages",
+          incluede: true,
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Tabs
+      className="w-[75%] border-t-2 mt-4 items-center flex flex-col"
+      value="all"
+    >
+      {/* {data.map((item, index) => {
+        return <BookList item={item} key={index} />;
+      })} */}
+      <TabsHeader className="p-4">
+        {data.map(({ label, value }) => (
+          <Tab key={value} value={value}>
+            {label}
+          </Tab>
+        ))}
+      </TabsHeader>
+      <TabsBody>
+        {data.map(({ value, booklist }) => (
+          <TabPanel
+            key={value}
+            value={value}
+            className="flex w-[100%] flex-wrap justify-evenly"
+          >
+            {booklist?.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col m-2 p-2 items-center hover:scale-110 "
+                >
+                  <img src={item.src} alt="imageindex" />
+                  <h1 className="font-bold text-xl">{item.des} </h1>
+
+                  <div className="flex p-4">
+                    <p>{item.age}&nbsp; </p> <p>{item.page}&nbsp; </p>
+                    <p>{item.incluede ? "included" : ""} </p>
+                  </div>
+                  <NavLink to={`/lessons/book/${item.id}`}>
+                    <button className="bg-buttoncolor px-8">Learn More</button>
+                  </NavLink>
+                </div>
+              );
+            })}
+          </TabPanel>
+        ))}
+      </TabsBody>
+    </Tabs>
+  );
+}

@@ -1,7 +1,8 @@
 import React from "react";
-import lesson1image from "../assets/images/lessons1.jpg";
-import lesson2image from "../assets/images/lessons2.jpg";
-import lesson3image from "../assets/images/lessons3.jpg";
+import lesson1image from "../assets/images/kids-perfect.jpg";
+import lesson2image from "../assets/images/booki-5-1.png";
+import lesson3image from "../assets/images/booki-3-1.png";
+import lesson4image from "../assets/images/booki-6.png";
 
 import LessonList from "../container/LessonList";
 
@@ -26,7 +27,7 @@ const Lessons = () => {
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
     },
     {
-      src: lesson3image,
+      src: lesson4image,
       date: new Date(),
       description:
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
@@ -42,7 +43,9 @@ const Lessons = () => {
         limitless
       </p>
       <LessonList data={lessonData} />
-      <button className=" opacity-80 my-5">Start Courses</button>
+      <button className=" opacity-80 my-5 bg-black text-white">
+        Start Courses
+      </button>
 
       <div class="inline-flex items-center justify-center w-full my-8">
         <hr class="w-64 h-1 my-8 bg-green-700 border-0 rounded dark:bg-[#E5588D]" />
