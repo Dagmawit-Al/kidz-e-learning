@@ -12,7 +12,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
       if (window.scrollY >= TOP_OFFSET) {
         setShowBackground(true);
       } else {
@@ -37,7 +37,7 @@ const Navbar = () => {
 
   const handleModal = (values) => {
     setShowModal(false);
-    console.log("input values are", values);
+    // console.log("input values are", values);
   };
   return (
     <div className="flex justify-around w-full absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
@@ -74,7 +74,7 @@ const Navbar = () => {
         <div>
           <button
             onClick={handleSignUp}
-            className="opacity-70 bg-gray-light text-black font-bold"
+            className="opacity-70 bg-buttoncolor text-black font-bold"
           >
             Sign Up
           </button>

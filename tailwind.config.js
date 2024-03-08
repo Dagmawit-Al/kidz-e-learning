@@ -43,9 +43,16 @@ module.exports = {
       header: ["ui-serif", "Georgia"],
       paragraph: ["ui-monospace", "SFMono-Regular"],
     },
+    colors: {
+      "regal-blue": "#243c5a",
+      white: "#Ffffff",
+      greentwo: "#15803d",
+      middlesection: "#f1faf0",
+      buttoncolor: "#ffd01e",
+    },
   },
   plugins: [
     require("tw-elements-react/dist/plugin.cjs"),
-    require('flowbite/plugin')
+    require("flowbite/plugin"),
   ],
 };

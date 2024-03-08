@@ -5,6 +5,7 @@ import BlogsDetail from "./components/Details/BlogsDetail";
 import LessonsDetail from "./components/Details/LessonsDetail";
 import Home from "./components/Home";
 import ProgramsDetail from "./components/Details/ProgramsDetail";
+import Book from "./components/Book";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/blogs" Component={BlogsDetail} />
           <Route exact path="/lessons" Component={LessonsDetail} />
           <Route exact path="/programs" Component={ProgramsDetail} />
+          <Route exact path="/lessons/book/:id" Component={Book} />
         </Routes>
       </BrowserRouter>
     </div>
