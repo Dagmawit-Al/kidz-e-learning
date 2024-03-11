@@ -4,7 +4,7 @@ import kids from "../assets/images/summer_camp.jpeg";
 
 function SummerCamp() {
   return (
-    <section className=" md:flex flex-col items-center mt-10 p-8 space-x-20">
+    <section className=" md:flex flex-col items-center  p-8 space-x-20">
       <div className="grid grid-rows-3 grid-flow-col gap-4">
         <h2 className="rock-salt-regular mb-2 mt-0 text-4xl font-medium leading-tight text-green">
           Join Our Summer Camp!
