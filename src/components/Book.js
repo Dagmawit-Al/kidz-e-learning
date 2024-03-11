@@ -62,7 +62,9 @@ const Book = () => {
           href="#quiz"
           class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded"
         >
+
           Courses
+
         </button>
         <button
           href="#level"
