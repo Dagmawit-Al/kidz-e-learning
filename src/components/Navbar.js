@@ -74,7 +74,7 @@ const Navbar = () => {
         <div>
           <button
             onClick={handleSignUp}
-            className="opacity-70 bg-buttoncolor text-black font-bold"
+            className="opacity-70 bg-button text-black font-bold"
           >
             Sign Up
           </button>
