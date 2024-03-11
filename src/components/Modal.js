@@ -8,17 +8,10 @@ import {
   TEModalHeader,
   TEModalBody,
 } from "tw-elements-react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase'
 import { useUserAuth } from "../components/Auth/UserAuthContext";
 import { useNavigate } from "react-router-dom";
-
-// const Modal = ({ showRegistrationModal, showLoginModal, handleshowRegistrationModal, handleshowLoginModal }) => {
-//     // const [showModal, setShowModal] = useState();
-//   const [values, setValues] = useState({
-//     firstname: "",
-//     lastname: "",
-//     email: "",
-//     phone: "",
-//   });
 
 const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationModal, handleshowLoginModal }) => {
   const [firstname, setFirstName] = useState("");
@@ -30,24 +23,24 @@ const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationM
   const { signUp } = useUserAuth();
   let navigate = useNavigate();
 
-  const handleSubmit = () => {
-    // e.preventDefault();
-    setError("");
-    // try {
-      // await 
-      signUp(firstname, lastname, email, phoneNumber, password);
-      console.log("Sign in clicked");
-      navigate("/");
-    // } catch (err) {
-    //   setError(err.message);
-    //   console.log("Error")
-    // }
-  };
+  const [values, setValues] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    phone: "",
+  });
 
-  // const handleSubmit = () => {
-  //   handleshowRegistrationModal(values);
-  //   setValues({ firstname: "", lastname: "", email: "", phone: "" });
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      setValues({ firstname: "", lastname: "", email: "", phone: "", password: "" });
+      console.log("Registered!")
+    } catch {
+      console.log(firstname)
+    }
+  }
 
   // const handleInput = (e) => {
   //   console.log(e.target);
@@ -105,7 +98,7 @@ const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationM
                           <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
                         </svg>
                       </span>
-                      <input type="text" id="firstname" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name" value={firstname} onChange={(e) => setFirstName(e.target.value)} required/>
+                      <input type="text" id="firstname" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="First Name" value={firstname} onChange={(e) => setFirstName(e.target.value)} required />
                     </div>
                     <div class="flex">
                       <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 rounded-s-md dark:bg-gray-600 dark:text-gray-400 dark:border-gray-600">
@@ -113,7 +106,7 @@ const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationM
                           <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
                         </svg>
                       </span>
-                      <input type="text" id="lastname" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name" value={lastname} onChange={(e) => setLastName(e.target.value)} required/>
+                      <input type="text" id="lastname" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Last Name" value={lastname} onChange={(e) => setLastName(e.target.value)} required />
                     </div>
                     <div class="relative mb-6">
                       <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
@@ -130,7 +123,7 @@ const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationM
                           <path fillRule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required/>
+                      <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Phone Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
                     </div>
                     <div class="relative mb-6">
                       <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
@@ -139,7 +132,7 @@ const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationM
                         </svg>
 
                       </div>
-                      <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+                      <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                     </div>
                     <TERipple rippleColor="light" className="w-full">
                       <button
@@ -174,7 +167,6 @@ const Signup = ({ showRegistrationModal, showLoginModal, handleshowRegistrationM
                         href="#!"
                         role="button"
                       >
-                        {/* <!-- Facebook --> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="mr-2 h-3.5 w-3.5"
