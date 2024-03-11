@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/logoimagekid.jpeg";
-import Modal from "./Modal";
+import Signup from "./Modal";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
   const [nav, setNav] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
-  const [showmodal, setShowModal] = useState(false);
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,11 +33,11 @@ const Navbar = () => {
   };
 
   const handleSignUp = () => {
-    setShowModal(true);
+    setShowRegistrationModal(true);
   };
 
   const handleModal = (values) => {
-    setShowModal(false);
+    setShowRegistrationModal(false);
     // console.log("input values are", values);
   };
   return (
@@ -115,7 +116,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Modal showmodal={showmodal} handleshowmodal={handleModal} />
+      <Signup showRegistrationModal={showRegistrationModal} handleshowRegistrationModal={setShowRegistrationModal} showLoginModal={showLoginModal} handleshowLoginModal={setShowLoginModal} />
     </div>
   );
 };

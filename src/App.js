@@ -6,20 +6,23 @@ import LessonsDetail from "./components/Details/LessonsDetail";
 import Home from "./components/Home";
 import ProgramsDetail from "./components/Details/ProgramsDetail";
 import Book from "./components/Book";
+import { UserAuthContextProvider } from "./components/Auth/UserAuthContext";
 
 const App = () => {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" Component={Home} />
-          <Route exact path="/blogs" Component={BlogsDetail} />
-          <Route exact path="/lessons" Component={LessonsDetail} />
-          <Route exact path="/programs" Component={ProgramsDetail} />
-          <Route exact path="/lessons/book/:id" Component={Book} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <UserAuthContextProvider>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" Component={Home} />
+            <Route exact path="/blogs" Component={BlogsDetail} />
+            <Route exact path="/lessons" Component={LessonsDetail} />
+            <Route exact path="/programs" Component={ProgramsDetail} />
+            <Route exact path="/lessons/book/:id" Component={Book} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </UserAuthContextProvider>
   );
 };
 
