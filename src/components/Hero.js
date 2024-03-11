@@ -21,9 +21,9 @@ const Hero = () => {
             faces!
           </p>
           <div className="text-white">
-            <button className="bg-buttoncolor text-black">Register</button>
+            <button className="bg-button text-black">Register</button>
             <NavLink to="/lessons">
-              <button className="opacity-80 bg-buttoncolor text-black ">
+              <button className="opacity-80 bg-button text-black ">
                 Start Courses
               </button>
             </NavLink>
