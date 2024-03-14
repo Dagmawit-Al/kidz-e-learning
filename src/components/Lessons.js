@@ -34,16 +34,16 @@ const Lessons = () => {
     },
   ];
   return (
-    <div id="products" className=" md:flex flex-col items-center">
-      <h1 className=" w-full text-center text-4xl font-bold font-header">
+    <div id="products" className="space-y-10 md:flex flex-col items-center">
+      <h1 className="mystery-quest-header w-full text-center text-4xl font-bold font-header">
         Shop our latest videos
       </h1>
-      <p className="font-paragraph">
+      <p className="bubblegum-sans-subheader">
         Our videos introduce children to key life skills that empower them to be
         limitless
       </p>
       <LessonList data={lessonData} />
-      <button className=" opacity-80 my-5 bg-black text-white">
+      <button className="bubblegum-sans-subheader opacity-80 my-5 bg-black text-white">
         Start Courses
       </button>
 

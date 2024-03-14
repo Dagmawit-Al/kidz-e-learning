@@ -6,11 +6,11 @@ function SummerCamp() {
   return (
     <section className=" md:flex flex-col items-center  p-8 space-x-20">
       <div className="grid grid-rows-3 grid-flow-col gap-4">
-        <h2 className="rock-salt-regular mb-2 mt-0 text-4xl font-medium leading-tight text-green">
+        <h2 className="mystery-quest-header mb-2 mt-0 text-4xl font-medium leading-tight text-green">
           Join Our Summer Camp!
         </h2>
         <div className="col-span-2 ...">
-          <h4 className="font-paragraph mb-2 mt-0 text-1xl font-small leading-tight text-black">
+          <h4 className="bubblegum-sans-subheader mb-2 mt-0 text-1xl font-small leading-tight text-black">
             "I can'ts" become "I cans" when you hit summer camp. <br /> Learn
             new things this summer at camp. <br /> Dive into your passion at
             summer camp.
@@ -18,7 +18,7 @@ function SummerCamp() {
         </div>
         <div className="col-span-2 ...">
           <TERipple rippleColor="light">
-            <button className="bg-black text-white" href="#programs">
+            <button className="bubblegum-sans-subheader bg-black text-white" href="#programs">
               Learn More
             </button>
           </TERipple>

@@ -6,8 +6,8 @@ function PediatricianApproved() {
   return (
     <figure class="max-w-screen-md mx-auto text-center p-8 space-y-8">
       <div class="flex flex-row justify-center items-start space-x-5">
-        <h2 className="font-bold font-header m-0 text-4xl font-medium text-black">
-          Pediatrician-Approved
+        <h2 className="mystery-quest-header m-0 text-black">
+          Pediatrician - Approved
         </h2>
 
         <svg
@@ -33,7 +33,7 @@ function PediatricianApproved() {
         />
       </div>
       <blockquote>
-        <p class="text-2xl italic font-medium text-black font-paragraph ">
+        <p class="bubblegum-sans-subheader text-4xl italic font-medium text-black ">
           "Lorem ipsum dolor sit amet. Qui dolor accusantium rem necessitatibus
           totam sit omnis totam quo totam beatae qui praesentium facilis. Aut
           galisum ipsa ut ipsa ratione ea Quis dolores. Qui voluptas dolor cum
