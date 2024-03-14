@@ -16,22 +16,22 @@ function Footer() {
             <div>
               <ul className="text-black font-medium mt-4">
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#" className="hover:underline bubblegum-sans-link">
                     Our Story
                   </a>
                 </li>
                 <li>
-                  <a href="#blog" className="hover:underline">
+                  <a href="#blog" className="hover:underline bubblegum-sans-link">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#products" className="hover:underline">
+                  <a href="#products" className="hover:underline bubblegum-sans-link">
                     Products
                   </a>
                 </li>
                 <li>
-                  <a href="/Programs" className="hover:underline">
+                  <a href="/Programs" className="hover:underline bubblegum-sans-link">
                     Programs
                   </a>
                 </li>
@@ -40,51 +40,51 @@ function Footer() {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Resources
               </h2>
               <ul className="text-black font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="#" className="hover:underline bubblegum-sans-link">
                     E-book #1
                   </a>
                 </li>
                 <li>
-                  <a href="" className="hover:underline">
+                  <a href="" className="hover:underline bubblegum-sans-link">
                     E-book #2
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Follow us
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline ">
+                  <a href="#" className="hover:underline bubblegum-sans-link">
                     Facebook
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#" className="hover:underline bubblegum-sans-link">
                     Twitter
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Legal
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline">
+                  <a href="#" className="hover:underline bubblegum-sans-link">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline">
+                  <a href="#" className="hover:underline bubblegum-sans-link">
                     Terms &amp; Conditions
                   </a>
                 </li>
@@ -94,9 +94,9 @@ function Footer() {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 ">
             Copyright© 2024{" "}
-            <a href="" className="hover:underline">
+            <a href="" className="hover:underline bubblegum-sans-link">
               Kidz-E-Learning™
             </a>
             . All Rights Reserved.

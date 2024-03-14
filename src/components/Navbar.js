@@ -57,25 +57,25 @@ const Navbar = () => {
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className="bubblegum-sans-link">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/storys">Our Story</NavLink>
+            <NavLink to="/storys" className="bubblegum-sans-link">Our Story</NavLink>
           </li>
           <li>
-            <NavLink to="/blogs">Blog</NavLink>
+            <NavLink to="/blogs" className="bubblegum-sans-link">Blog</NavLink>
           </li>
           <li>
-            <NavLink to="/lessons">Products</NavLink>
+            <NavLink to="/lessons" className="bubblegum-sans-link">Products</NavLink>
           </li>
           <li>
-            <NavLink to="/programs">Programs</NavLink>
+            <NavLink to="/programs" className="bubblegum-sans-link">Programs</NavLink>
           </li>
         </ul>
         <div>
           <button
             onClick={handleSignUp}
-            className="opacity-70 bg-buttoncolor text-black font-bold"
+            className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
           >
             Sign Up
           </button>
