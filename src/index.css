@@ -22,3 +22,24 @@
   font-weight: 1000;
   font-style: normal;
 }
+
+.mystery-quest-header {
+  font-family: "Mystery Quest", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 50px;
+}
+
+.bubblegum-sans-subheader {
+  font-family: "Bubblegum Sans", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  word-spacing: 3px;
+}
+
+.bubblegum-sans-link {
+  font-family: "Bubblegum Sans", sans-serif;
+  font-weight: 50;
+  font-size: 17px;
+  word-spacing: 3px;
+}

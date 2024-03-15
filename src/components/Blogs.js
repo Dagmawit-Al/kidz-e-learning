@@ -26,11 +26,11 @@ const Blogs = () => {
     },
   ];
   return (
-    <div id="blogs" className=" md:flex  flex-col items-center ">
-      <h1 className=" w-full  text-4xl text-center font-bold font-header">
+    <div id="blogs" className="space-y-8 md:flex  flex-col items-center ">
+      <h1 className="mystery-quest-header w-full text-4xl text-center font-bold font-header">
         Latest Articles And Updates
       </h1>
-      <p className="font-paragraph">
+      <p className="bubblegum-sans-subheader">
         Entertaining and educational weekly posts that inspire kids te reach for
         the stars.
       </p>

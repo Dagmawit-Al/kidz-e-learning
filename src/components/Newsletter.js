@@ -5,10 +5,10 @@ function Newsletter() {
     <section class="bg-green dark:bg-gray-900">
       <div class="rounded-lg py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
-          <h2 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
+          <h2 class="mystery-quest-header mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
             Sign up for our newsletter
           </h2>
-          <p class="mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
+          <p class="bubblegum-sans-subheader mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
             Stay up to date with the latest learning materials, announcements
             and exclusive discounts! <br /> Feel free to sign up with your
             email.
@@ -44,7 +44,7 @@ function Newsletter() {
               <div>
                 <button
                   type="submit"
-                  class="py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-[#FDB7D1] border-[#E5588D] sm:rounded-none sm:rounded-r-lg hover:bg-[#E5588D] focus:ring-4 focus:ring-[#E5588D] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D]"
+                  class="bubblegum-sans-subheader py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-[#FDB7D1] border-[#E5588D] sm:rounded-none sm:rounded-r-lg hover:bg-[#E5588D] focus:ring-4 focus:ring-[#E5588D] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D]"
                 >
                   Subscribe
                 </button>
