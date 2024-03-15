@@ -4,30 +4,34 @@ import lesson2image from "../assets/images/booki-5-1.png";
 import lesson3image from "../assets/images/booki-3-1.png";
 import lesson4image from "../assets/images/booki-6.png";
 
-import LessonList from "../container/LessonList";
+import CourseList from "../container/CourseList";
 
-const Lessons = () => {
-  const lessonData = [
+const Courses = () => {
+  const courseData = [
     {
       src: lesson1image,
+      id: 25,
       date: new Date(),
       description:
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
     },
     {
       src: lesson2image,
+      id: 26,
       date: new Date(),
       description:
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
     },
     {
       src: lesson3image,
+      id: 27,
       date: new Date(),
       description:
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
     },
     {
       src: lesson4image,
+      id: 28,
       date: new Date(),
       description:
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
@@ -36,13 +40,13 @@ const Lessons = () => {
   return (
     <div id="products" className=" md:flex flex-col items-center">
       <h1 className=" w-full text-center text-4xl font-bold font-header">
-        Shop our latest videos
+        Shop our latest Courses
       </h1>
       <p className="font-paragraph">
-        Our videos introduce children to key life skills that empower them to be
-        limitless
+        Our Courses introduce children to key life skills that empower them to
+        be limitless
       </p>
-      <LessonList data={lessonData} />
+      <CourseList data={courseData} />
       <button className=" opacity-80 my-5 bg-black text-white">
         Start Courses
       </button>
@@ -70,4 +74,4 @@ const Lessons = () => {
   );
 };
 
-export default Lessons;
+export default Courses;

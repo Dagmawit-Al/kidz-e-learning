@@ -66,7 +66,7 @@ const Navbar = () => {
             <NavLink to="/blogs">Blog</NavLink>
           </li>
           <li>
-            <NavLink to="/lessons">Products</NavLink>
+            <NavLink to="/courses">Courses</NavLink>
           </li>
           <li>
             <NavLink to="/programs">Programs</NavLink>
@@ -75,7 +75,7 @@ const Navbar = () => {
         <div>
           <button
             onClick={handleSignUp}
-            className="opacity-70 bg-button text-black font-bold"
+            className="opacity-90 bg-button text-black"
           >
             Sign Up
           </button>
@@ -108,7 +108,7 @@ const Navbar = () => {
               <a href="#Blog">Blog</a>
             </li>
             <li className="text-2xl py-8">
-              <a href="#Products">Products</a>
+              <NavLink to="/courses">Courses</NavLink>
             </li>
             <li className="text-2xl py-8">
               <a href="#Programs">Programs</a>
@@ -116,7 +116,12 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Signup showRegistrationModal={showRegistrationModal} handleshowRegistrationModal={setShowRegistrationModal} showLoginModal={showLoginModal} handleshowLoginModal={setShowLoginModal} />
+      <Signup
+        showRegistrationModal={showRegistrationModal}
+        handleshowRegistrationModal={setShowRegistrationModal}
+        showLoginModal={showLoginModal}
+        handleshowLoginModal={setShowLoginModal}
+      />
     </div>
   );
 };

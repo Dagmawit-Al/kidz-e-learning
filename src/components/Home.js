@@ -2,7 +2,7 @@ import React from "react";
 import Blogs from "./Blogs";
 import Footer from "./Footer";
 import Hero from "./Hero";
-import Lessons from "./Lessons";
+import Courses from "./Courses";
 import Navbar from "./Navbar";
 import PediatricianApproved from "./PediatricianApproved";
 import SummerCamp from "./SummerCamp";
@@ -19,7 +19,7 @@ function Home() {
       <Navbar />
       <div className="space-y-10">
         <Hero />
-        <Lessons />
+        <Courses />
         <Blogs />
         <Description />
         <div class="row-span-10 ..."></div>
