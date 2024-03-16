@@ -115,26 +115,6 @@ const Book = () => {
           </div>
         </div>
       </div>
-      <div className="flex mt-16 sm:flex w-[25%] p-4">
-        <a href="#courses">
-          <button class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded">
-            Courses
-          </button>
-        </a>
-        <button
-          href="#worksheet"
-          class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded"
-        >
-          Worksheet
-        </button>
-
-        <button
-          href="#level"
-          class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded"
-        >
-          Quiz
-        </button>
-      </div>
 
       <div className="mt-4 sm:flex flex-row justify-around border-t-2 p-8 ">
         <div className="sm:w-[25%]">
