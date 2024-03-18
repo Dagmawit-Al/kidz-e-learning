@@ -2,14 +2,23 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/logoimagekid.jpeg";
-import Signup from "./Modal";
+import Modal from "./Modal";
+import { useUserAuth } from "./Auth/UserAuthContext";
+import { useDispatch } from "react-redux";
+import {
+  setSignInOpen,
+  setSignUpOpen,
+  setCloseAll,
+} from "../redux/slices/authDialogSlice";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
+  const { user } = useUserAuth();
   const [nav, setNav] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +42,8 @@ const Navbar = () => {
   };
 
   const handleSignUp = () => {
-    setShowRegistrationModal(true);
+    dispatch(setSignUpOpen());
+    // setShowRegistrationModal(true);
   };
 
   const handleModal = (values) => {
@@ -124,12 +134,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Signup
-        showRegistrationModal={showRegistrationModal}
-        handleshowRegistrationModal={setShowRegistrationModal}
-        showLoginModal={showLoginModal}
-        handleshowLoginModal={setShowLoginModal}
-      />
+      <Modal />
     </div>
   );
 };
