@@ -2,10 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ChapterSummaryCard from "../ChapterSummaryCard";
 import { useUserAuth } from "../Auth/UserAuthContext";
+import { useDispatch } from "react-redux";
+import {
+  setSignInOpen,
+  setSignUpOpen,
+  setCloseAll,
+} from "../../redux/slices/authDialogSlice";
+
 import Signup from "../Modal";
 import Header from "../Header";
 
 function Chapter(props) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useUserAuth();
   let USER = true;
@@ -21,14 +29,9 @@ function Chapter(props) {
   //   }, []);
 
   const handlePurchaseButton = (e) => {
-    console.log("purchase button clicked", e);
-    // setOpenSignup(true);
-    if (!USER) {
-      setShowRegistrationModal(true);
-    } else {
-      navigate("/checkout");
+    if (!user) {
+      dispatch(setSignUpOpen());
     }
-    // user ? handleCheckoutPageRoute() : setOpenSignup(true);
   };
 
   const handleCheckoutPageRoute = () => {
@@ -72,7 +75,7 @@ function Chapter(props) {
               </button>
             </div>
           </div>
-          <ChapterSummaryCard />
+          <ChapterSummaryCard handlePurchaseButton2={handlePurchaseButton} />
         </div>
       </div>
 
