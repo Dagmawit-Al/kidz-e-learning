@@ -14,7 +14,9 @@ const Profile = () => {
             alt="John Doe"
           />
           <div className="p-4">
-            <h3 class="text-center text-xl text-gray leading-8">Seble Doez</h3>
+            <h3 className="text-center text-xl text-gray leading-8">
+              Seble Doez
+            </h3>
             <p className="text-center">Author, Photographer</p>
           </div>
         </div>
@@ -25,7 +27,7 @@ const Profile = () => {
             alt="John Doe"
           />
           <div className="p-4">
-            <h3 class="text-center text-xl text-gray leading-8">
+            <h3 className="text-center text-xl text-gray leading-8">
               Nahom Dubale
             </h3>
             <p className="text-center">Author, Photographer</p>

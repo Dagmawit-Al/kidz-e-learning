@@ -4,6 +4,7 @@ import book from "../assets/images/book.png";
 import profile from "../assets/images/instructor.jpeg";
 import profile2 from "../assets/images/instructor2.jpeg";
 import Chapters from "./Chapters";
+import Header from "./Header";
 import Profile from "./Profile";
 
 const chaptersData = [
@@ -64,10 +65,11 @@ const Book = () => {
   const [stroke, setStroke] = useState(4.8);
   return (
     <div className="sm:flex flex-col w-full h-screen">
-      <div className="h-screen m-4 sm:flex flex-col mt-5 h-[700px]">
-        <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
-          KidsLearning
-        </h1>
+      <Header />
+      {/* <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
+        KidsLearning
+      </h1> */}
+      <div className="h-screen m-4 sm:flex flex-col h-[700px]">
         <div className="sm:flex justify-around">
           <img
             className="object-cover sm:w-[25%] h-[100%] object-cover sm:w-[50%] md:w-[50%] lg:w-[25%]"
@@ -110,7 +112,7 @@ const Book = () => {
               </p>
             </div>
             <div className="p-4">
-              <button className="bg-buttoncolor">Purchase</button>
+              <button className="bg-buttoncolor">Purchase Courses</button>
             </div>
           </div>
         </div>

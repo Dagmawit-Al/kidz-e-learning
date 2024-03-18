@@ -15,6 +15,7 @@ import book6 from "../../assets/images/booki-6.png";
 import book7 from "../../assets/images/booki-1-1.png";
 import book8 from "../../assets/images/booki-2-1.png";
 
+import Header from "../Header";
 import middlesection from "../../assets/images/BookCover_YoungTrepTeenBizCourseJournal.png";
 import { NavLink } from "react-router-dom";
 
@@ -22,8 +23,11 @@ function CoursesDetail() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className=" md:flex flex-col h-screen">
+      <Header />
+
       <div className="md:flex w-full items-center justify-between m-4">
         <img src={book1} alt="book1" />
         <div className="flex flex-col items-center">

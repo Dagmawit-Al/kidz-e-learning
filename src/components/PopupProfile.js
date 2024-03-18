@@ -8,7 +8,7 @@ function PopupProfile() {
         data-popover-target="popover-right"
         data-popover-placement="bottom"
         type="button"
-        class="text-black hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:bg-gray-100 dark:focus:ring-gay-200"
+        className="text-black hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:hover:bg-gray-100 dark:focus:ring-gay-200"
       >
         Dr. Kalkidan Tesfaye
       </button>
@@ -17,23 +17,27 @@ function PopupProfile() {
         data-popover
         id="popover-right"
         role="tooltip"
-        class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 space-y-8"
+        className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 space-y-8"
       >
-        <div class="p-3">
-          <div class="flex items-center justify-between mb-2">
+        <div className="p-3">
+          <div className="flex items-center justify-between mb-2">
             <a href="#">
-              <img class="w-18 h-18 rounded-full" src={pediatrician} alt="" />
+              <img
+                className="w-18 h-18 rounded-full"
+                src={pediatrician}
+                alt=""
+              />
             </a>
             <div>
               <button
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
-                class="mb-2 inline-block rounded-full bg-[#1877f2] p-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                className="mb-2 inline-block rounded-full bg-[#1877f2] p-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -44,11 +48,11 @@ function PopupProfile() {
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
-                class="mb-2 inline-block rounded-full bg-[#c13584] p-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                className="mb-2 inline-block rounded-full bg-[#c13584] p-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -60,11 +64,11 @@ function PopupProfile() {
                 type="button"
                 data-te-ripple-init
                 data-te-ripple-color="light"
-                class="mb-2 inline-block rounded-full bg-[#0077b5] p-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+                className="mb-2 inline-block rounded-full bg-[#0077b5] p-2 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
+                  className="h-4 w-4"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -73,19 +77,19 @@ function PopupProfile() {
               </button>
             </div>
           </div>
-          <p class="text-base font-semibold leading-none text-gray-900 dark:text-white">
+          <p className="text-base font-semibold leading-none text-gray-900 dark:text-white">
             <a href="#">Dr. Kalkidan Tesfaye</a>
           </p>
-          <p class="mb-3 text-sm font-normal">Pediatrician</p>
-          <p class="mb-4 text-black text-sm">
+          <p className="mb-3 text-sm font-normal">Pediatrician</p>
+          <p className="mb-4 text-black text-sm">
             Dedicated pediatrician with a background in delivering quality
             pediatric care to enhance dynamic healthcare team.
           </p>
-          <div class="pl-9">
-            <ul class="flex text-sm">
-              <li class="me-2">
-                <a href="#" class="hover:underline">
-                  <span class="font-semibold text-gray-900 dark:text-white">
+          <div className="pl-9">
+            <ul className="flex text-sm">
+              <li className="me-2">
+                <a href="#" className="hover:underline">
+                  <span className="font-semibold text-gray-900 dark:text-white">
                     Checkout{" "}
                   </span>
                   <span>Resume</span>
