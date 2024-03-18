@@ -9,14 +9,14 @@ const options = {
     //Reducer for "addTodo" action
     setSignInOpen: (state, action) => {
       return {
-        ...state,
+        isSignUpOpen: false,
         isSignInOpen: true,
       };
     },
     //Reducer for "toggleTodo" action
     setSignUpOpen: (state, action) => {
       return {
-        ...state,
+        isSignInOpen: false,
         isSignUpOpen: true,
       };
     },

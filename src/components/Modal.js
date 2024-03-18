@@ -19,12 +19,16 @@ import {
   setCloseAll,
 } from "../redux/slices/authDialogSlice";
 
-const Signup = ({
-  showRegistrationModal,
-  showLoginModal,
-  handleshowRegistrationModal,
-  handleshowLoginModal,
-}) => {
+import { useDispatch } from "react-redux";
+
+const Modal = (
+  {
+    // showRegistrationModal,
+    // showLoginModal,
+    // handleshowRegistrationModal,
+    // handleshowLoginModal,
+  }
+) => {
   const { isSignInOpen, isSignUpOpen } = useSelector(
     (state) => state.authDialog
   );
@@ -36,6 +40,7 @@ const Signup = ({
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
   const { signUp } = useUserAuth();
+  const dispatch = useDispatch();
   let navigate = useNavigate();
 
   const [values, setValues] = useState({
@@ -58,6 +63,7 @@ const Signup = ({
         password: "",
       });
       console.log("Registered!");
+      handleClose();
     } catch {
       console.log(firstname);
     }
@@ -69,22 +75,27 @@ const Signup = ({
   // };
 
   const handleLogin = () => {
-    handleshowLoginModal(true);
-    handleshowRegistrationModal(false);
+    dispatch(setSignInOpen());
+    // handleshowLoginModal(true);
+    // handleshowRegistrationModal(false);
   };
   const showRegister = () => {
-    handleshowRegistrationModal(true);
-    handleshowLoginModal(false);
+    dispatch(setSignUpOpen());
+    // handleshowRegistrationModal(true);
+    // handleshowLoginModal(false);
   };
+
+  const handleClose = () => {
+    dispatch(setCloseAll());
+  };
+
+  const openModal = isSignInOpen || isSignUpOpen;
 
   return (
     <>
-      {showRegistrationModal ? (
+      {isSignUpOpen ? (
         <>
-          <TEModal
-            show={showRegistrationModal}
-            setShow={handleshowRegistrationModal}
-          >
+          <TEModal show={openModal} setShow={handleClose}>
             <TEModalDialog size="lg">
               <TEModalContent>
                 <TEModalHeader className="bg-buttoncolor">
@@ -94,7 +105,7 @@ const Signup = ({
                   <button
                     type="button"
                     className="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-                    onClick={() => handleshowRegistrationModal(false)}
+                    onClick={handleClose}
                     aria-label="Close"
                   >
                     <svg
@@ -308,9 +319,9 @@ const Signup = ({
           </TEModal>
         </>
       ) : null}
-      {showLoginModal ? (
+      {isSignInOpen ? (
         <>
-          <TEModal show={showLoginModal} setShow={handleshowLoginModal}>
+          <TEModal show={openModal} setShow={handleClose}>
             <TEModalDialog size="lg">
               <TEModalContent>
                 <TEModalHeader className="bg-buttoncolor">
@@ -320,7 +331,7 @@ const Signup = ({
                   <button
                     type="button"
                     className="box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
-                    onClick={() => handleshowLoginModal(false)}
+                    onClick={handleClose}
                     aria-label="Close"
                   >
                     <svg
@@ -412,4 +423,4 @@ const Signup = ({
   );
 };
 
-export default Signup;
+export default Modal;
