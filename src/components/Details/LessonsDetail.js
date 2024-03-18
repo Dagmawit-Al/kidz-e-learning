@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -17,13 +17,42 @@ import book8 from "../../assets/images/booki-2-1.png";
 
 import middlesection from "../../assets/images/BookCover_YoungTrepTeenBizCourseJournal.png";
 import { NavLink } from "react-router-dom";
+import { query, collection, getDocs, where } from "firebase/firestore";
+import { auth, db } from "../../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function LessonsDetail() {
+
+  const [name, setName] = useState("");
+  const [uid, setUID] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+      setName(data.firstname);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchUserName();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUID(user.uid);
+        console.log("uid", uid);
+      } else {
+        console.log("user is logged out");
+      }
+    })
   }, []);
   return (
     <div className="flex flex-col h-screen">
+      <h1 className="mystery-quest-modal p-10">Welcome {name}!</h1>
       <div className="flex w-full items-center justify-between m-4">
         <img src={book1} alt="book1" />
         <div className="flex flex-col items-center">
