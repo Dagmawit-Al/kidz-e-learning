@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   TERipple,
   TEInput,
@@ -12,6 +12,12 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useUserAuth } from "../components/Auth/UserAuthContext";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import {
+  setSignInOpen,
+  setSignUpOpen,
+  setCloseAll,
+} from "../redux/slices/authDialogSlice";
 
 const Signup = ({
   showRegistrationModal,
@@ -19,6 +25,10 @@ const Signup = ({
   handleshowRegistrationModal,
   handleshowLoginModal,
 }) => {
+  const { isSignInOpen, isSignUpOpen } = useSelector(
+    (state) => state.authDialog
+  );
+  console.log("issignin", isSignInOpen, isSignUpOpen);
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
