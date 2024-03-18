@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import ChapterSummaryCard from "../ChapterSummaryCard";
+import { useUserAuth } from "../Auth/UserAuthContext";
+import Signup from "../Modal";
+import Header from "../Header";
 
 function Chapter(props) {
+  const navigate = useNavigate();
+  const { user } = useUserAuth();
+  let USER = true;
+  const [openSignup, setOpenSignup] = useState(false);
   const { chapternumber } = useParams();
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   useEffect(() => {
     console.log("chapternumber", chapternumber);
   }, []);
@@ -17,14 +20,29 @@ function Chapter(props) {
   //       const unsubscribe = fetch("api/chapternumber", (value, err)=>)
   //   }, []);
 
-  useEffect(() => {}, []);
+  const handlePurchaseButton = (e) => {
+    console.log("purchase button clicked", e);
+    // setOpenSignup(true);
+    if (!USER) {
+      setShowRegistrationModal(true);
+    } else {
+      navigate("/checkout");
+    }
+    // user ? handleCheckoutPageRoute() : setOpenSignup(true);
+  };
+
+  const handleCheckoutPageRoute = () => {
+    console.log("handleCheckoutpageclicked");
+  };
+
   return (
     <div className="sm:flex flex-col w-full h-screen">
+      <Header />
       <div className="h-screen m-4 sm:flex flex-col mt-5 h-[700px]">
-        <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
+        {/* <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
           KidsLearning
-        </h1>
-        <div className="sm:flex justify-around">
+        </h1> */}
+        <div className="sm:flex justify-around p-2">
           <div className="sm:w-[50%] flex flex-col justify-between">
             <h1 className="sm:text-2xl font-bold w-[75%] border-b-2">
               Foundation: Real World Money Lessons, chapter {chapternumber}
@@ -49,31 +67,13 @@ function Chapter(props) {
             </div>
 
             <div className="p-4">
-              <button className="bg-buttoncolor">Purchase</button>
+              <button onClick={handlePurchaseButton} className="bg-buttoncolor">
+                Purchase Course
+              </button>
             </div>
           </div>
-          <SimpleCard />
+          <ChapterSummaryCard />
         </div>
-      </div>
-      <div className="flex mt-16 sm:flex w-[25%] p-4">
-        <a href="#courses">
-          <button class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded">
-            Courses
-          </button>
-        </a>
-        <button
-          href="#worksheet"
-          class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded"
-        >
-          Worksheet
-        </button>
-
-        <button
-          href="#level"
-          class="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded"
-        >
-          Quiz
-        </button>
       </div>
 
       <div className="mt-4 sm:flex flex-row border-t-2 p-8 ">
@@ -121,37 +121,15 @@ function Chapter(props) {
           </p>
         </div>
       </div>
+
+      <Signup
+        showRegistrationModal={showRegistrationModal}
+        handleshowRegistrationModal={setShowRegistrationModal}
+        showLoginModal={showLoginModal}
+        handleshowLoginModal={setShowLoginModal}
+      />
     </div>
   );
 }
 
 export default Chapter;
-
-export function SimpleCard() {
-  return (
-    <Card>
-      <CardBody>
-        <Typography variant="h4" color="blue-gray" className="mb-2">
-          Course
-        </Typography>
-        <Typography>
-          This course is part of Google Data Analytics Professional Certificate
-        </Typography>
-        <Typography variant="h2" className="border-t-2 pt-2 mt-2 text-xl">
-          Beginner level
-        </Typography>
-        <Typography>Recommended experience</Typography>
-        <Typography variant="h2" className="border-t-2 pt-2 mt-2 text-xl">
-          18 hours(approximately)
-        </Typography>
-        <Typography variant="h2" className="border-t-2 pt-2 mt-2 text-xl">
-          Flexible schedule
-        </Typography>
-        <Typography>Learn at your own pace</Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <button className="bg-buttoncolor">Purchase</button>
-      </CardFooter>
-    </Card>
-  );
-}

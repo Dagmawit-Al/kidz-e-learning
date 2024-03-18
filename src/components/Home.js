@@ -22,7 +22,7 @@ function Home() {
         <Courses />
         <Blogs />
         <Description />
-        <div class="row-span-10 ..."></div>
+        <div className="row-span-10 ..."></div>
         <Testimony />
         <SummerCamp />
         <PediatricianApproved />
