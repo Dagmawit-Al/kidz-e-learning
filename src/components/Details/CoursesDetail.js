@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Tabs,
   TabsHeader,
@@ -18,15 +18,65 @@ import book8 from "../../assets/images/booki-2-1.png";
 import Header from "../Header";
 import middlesection from "../../assets/images/BookCover_YoungTrepTeenBizCourseJournal.png";
 import { NavLink } from "react-router-dom";
+import { query, collection, getDocs, where } from "firebase/firestore";
+import { auth, db } from "../../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 function CoursesDetail() {
+
+  const [name, setName] = useState("");
+  const [uid, setUID] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  let navigate = useNavigate();
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      console.log("DOCS", doc);
+      const data = doc.docs[0].data();
+      console.log("DATA", data);
+      setName(data.firstname);
+      console.log("NAME:", data.firstname);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
+
+  const handleLogOut = () => {
+    auth.signOut();
+    navigate("/");
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    fetchUserName();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUID(user.uid);
+        console.log("uid", uid);
+      } else {
+        console.log("user is logged out");
+      }
+    })
   }, []);
 
   return (
-    <div className=" md:flex flex-col h-screen">
+    <div className="md:flex flex-col h-screen">
       <Header />
+      <div className="flex justify-between p-10">
+        <h1 className="mystery-quest-modal">Welcome {name}!</h1>
+        <div>
+          <button
+            onClick={handleLogOut}
+            className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
 
       <div className="md:flex w-full items-center justify-between m-4">
         <img src={book1} alt="book1" />

@@ -30,6 +30,13 @@
   font-size: 50px;
 }
 
+.mystery-quest-modal {
+  font-family: "Mystery Quest", system-ui;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+}
+
 .bubblegum-sans-subheader {
   font-family: "Bubblegum Sans", sans-serif;
   font-weight: 100;

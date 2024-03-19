@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/logoimagekid.jpeg";
+import { auth, db } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import { query, collection, getDocs, where } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 import Modal from "./Modal";
 import { useUserAuth } from "./Auth/UserAuthContext";
 import { useDispatch } from "react-redux";
@@ -13,14 +18,29 @@ import {
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
-  const { user } = useUserAuth();
   const [nav, setNav] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [user, loading, error] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const [uid, setUID] = useState("");
+  const navigate = useNavigate();
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+      setName(data.firstname);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
+    }
+  };
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // fetchUserName();
     const handleScroll = () => {
       // console.log(window.scrollY);
       if (window.scrollY >= TOP_OFFSET) {
@@ -29,6 +49,14 @@ const Navbar = () => {
         setShowBackground(false);
       }
     };
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUID(user.uid);
+        console.log("uid", uid);
+      } else {
+        console.log("user is logged out");
+      }
+    })
 
     window.addEventListener("scroll", handleScroll);
 

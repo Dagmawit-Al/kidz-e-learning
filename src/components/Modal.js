@@ -8,10 +8,12 @@ import {
   TEModalHeader,
   TEModalBody,
 } from "tw-elements-react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { auth, signInWithGooglePopup } from '../firebase'
 import { useUserAuth } from "../components/Auth/UserAuthContext";
 import { useNavigate } from "react-router-dom";
+import { db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import {
   setSignInOpen,
@@ -39,6 +41,7 @@ const Modal = (
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { signUp } = useUserAuth();
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -49,6 +52,67 @@ const Modal = (
     email: "",
     phone: "",
   });
+
+  const signupWithUsernameAndPassword = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    // const user = userCredential.user;
+    // const userArray = [...e.target.elements];
+    // console.log(userArray);
+
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        setTimeout(() => {
+          const user = userCredential.user;
+          sendEmailVerification(user)
+          auth.signOut();
+          const docRef = addDoc(collection(db, "users"), {
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            phoneNumber: phoneNumber,
+            uid: user.uid
+          });
+          console.log("Document written with ID: ", docRef.id);
+          // const user = userCredential.user;
+          handleLogin();
+          console.log(user);
+          setIsLoading(false);
+        }, 5000);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+
+      });
+  }
+
+  const loginWithUsernameAndPassword = async (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        navigate("/lessons");
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
+      });
+  }
+
+  const loginWithGoogle = async () => {
+    const response = await signInWithGooglePopup();
+    console.log(response);
+  }
+
+  const validate = () => {
+    console.log(firstname.length && lastname.length);
+    return firstname.length && lastname.length;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -91,6 +155,11 @@ const Modal = (
 
   const openModal = isSignInOpen || isSignUpOpen;
 
+  useEffect(() => {
+    // setEmail("");
+    // setPassword("");
+  })
+
   return (
     <>
       {isSignUpOpen ? (
@@ -98,8 +167,8 @@ const Modal = (
           <TEModal show={openModal} setShow={handleClose}>
             <TEModalDialog size="lg">
               <TEModalContent>
-                <TEModalHeader className="bg-buttoncolor">
-                  <h5 className="text-xl font-medium leading-normal text-black dark:text-black-200">
+                <TEModalHeader className="bg-[#7E60CC]">
+                  <h5 className="mystery-quest-modal text-xl font-medium leading-normal text-[#F7F9F3] dark:text-black-200">
                     Sign Up here!
                   </h5>
                   <button
@@ -113,7 +182,7 @@ const Modal = (
                       fill="none"
                       viewBox="0 0 24 24"
                       strokeWidth="1.5"
-                      stroke="currentColor"
+                      stroke="white"
                       className="h-6 w-6"
                     >
                       <path
@@ -249,9 +318,14 @@ const Modal = (
                     <TERipple rippleColor="light" className="w-full">
                       <button
                         type="submit"
-                        className="inline-block w-full rounded bg-[#FDB7D1] border-[#E5588D] px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#E5588D] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#E5588D] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#E5588D] active:bg-[#E5588D] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                        className="inline-block w-full rounded bg-[#FB9060] border-[#E6777A] px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#FB9060] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#FB9060] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#FB9060] active:bg-[#FB9060] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FB9060] dark:hover:bg-[#FB9060] dark:focus:ring-[#FB9060] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                        onClick={(e) => signupWithUsernameAndPassword(e)} disabled={isLoading}
                       >
-                        Sign up
+                        {/* {isLoading ? (
+                          <span className="spinner-border spinner-border-sm text-white" role="status" aria-hidden="true"></span>
+                        ) : */}
+                          Sign up
+                        {/* } */}
                       </button>
                     </TERipple>
                     <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
@@ -265,6 +339,7 @@ const Modal = (
                         style={{ backgroundColor: "white" }}
                         href="#!"
                         role="button"
+                        onClick={loginWithUsernameAndPassword}
                       >
                         <svg
                           className="mr-2 h-3.5 w-3.5"
@@ -281,7 +356,7 @@ const Modal = (
                             d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
                           ></path>
                         </svg>
-                        Sign in with Google
+                        Sign up with Google
                       </a>
                     </TERipple>
 
@@ -307,7 +382,7 @@ const Modal = (
                       Have an account? {"    "}
                       <a
                         onClick={handleLogin}
-                        className="text-success cursor-pointer transition duration-150 ease-in-out hover:text-success-600 focus:text-success-600 active:text-success-700"
+                        className="cursor-pointer text-[#E6777A] transition duration-150 ease-in-out"
                       >
                         Login
                       </a>
@@ -324,8 +399,8 @@ const Modal = (
           <TEModal show={openModal} setShow={handleClose}>
             <TEModalDialog size="lg">
               <TEModalContent>
-                <TEModalHeader className="bg-buttoncolor">
-                  <h5 className="text-xl font-medium leading-normal text-black dark:text-black-200">
+                <TEModalHeader className="bg-[#7E60CC]">
+                  <h5 className="mystery-quest-modal text-xl font-medium leading-normal text-[#F7F9F3] dark:text-black-200">
                     Sign In here!
                   </h5>
                   <button
@@ -398,16 +473,29 @@ const Modal = (
                     <TERipple rippleColor="light" className="w-full">
                       <button
                         type="button"
-                        className="inline-block w-full rounded bg-[#FDB7D1] border-[#E5588D] px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#E5588D] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#E5588D] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#E5588D] active:bg-[#E5588D] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                        onClick={(e) => loginWithUsernameAndPassword(e)}
+                        className="inline-block w-full rounded bg-[#FB9060] border-[#E6777A] px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#FB9060] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#FB9060] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#FB9060] active:bg-[#FB9060] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FB9060] dark:hover:bg-[#FB9060] dark:focus:ring-[#FB9060] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                       >
                         Sign In
                       </button>
+                    </TERipple>
+                    <TERipple rippleColor="light" className="w-full">
+                      <a
+                        className="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 active:bg-red-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                        style={{ backgroundColor: "white" }}
+                        href="#!"
+                        role="button"
+                        onClick={loginWithGoogle}
+                      >
+                        <svg class="mr-2 h-3.5 w-3.5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="red" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
+                        Sign in with Google
+                      </a>
                     </TERipple>
                     <p className="text-center pt-1 text-sm font-semibold">
                       First Time? {"    "}
                       <a
                         onClick={showRegister}
-                        className="cursor-pointer text-success transition duration-150 ease-in-out hover:text-success-600 focus:text-success-600 active:text-success-700"
+                        className="cursor-pointer text-[#E6777A] transition duration-150 ease-in-out"
                       >
                         Register here
                       </a>
