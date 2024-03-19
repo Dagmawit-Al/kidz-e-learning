@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
-import logoImage from "../assets/images/mentorable_logo.png";
+import logoImage from "../assets/images/logoAndText.png";
 import textLogo from "../assets/images/text_logo_transparent_720.png";
 
 import { auth, db } from "../firebase";
@@ -92,7 +92,7 @@ const Navbar = () => {
     // console.log("input values are", values);
   };
   return (
-    <div className="flex justify-around w-[100%] absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
+    <div className="flex justify-around pt-10 w-[100%] absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
       <div className="flex items-center justify-around flex-1 fixed w-full">
         <div className="flex cursor-pointer items-center ">
           {" "}
@@ -103,30 +103,29 @@ const Navbar = () => {
               alt="Logo"
               className="sm:h-[200px] w-[200px] cursor-pointer rounded-full "
             />
-            <p className="text-black cursor-pointer font-bold ml-8">Kidz</p>
           </NavLink>
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
-            <NavLink to="/" className="bubblegum-sans-link">
+            <NavLink to="/" className="bubblegum-sans-link text-[#F7F9F3]">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/storys" className="bubblegum-sans-link">
+            <NavLink to="/storys" className="bubblegum-sans-link text-[#F7F9F3]">
               Our Story
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" className="bubblegum-sans-link">
+            <NavLink to="/blogs" className="bubblegum-sans-link text-[#F7F9F3]">
               Blog
             </NavLink>
           </li>
           <li>
-            <NavLink to="/courses">Courses</NavLink>
+            <NavLink to="/courses" className="bubblegum-sans-link text-[#F7F9F3]">Courses</NavLink>
           </li>
           <li>
-            <NavLink to="/programs" className="bubblegum-sans-link">
+            <NavLink to="/programs" className="bubblegum-sans-link text-[#F7F9F3]">
               Programs
             </NavLink>
           </li>

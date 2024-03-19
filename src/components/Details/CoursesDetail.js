@@ -68,12 +68,12 @@ function CoursesDetail() {
       <div className="flex justify-between p-10">
         <h1 className="mystery-quest-modal">Welcome {name}!</h1>
         <div>
-          <button
+          {/* <button
             onClick={handleLogOut}
             className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
           >
             Logout
-          </button>
+          </button> */}
         </div>
       </div>
 
