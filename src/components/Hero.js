@@ -1,17 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import heroImage from "../assets/images/img-banner.png";
+import btnart from "../assets/images/btn-art.png";
 
 const Hero = () => {
   return (
-    <div id="hero" className="w-full h-[90vh]">
-      <img
-        src={heroImage}
-        alt="heroImage"
-        className="w-full h-full object-cover opacity-75"
-      />
-      <div className="max-w-[1140px] m-auto">
-        <div className="space-y-5 absolute top-[40%] w-full md:-[50%] max-w-[600px] h-full flex flex-col text-black p-4">
+    <div id="hero" className="flex flex-col  mt-[100px]  ">
+      <div className="w-full flex items-center flex-col m-4 p-4">
+        <div className="space-y-5 w-full md:w-[50%] w-[45%] items-center m-4 h-full flex flex-col text-black p-4">
           <h1 className="mystery-quest-header font-bold  text-gray-dark font-header	">
             Empowering kids through entrepreneurship
           </h1>
@@ -20,13 +16,19 @@ const Hero = () => {
             entrepreneurship and in life... all while putting smiles on their
             faces!
           </p>
-          <div>
-            <button className="bg-button text-black">Register</button>
-            <NavLink to="/courses">
-              <button className=" bg-button text-black ">Start Courses</button>
-            </NavLink>
+        </div>
+        <div className="flex">
+          <NavLink to="/courses">
+            <button className=" bg-button text-black ">Start Courses</button>
+          </NavLink>
+          <div className="-m-8 p-2">
+            <img src={btnart} alt="btnart" />
           </div>
         </div>
+      </div>
+
+      <div>
+        <img src={heroImage} alt="heroImage" className="w-full object-cover" />
       </div>
     </div>
   );

@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import logoImage from "../assets/images/logoimagekid.jpeg";
+
+import logoImage from "../assets/images/mentorable_logo.png";
+import textLogo from "../assets/images/text_logo_transparent_720.png";
+
+
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
+
 import Modal from "./Modal";
 import { useUserAuth } from "./Auth/UserAuthContext";
 import { useDispatch } from "react-redux";
@@ -22,6 +27,9 @@ const Navbar = () => {
   const [showBackground, setShowBackground] = useState(false);
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const [users, setUsers] = useState(user);
+
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
@@ -37,6 +45,7 @@ const Navbar = () => {
       alert("An error occured while fetching user data");
     }
   };
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -49,6 +58,8 @@ const Navbar = () => {
         setShowBackground(false);
       }
     };
+
+
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUID(user.uid);
@@ -58,12 +69,17 @@ const Navbar = () => {
       }
     })
 
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    setUsers(user);
+  }, [user]);
 
   const handleNavClick = () => {
     setNav(!nav);
@@ -79,18 +95,18 @@ const Navbar = () => {
     // console.log("input values are", values);
   };
   return (
-    <div className="flex justify-around w-full absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
+    <div className="flex justify-around w-[100%] absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
       <div className="flex items-center justify-around flex-1 fixed w-full">
-        <div className="flex cursor-pointer items-center -mx-4">
+        <div className="flex cursor-pointer items-center ">
           {" "}
           <NavLink to="/" className="flex items-center sm:flex items-center">
             <img
               href="/"
               src={logoImage}
               alt="Logo"
-              className="h-8 w-8 cursor-pointer rounded-full "
+              className="sm:h-[200px] w-[200px] cursor-pointer rounded-full "
             />
-            <p className=" text-black cursor-pointer pl-2 font-bold">Kidz</p>
+            <p className="text-black cursor-pointer font-bold ml-8">Kidz</p>
           </NavLink>
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
@@ -123,7 +139,7 @@ const Navbar = () => {
             onClick={handleSignUp}
             className="opacity-90 bg-button text-black"
           >
-            Sign Up
+            {user ? "Log Out" : "Sign Up"}
           </button>
         </div>
       </div>

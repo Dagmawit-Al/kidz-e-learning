@@ -10371,6 +10371,11 @@
     "querystringify" "^2.1.1"
     "requires-port" "^1.0.0"
 
+"use-react-countries@^2.0.0":
+  "integrity" "sha512-0D7YHhPZAQOtCxukJr7gkeLhPzYN+qOUFiaf+rZW7Ty8Uwk7hV7Mx8pP6rU44kz/LN6sjkuubbXhEf15dDS5dA=="
+  "resolved" "https://registry.npmjs.org/use-react-countries/-/use-react-countries-2.0.0.tgz"
+  "version" "2.0.0"
+
 "use-sync-external-store@^1.0.0":
   "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
   "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"

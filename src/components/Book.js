@@ -1,68 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom";
 import book from "../assets/images/book.png";
 import profile from "../assets/images/instructor.jpeg";
 import profile2 from "../assets/images/instructor2.jpeg";
 import Chapters from "./Chapters";
 import Header from "./Header";
 import Profile from "./Profile";
+import chaptersData from "../chapters.json";
 
-const chaptersData = [
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 1,
-    hours: 18,
-    rating: 4.5,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 2,
-    hours: 10,
-    rating: 4.5,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 3,
-    hours: 12,
-    rating: 4.5,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 4,
-    hours: 16,
-    rating: 4.6,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 5,
-    hours: 15,
-    rating: 4.5,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 6,
-    hours: 10,
-    rating: 4.7,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 7,
-    hours: 12,
-    rating: 4,
-  },
-  {
-    chaptertitle: "Foundations: Data, Data, Everywhere",
-    chapternumber: 8,
-    hours: 8,
-    rating: 4.5,
-  },
-];
+import { setSignInOpen } from "../redux/slices/authDialogSlice";
+
+import { useDispatch, useSelector } from "react-redux";
+import { useUserAuth } from "./Auth/UserAuthContext";
+import Modal from "./Modal";
 
 const Book = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const { user } = useUserAuth();
+  console.log("id", id);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   const [stroke, setStroke] = useState(4.8);
+
+  const handlePurchase = () => {
+    console.log("user is", user ? user?.email : null);
+    if (!user) {
+      navigate(`/book/${id}/checkout`);
+    } else {
+      dispatch(setSignInOpen());
+    }
+  };
+
+  const handleStartCourses = () => {
+    navigate(`/course/${id}`);
+  };
   return (
     <div className="sm:flex flex-col w-full h-screen">
       <Header />
@@ -112,7 +86,15 @@ const Book = () => {
               </p>
             </div>
             <div className="p-4">
-              <button className="bg-buttoncolor">Purchase Courses</button>
+              {false ? (
+                <button onClick={handleStartCourses} className="bg-buttoncolor">
+                  Start Courses
+                </button>
+              ) : (
+                <button onClick={handlePurchase} className="bg-buttoncolor">
+                  Purchase Courses
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -158,15 +140,23 @@ const Book = () => {
         className="sm:flex flex-row justify-around border-t-2 p-8 "
       >
         <div className=" sm:w-[50%] flex flex-col">
-          <Chapters chaptersData={chaptersData} />
+          <Chapters id={id} chaptersData={chaptersData} />
         </div>
-        <div
-          id="sample"
-          className="flex flex-row sm:w-[25%] border-2 h-[50%] items-center mt-2"
-        >
-          <Profile />
+        <div className="flex flex-row sm:w-[25%] h-[75%] flex flex-col items-start m-2 p-4">
+          <div
+            id="sample"
+            className="flex flex-row sm:w-[100%] h-[50%] items-center mt-2"
+          >
+            <Profile />
+          </div>
+          <div className="p-4">
+            <button onClick={handlePurchase} className="bg-buttoncolor">
+              Purchase Courses
+            </button>
+          </div>
         </div>
       </div>
+      <Modal />
     </div>
   );
 };

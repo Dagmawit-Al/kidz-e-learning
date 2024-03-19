@@ -10,6 +10,8 @@ import Chapter from "./components/Details/Chapter";
 import { UserAuthContextProvider } from "./components/Auth/UserAuthContext";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import Checkout from "./components/Payment/Checkout";
+import LearnBook from "./components/LearnBook";
 
 const App = () => {
   return (
@@ -23,9 +25,16 @@ const App = () => {
               <Route exact path="/courses" Component={CoursesDetail} />
               <Route exact path="/programs" Component={ProgramsDetail} />
               <Route exact path="/courses/book/:id" Component={Book} />
+              <Route exact path="/book/:bookId/checkout" Component={Checkout} />
               <Route
                 exact
-                path="/courses/book/chapter/:chapternumber"
+                path="/book/:bookId/checkout/learn"
+                Component={LearnBook}
+              />
+
+              <Route
+                exact
+                path="/courses/book/:id/chapter/:chapternumber"
                 Component={Chapter}
               />
             </Routes>

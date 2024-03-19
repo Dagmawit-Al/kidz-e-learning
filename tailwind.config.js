@@ -48,7 +48,7 @@ module.exports = {
       white: "#Ffffff",
       greentwo: "#15803d",
       middlesection: "#f1faf0",
-      button: "#20aba4",
+      button: "#ffd01e",
 
       buttoncolor: "#ffd01e",
     },
