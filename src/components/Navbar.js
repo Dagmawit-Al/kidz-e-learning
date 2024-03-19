@@ -2,12 +2,19 @@ import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/logoimagekid.jpeg";
-import Signup from "./Modal";
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
+import Modal from "./Modal";
+import { useUserAuth } from "./Auth/UserAuthContext";
+import { useDispatch } from "react-redux";
+import {
+  setSignInOpen,
+  setSignUpOpen,
+  setCloseAll,
+} from "../redux/slices/authDialogSlice";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
@@ -30,6 +37,7 @@ const Navbar = () => {
       alert("An error occured while fetching user data");
     }
   };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // fetchUserName();
@@ -62,7 +70,8 @@ const Navbar = () => {
   };
 
   const handleSignUp = () => {
-    setShowRegistrationModal(true);
+    dispatch(setSignUpOpen());
+    // setShowRegistrationModal(true);
   };
 
   const handleModal = (values) => {
@@ -86,25 +95,33 @@ const Navbar = () => {
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
-            <NavLink to="/" className="bubblegum-sans-link">Home</NavLink>
+            <NavLink to="/" className="bubblegum-sans-link">
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/storys" className="bubblegum-sans-link">Our Story</NavLink>
+            <NavLink to="/storys" className="bubblegum-sans-link">
+              Our Story
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" className="bubblegum-sans-link">Blog</NavLink>
+            <NavLink to="/blogs" className="bubblegum-sans-link">
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/lessons" className="bubblegum-sans-link">Products</NavLink>
+            <NavLink to="/courses">Courses</NavLink>
           </li>
           <li>
-            <NavLink to="/programs" className="bubblegum-sans-link">Programs</NavLink>
+            <NavLink to="/programs" className="bubblegum-sans-link">
+              Programs
+            </NavLink>
           </li>
         </ul>
         <div>
           <button
             onClick={handleSignUp}
-            className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
+            className="opacity-90 bg-button text-black"
           >
             Sign Up
           </button>
@@ -137,7 +154,7 @@ const Navbar = () => {
               <a href="#Blog">Blog</a>
             </li>
             <li className="text-2xl py-8">
-              <a href="#Products">Products</a>
+              <NavLink to="/courses">Courses</NavLink>
             </li>
             <li className="text-2xl py-8">
               <a href="#Programs">Programs</a>
@@ -145,7 +162,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Signup showRegistrationModal={showRegistrationModal} handleshowRegistrationModal={setShowRegistrationModal} showLoginModal={showLoginModal} handleshowLoginModal={setShowLoginModal} />
+      <Modal />
     </div>
   );
 };

@@ -18,7 +18,10 @@ function SummerCamp() {
         </div>
         <div className="col-span-2 ...">
           <TERipple rippleColor="light">
-            <button className="bubblegum-sans-subheader bg-black text-white" href="#programs">
+            <button
+              className="bubblegum-sans-subheader bg-black text-white"
+              href="#programs"
+            >
               Learn More
             </button>
           </TERipple>
@@ -27,8 +30,8 @@ function SummerCamp() {
           <img src={kids} className="rounded-full" alt="" />
         </div>
       </div>
-      <div class="inline-flex items-center justify-center w-full">
-        <div class="absolute px-4 -translate-x-1/2 bg-[#faf8f0] left-1/2 dark:bg-[#faf8f0]">
+      <div className="inline-flex items-center justify-center w-full">
+        <div className="absolute px-4 -translate-x-1/2 bg-[#faf8f0] left-1/2 dark:bg-[#faf8f0]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

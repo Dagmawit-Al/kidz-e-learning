@@ -4,8 +4,8 @@ import pediatrician from "../assets/images/avatar.jpeg";
 
 function PediatricianApproved() {
   return (
-    <figure class="max-w-screen-md mx-auto text-center p-8 space-y-8">
-      <div class="flex flex-row justify-center items-start space-x-5">
+    <figure className="max-w-screen-md mx-auto text-center p-8 space-y-8">
+      <div className="flex flex-row justify-center items-start space-x-5">
         <h2 className="mystery-quest-header m-0 text-black">
           Pediatrician - Approved
         </h2>
@@ -25,15 +25,15 @@ function PediatricianApproved() {
           />
         </svg>
       </div>
-      <div class="flex justify-center">
+      <div className="flex justify-center">
         <img
-          class="border-solid border-4 border-green-100 w-50 h-50 rounded-full"
+          className="border-solid border-4 border-green-100 w-50 h-50 rounded-full"
           src={pediatrician}
           alt=""
         />
       </div>
       <blockquote>
-        <p class="bubblegum-sans-subheader text-4xl italic font-medium text-black ">
+        <p className="bubblegum-sans-subheader text-4xl italic font-medium text-black ">
           "Lorem ipsum dolor sit amet. Qui dolor accusantium rem necessitatibus
           totam sit omnis totam quo totam beatae qui praesentium facilis. Aut
           galisum ipsa ut ipsa ratione ea Quis dolores. Qui voluptas dolor cum
@@ -42,9 +42,9 @@ function PediatricianApproved() {
         </p>
       </blockquote>
       <PopupProfile />
-      <div class="inline-flex items-center justify-center w-full">
-        <hr class="w-64 h-1 my-8 bg-green-300 border-0 rounded dark:bg-[#E5588D]" />
-        <div class="absolute px-4 -translate-x-1/2 bg-[#faf8f0] left-1/2 dark:bg-gray-900">
+      <div className="inline-flex items-center justify-center w-full">
+        <hr className="w-64 h-1 my-8 bg-green-300 border-0 rounded dark:bg-[#E5588D]" />
+        <div className="absolute px-4 -translate-x-1/2 bg-[#faf8f0] left-1/2 dark:bg-gray-900">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

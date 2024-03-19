@@ -20,12 +20,10 @@ const Hero = () => {
             entrepreneurship and in life... all while putting smiles on their
             faces!
           </p>
-          <div className="text-white">
-            <button className="bubblegum-sans-subheader bg-buttoncolor text-black">Register</button>
-            <NavLink to="/lessons">
-              <button className="bubblegum-sans-subheader opacity-80 bg-buttoncolor text-black ">
-                Start Courses
-              </button>
+          <div>
+            <button className="bg-button text-black">Register</button>
+            <NavLink to="/courses">
+              <button className=" bg-button text-black ">Start Courses</button>
             </NavLink>
           </div>
         </div>

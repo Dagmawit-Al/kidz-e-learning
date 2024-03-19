@@ -15,6 +15,7 @@ import book6 from "../../assets/images/booki-6.png";
 import book7 from "../../assets/images/booki-1-1.png";
 import book8 from "../../assets/images/booki-2-1.png";
 
+import Header from "../Header";
 import middlesection from "../../assets/images/BookCover_YoungTrepTeenBizCourseJournal.png";
 import { NavLink } from "react-router-dom";
 import { query, collection, getDocs, where } from "firebase/firestore";
@@ -23,7 +24,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
-function LessonsDetail() {
+function CoursesDetail() {
 
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
@@ -61,8 +62,10 @@ function LessonsDetail() {
       }
     })
   }, []);
+
   return (
-    <div className="flex flex-col h-screen">
+    <div className="md:flex flex-col h-screen">
+      <Header />
       <div className="flex justify-between p-10">
         <h1 className="mystery-quest-modal">Welcome {name}!</h1>
         <div>
@@ -74,7 +77,8 @@ function LessonsDetail() {
           </button>
         </div>
       </div>
-      <div className="flex w-full items-center justify-between m-4">
+
+      <div className="md:flex w-full items-center justify-between m-4">
         <img src={book1} alt="book1" />
         <div className="flex flex-col items-center">
           <h1 className="font-bold text-6xl">Books That Empower</h1>
@@ -85,14 +89,14 @@ function LessonsDetail() {
 
         <img src={book2} alt="book2" />
       </div>
-      <div className="flex items-center flex-col border-t-2 w-full">
-        <div className="flex justify-around p-2 m-2 w-[60%] h-[500px] bg-middlesection ">
+      <div className="md:flex items-center flex-col border-t-2 w-full">
+        <div className="md:flex justify-around p-2 m-2 w-[60%] h-[500px] bg-middlesection ">
           <img
             className="object-cover"
             src={middlesection}
             alt="middlesectionimage"
           />
-          <div className="p-4 m-2 flex flex-col w-[50%] justify-around">
+          <div className="md:p-4 m-2 flex flex-col w-[50%] justify-around">
             <h1 className="font-bold text-6xl">The Book That Started All</h1>
             <p className="text-gray-light">
               Author, Abel Dawit <br />
@@ -107,14 +111,14 @@ function LessonsDetail() {
           </div>
         </div>
       </div>
-      <div className=" flex items-center flex-col w-full">
+      <div className=" md:flex items-center flex-col w-full">
         <TabsDefault />
       </div>
     </div>
   );
 }
 
-export default LessonsDetail;
+export default CoursesDetail;
 
 export function TabsDefault() {
   const data = [
@@ -250,7 +254,7 @@ export function TabsDefault() {
 
   return (
     <Tabs
-      className="w-[75%] border-t-2 mt-4 items-center flex flex-col"
+      className="md:w-[75%] border-t-2 mt-4 items-center flex flex-col h-screen"
       value="all"
     >
       {/* {data.map((item, index) => {
@@ -268,13 +272,13 @@ export function TabsDefault() {
           <TabPanel
             key={value}
             value={value}
-            className="flex w-[100%] flex-wrap justify-evenly"
+            className="md:flex w-[100%] flex-wrap justify-evenly"
           >
             {booklist?.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="flex flex-col m-2 p-2 items-center hover:scale-110 "
+                  className="md:flex flex-col m-2 p-2 items-center hover:scale-110 "
                 >
                   <img src={item.src} alt="imageindex" />
                   <h1 className="font-bold text-xl">{item.des} </h1>
@@ -283,7 +287,7 @@ export function TabsDefault() {
                     <p>{item.age}&nbsp; </p> <p>{item.page}&nbsp; </p>
                     <p>{item.incluede ? "included" : ""} </p>
                   </div>
-                  <NavLink to={`/lessons/book/${item.id}`}>
+                  <NavLink to={`/courses/book/${item.id}`}>
                     <button className="bg-buttoncolor px-8">Learn More</button>
                   </NavLink>
                 </div>

@@ -21,17 +21,26 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#blog" className="hover:underline bubblegum-sans-link">
+                  <a
+                    href="#blog"
+                    className="hover:underline bubblegum-sans-link"
+                  >
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#products" className="hover:underline bubblegum-sans-link">
+                  <a
+                    href="#products"
+                    className="hover:underline bubblegum-sans-link"
+                  >
                     Products
                   </a>
                 </li>
                 <li>
-                  <a href="/Programs" className="hover:underline bubblegum-sans-link">
+                  <a
+                    href="/Programs"
+                    className="hover:underline bubblegum-sans-link"
+                  >
                     Programs
                   </a>
                 </li>
