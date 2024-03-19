@@ -36,6 +36,27 @@ const Courses = () => {
       description:
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
     },
+    {
+      src: lesson1image,
+      id: 30,
+      date: new Date(),
+      description:
+        "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
+    },
+    {
+      src: lesson1image,
+      id: 31,
+      date: new Date(),
+      description:
+        "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
+    },
+    {
+      src: lesson1image,
+      id: 32,
+      date: new Date(),
+      description:
+        "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
+    },
   ];
   return (
     <div id="products" className=" md:flex flex-col items-center">

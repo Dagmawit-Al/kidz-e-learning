@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Chapters = ({ chaptersData }) => {
+const Chapters = ({ id, chaptersData }) => {
   return (
     <>
       <h1 className="font-bold">Professional Certificate - 8 course series</h1>
@@ -19,12 +19,17 @@ const Chapters = ({ chaptersData }) => {
           <>
             {index == 0 ? (
               <div className="p-4" key={item.hours + item.rating + index}>
-                <NavLink to={`/courses/book/chapter/${item.chapternumber}`}>
+                {/* <NavLink
+                  to={`/courses/book/${id}/chapter/${item.chapternumber}`}
+                >
                   {" "}
                   <h1 className="font-bold hover:text-greentwo">
                     {item.chaptertitle}
                   </h1>{" "}
-                </NavLink>
+                </NavLink> */}
+                <h1 className="font-bold hover:text-greentwo">
+                  {item.chaptertitle}
+                </h1>
                 <p className="pt-2 flex">
                   {" "}
                   Course {item.chapternumber} {item.hours}hours {item.rating}
@@ -45,7 +50,9 @@ const Chapters = ({ chaptersData }) => {
             ) : (
               <div className="p-4" key={item.hours + item.rating + index}>
                 {" "}
-                <h1 className="font-bold">{item.chaptertitle}</h1>{" "}
+                <h1 className="font-bold hover:text-greentwo">
+                  {item.chaptertitle}
+                </h1>{" "}
                 <p className="pt-2 flex">
                   {" "}
                   Course {item.chapternumber} {item.hours}hours {item.rating}

@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import ChapterSummaryCard from "../ChapterSummaryCard";
 import { useUserAuth } from "../Auth/UserAuthContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
 import {
   setSignInOpen,
   setSignUpOpen,
   setCloseAll,
 } from "../../redux/slices/authDialogSlice";
 
+import { setPathName, listPathName } from "../../redux/slices/locationSlice";
+
 import Signup from "../Modal";
 import Header from "../Header";
 
 function Chapter(props) {
+  const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useUserAuth();
@@ -21,16 +25,25 @@ function Chapter(props) {
   const { chapternumber } = useParams();
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-  useEffect(() => {
-    console.log("chapternumber", chapternumber);
-  }, []);
+
+  const { pathname } = useSelector((state) => state.locationslice);
+  // useEffect(() => {
+  //   console.log("chapternumber", chapternumber);
+  // }, []);
+  // useEffect(() => {
+  //   console.log("pathname is", pathname);
+  // }, [pathname]);
   //   useEffect(() => {
   //       const unsubscribe = fetch("api/chapternumber", (value, err)=>)
   //   }, []);
 
   const handlePurchaseButton = (e) => {
     if (!user) {
+      console.log("navigation", location);
+      dispatch(setPathName(location.pathname));
       dispatch(setSignUpOpen());
+    } else {
+      navigate("/checkout");
     }
   };
 

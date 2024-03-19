@@ -11,13 +11,14 @@ import {
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { useUserAuth } from "../components/Auth/UserAuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {
   setSignInOpen,
   setSignUpOpen,
   setCloseAll,
 } from "../redux/slices/authDialogSlice";
+import { setPathName, listPathName } from "../redux/slices/locationSlice";
 
 import { useDispatch } from "react-redux";
 
@@ -32,6 +33,9 @@ const Modal = (
   const { isSignInOpen, isSignUpOpen } = useSelector(
     (state) => state.authDialog
   );
+  const { bookId } = useParams();
+  const location = useLocation();
+  const { pathname } = useSelector((state) => state.locationslice);
   console.log("issignin", isSignInOpen, isSignUpOpen);
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -39,7 +43,7 @@ const Modal = (
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const { signUp } = useUserAuth();
+  const { signUp, user } = useUserAuth();
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -49,6 +53,17 @@ const Modal = (
     email: "",
     phone: "",
   });
+
+  // useEffect(() => {
+  //   console.log("pathname in modal", pathname);
+  //   const homepath = "/";
+  //   console.log("homepath", homepath);
+  //   if (pathname && pathname !== homepath) {
+  //     navigate("/checkout");
+  //   } else {
+  //     navigate("/");
+  //   }
+  // }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,6 +79,18 @@ const Modal = (
       });
       console.log("Registered!");
       handleClose();
+      // if (location?.pathname) {
+      //   navigate(`/book/${bookId}/checkout`);
+      // } else {
+      //   navigate("/");
+      // }
+      // const homepath = "/";
+      // console.log("homepath", homepath);
+      // if (user && pathname && pathname !== homepath) {
+      //   navigate("/checkout");
+      // } else {
+      //   navigate("/");
+      // }
     } catch {
       console.log(firstname);
     }

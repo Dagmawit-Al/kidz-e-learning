@@ -2,11 +2,11 @@ import React from "react";
 
 function Testimony() {
   return (
-    <div className="space-y-10 ">
+    <div className="flex flex-col items-center sm:space-y-10 ">
       <h2 className="mystery-quest-header text-center font-extrabold text-gray-900 dark:text-white">
         Testimony
       </h2>
-      <div className="flex flex-row justify-between space-x-20 px-10">
+      <div className="sm:flex flex-row justify-between space-x-20 px-10">
         <iframe
           className=" rounded-lg"
           src="https://www.youtube.com/embed/viHILXVY_eU?si=kG9IYX4r3tKBqeeG"
