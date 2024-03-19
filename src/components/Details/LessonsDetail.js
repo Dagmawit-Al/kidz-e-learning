@@ -21,23 +21,34 @@ import { query, collection, getDocs, where } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 
 function LessonsDetail() {
 
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
   const [user, loading, error] = useAuthState(auth);
+  let navigate = useNavigate();
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
       const doc = await getDocs(q);
+      console.log("DOCS", doc);
       const data = doc.docs[0].data();
+      console.log("DATA", data);
       setName(data.firstname);
+      console.log("NAME:", data.firstname);
     } catch (err) {
       console.error(err);
       alert("An error occured while fetching user data");
     }
   };
+
+  const handleLogOut = () => {
+    auth.signOut();
+    navigate("/");
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
     fetchUserName();
@@ -52,7 +63,17 @@ function LessonsDetail() {
   }, []);
   return (
     <div className="flex flex-col h-screen">
-      <h1 className="mystery-quest-modal p-10">Welcome {name}!</h1>
+      <div className="flex justify-between p-10">
+        <h1 className="mystery-quest-modal">Welcome {name}!</h1>
+        <div>
+          <button
+            onClick={handleLogOut}
+            className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
       <div className="flex w-full items-center justify-between m-4">
         <img src={book1} alt="book1" />
         <div className="flex flex-col items-center">
