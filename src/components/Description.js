@@ -6,7 +6,7 @@ function Description() {
       <h2 className="mystery-quest-header text-center dark:text-white">
         What happens when kids use our resources ?
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 p-20 mx-10">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 p-10 mx-10">
         <div className="flex flex-col items-center space-y-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -59,28 +59,28 @@ const Courses = () => {
     },
   ];
   return (
-    <div id="products" className=" md:flex flex-col items-center">
-      <h1 className=" w-full text-center text-4xl font-bold font-header">
+    <div id="products" className="pt-10 space-y-8 md:flex flex-col items-center">
+      <h1 className="mystery-quest-header w-full text-black text-center text-4xl font-bold font-header">
         Shop our latest Courses
       </h1>
-      <p className="font-paragraph">
+      <p className="bubblegum-sans-subheader text-black font-paragraph">
         Our Courses introduce children to key life skills that empower them to
         be limitless
       </p>
       <CourseList data={courseData} />
-      <button className=" opacity-80 my-5 bg-black text-white">
+      <button className=" opacity-80 my-5 bg-button text-black">
         Start Courses
       </button>
 
-      <div class="inline-flex items-center justify-center w-full my-8">
-        <hr class="w-64 h-1 my-8 bg-green-700 border-0 rounded dark:bg-[#E5588D]" />
-        <div class="absolute px-4 -translate-x-1/2 bg-[#faf8f0] left-1/2 dark:bg-gray-900">
+      <div class="inline-flex items-center justify-center w-full my-8 pt-10">
+        <hr class="w-64 h-1 my-8 bg-[#7E60CC] border-0 rounded dark:bg-[#E5588D]" />
+        <div class="absolute px-4 -translate-x-1/2 bg-[#7E60CC] left-1/2 dark:bg-gray-900">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="orange"
+            stroke={"orange"}
             className="w-24 h-24"
           >
             <path

@@ -5,10 +5,10 @@ function Newsletter() {
     <section className="bg-green dark:bg-gray-900">
       <div className="rounded-lg py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-md sm:text-center">
-          <h2 className="mystery-quest-header mb-4 text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl dark:text-white">
+          <h2 className="mystery-quest-header mb-4 text-3xl tracking-tight font-extrabold text-[#F7F9F3] sm:text-4xl dark:text-white">
             Sign up for our newsletter
           </h2>
-          <p className="bubblegum-sans-subheader mx-auto mb-8 max-w-2xl font-light text-gray-500 md:mb-12 sm:text-xl dark:text-gray-400">
+          <p className="bubblegum-sans-subheader mx-auto mb-8 max-w-2xl font-light text-[#F7F9F3] md:mb-12 sm:text-xl dark:text-gray-400">
             Stay up to date with the latest learning materials, announcements
             and exclusive discounts! <br /> Feel free to sign up with your
             email.
@@ -25,7 +25,7 @@ function Newsletter() {
                 <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <svg
                     className="w-5 h-5 text-[#FDB7D1] dark:text-gray-400"
-                    fill="currentColor"
+                    fill="orange"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -44,13 +44,13 @@ function Newsletter() {
               <div>
                 <button
                   type="submit"
-                  className="bubblegum-sans-subheader py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-[#FDB7D1] border-[#E5588D] sm:rounded-none sm:rounded-r-lg hover:bg-[#E5588D] focus:ring-4 focus:ring-[#E5588D] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D]"
+                  className="bubblegum-sans-subheader py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-button border-[#E5588D] sm:rounded-none sm:rounded-r-lg hover:bg-[#E5588D] focus:ring-4 focus:ring-[#E5588D] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D]"
                 >
                   Subscribe
                 </button>
               </div>
             </div>
-            <div className="mx-auto max-w-screen-sm text-sm text-center text-gray-500 newsletter-form-footer dark:text-gray-300 pt-5">
+            <div className="mx-auto max-w-screen-sm text-sm text-center text-black newsletter-form-footer dark:text-gray-300 pt-5">
               We care about the protection of your data.{" "}
               <a
                 href="#"

@@ -26,7 +26,7 @@ const Blogs = () => {
     },
   ];
   return (
-    <div id="blogs" className="space-y-8 md:flex  flex-col items-center ">
+    <div id="blogs" className="space-y-8 p-10 md:flex  flex-col items-center ">
       <h1 className="mystery-quest-header w-full text-4xl text-center font-bold font-header">
         Latest Articles And Updates
       </h1>

@@ -51,7 +51,6 @@ function CoursesDetail() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchUserName();
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUID(user.uid);
@@ -60,7 +59,8 @@ function CoursesDetail() {
         console.log("user is logged out");
       }
     });
-  }, []);
+    fetchUserName();
+  }, [user]);
 
   return (
     <div className="md:flex flex-col h-screen">
@@ -68,12 +68,12 @@ function CoursesDetail() {
       <div className="flex justify-between p-10">
         <h1 className="mystery-quest-modal">Welcome {name}!</h1>
         <div>
-          <button
+          {/* <button
             onClick={handleLogOut}
             className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
           >
             Logout
-          </button>
+          </button> */}
         </div>
       </div>
 
