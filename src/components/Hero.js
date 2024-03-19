@@ -8,16 +8,16 @@ const Hero = () => {
     <div id="hero" className="flex flex-col  mt-[100px]  ">
       <div className="w-full flex items-center flex-col m-4 p-4">
         <div className="space-y-5 w-full md:w-[50%] w-[45%] items-center m-4 h-full flex flex-col text-black p-4">
-          <h1 className="mystery-quest-header font-bold  text-gray-dark font-header	">
+          <h1 className="mystery-quest-header font-bold text-black font-header	">
             Empowering kids through entrepreneurship
           </h1>
-          <p className="bubblegum-sans-subheader text-gray-dark">
+          <p className="bubblegum-sans-subheader text-black">
             Our books and online programs empower kids aged 6-12 to excel in
             entrepreneurship and in life... all while putting smiles on their
             faces!
           </p>
         </div>
-        <div className="flex">
+        <div className="flex pt-10">
           <NavLink to="/courses">
             <button className=" bg-button text-black ">Start Courses</button>
           </NavLink>

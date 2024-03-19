@@ -1,29 +1,26 @@
 import React from "react";
-import logo from "../assets/images/logoimagekid.jpeg";
+import logo from "../assets/images/logoAndText.png";
 
 function Footer() {
   return (
-    <footer className="bg-gray-300 dark:bg-gray-900">
+    <footer className="bg-[#7E60CC] dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="" className="flex items-center">
-              <img src={logo} className="h-8 me-3 rounded-full" alt="" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap ">
-                Kidz
-              </span>
+              <img src={logo} className="sm:h-[150px] w-[150px] cursor-pointer rounded-full" alt="" />
             </a>
             <div>
               <ul className="text-black font-medium mt-4">
                 <li>
-                  <a href="#" className="hover:underline bubblegum-sans-link">
+                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     Our Story
                   </a>
                 </li>
                 <li>
                   <a
                     href="#blog"
-                    className="hover:underline bubblegum-sans-link"
+                    className="hover:underline bubblegum-sans-link text-[#F7F9F3]"
                   >
                     Blog
                   </a>
@@ -31,7 +28,7 @@ function Footer() {
                 <li>
                   <a
                     href="#products"
-                    className="hover:underline bubblegum-sans-link"
+                    className="hover:underline bubblegum-sans-link text-[#F7F9F3]"
                   >
                     Products
                   </a>
@@ -39,7 +36,7 @@ function Footer() {
                 <li>
                   <a
                     href="/Programs"
-                    className="hover:underline bubblegum-sans-link"
+                    className="hover:underline bubblegum-sans-link text-[#F7F9F3]"
                   >
                     Programs
                   </a>
@@ -47,53 +44,53 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 mt-20">
             <div>
-              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-[#F7F9F3] uppercase dark:text-white">
                 Resources
               </h2>
               <ul className="text-black font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline bubblegum-sans-link">
+                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     E-book #1
                   </a>
                 </li>
                 <li>
-                  <a href="" className="hover:underline bubblegum-sans-link">
+                  <a href="" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     E-book #2
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-[#F7F9F3] uppercase dark:text-white">
                 Follow us
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500 dark:text-black font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline bubblegum-sans-link">
+                  <a href="#" className="hover:underline bubblegum-sans-link text-black">
                     Facebook
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline bubblegum-sans-link">
+                  <a href="#" className="hover:underline bubblegum-sans-link text-black">
                     Twitter
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <h2 className="bubblegum-sans-subheader mb-6 text-sm font-semibold text-[#F7F9F3] uppercase dark:text-white">
                 Legal
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline bubblegum-sans-link">
+                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline bubblegum-sans-link">
+                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     Terms &amp; Conditions
                   </a>
                 </li>
@@ -103,7 +100,7 @@ function Footer() {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400 ">
+          <span className="text-sm text-black sm:text-center dark:text-black ">
             Copyright© 2024{" "}
             <a href="" className="hover:underline bubblegum-sans-link">
               Kidz-E-Learning™
