@@ -17,9 +17,9 @@ import Modal from "./Modal";
 const Book = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { bookId } = useParams();
   const { user } = useUserAuth();
-  console.log("id", id);
+  console.log("id", bookId);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -28,14 +28,14 @@ const Book = () => {
   const handlePurchase = () => {
     console.log("user is", user ? user?.email : null);
     if (!user) {
-      navigate(`/book/${id}/checkout`);
+      navigate(`/book/${bookId}/checkout`);
     } else {
       dispatch(setSignInOpen());
     }
   };
 
   const handleStartCourses = () => {
-    navigate(`/course/${id}`);
+    navigate(`/course/${bookId}`);
   };
   return (
     <div className="sm:flex flex-col w-full h-screen">
@@ -140,7 +140,7 @@ const Book = () => {
         className="sm:flex flex-row justify-around border-t-2 p-8 "
       >
         <div className=" sm:w-[50%] flex flex-col">
-          <Chapters id={id} chaptersData={chaptersData} />
+          <Chapters id={bookId} chaptersData={chaptersData} />
         </div>
         <div className="flex flex-row sm:w-[25%] h-[75%] flex flex-col items-start m-2 p-4">
           <div

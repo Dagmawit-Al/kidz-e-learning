@@ -25,7 +25,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
 function CoursesDetail() {
-
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -48,7 +47,7 @@ function CoursesDetail() {
   const handleLogOut = () => {
     auth.signOut();
     navigate("/");
-  }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,7 +59,7 @@ function CoursesDetail() {
       } else {
         console.log("user is logged out");
       }
-    })
+    });
   }, []);
 
   return (
@@ -278,7 +277,7 @@ export function TabsDefault() {
               return (
                 <div
                   key={index}
-                  className="md:flex flex-col m-2 p-2 items-center hover:scale-110 "
+                  className="md:flex w-[25%] h-[25%] flex-col m-2 p-2 items-center hover:scale-110 "
                 >
                   <img src={item.src} alt="imageindex" />
                   <h1 className="font-bold text-xl">{item.des} </h1>

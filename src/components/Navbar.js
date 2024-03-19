@@ -5,7 +5,6 @@ import { NavLink } from "react-router-dom";
 import logoImage from "../assets/images/mentorable_logo.png";
 import textLogo from "../assets/images/text_logo_transparent_720.png";
 
-
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -28,9 +27,9 @@ const Navbar = () => {
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
+  const [user, loading, error] = useAuthState(auth);
   const [users, setUsers] = useState(user);
 
-  const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
   const navigate = useNavigate();
@@ -59,7 +58,6 @@ const Navbar = () => {
       }
     };
 
-
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUID(user.uid);
@@ -67,8 +65,7 @@ const Navbar = () => {
       } else {
         console.log("user is logged out");
       }
-    })
-
+    });
 
     window.addEventListener("scroll", handleScroll);
 
@@ -139,7 +136,7 @@ const Navbar = () => {
             onClick={handleSignUp}
             className="opacity-90 bg-button text-black"
           >
-            {user ? "Log Out" : "Sign Up"}
+            Sign Up
           </button>
         </div>
       </div>

@@ -8,12 +8,15 @@ import {
   TEModalHeader,
   TEModalBody,
 } from "tw-elements-react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { auth, signInWithGooglePopup } from '../firebase'
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
+import { auth, signInWithGooglePopup } from "../firebase";
 import { useUserAuth } from "../components/Auth/UserAuthContext";
 
 import { useNavigate, useLocation, useParams } from "react-router-dom";
-
 
 import { db } from "../firebase";
 import { addDoc, collection } from "firebase/firestore";
@@ -53,7 +56,6 @@ const Modal = (
 
   const [isLoading, setIsLoading] = useState(false);
 
-
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -63,7 +65,6 @@ const Modal = (
     email: "",
     phone: "",
   });
-
 
   // useEffect(() => {
   //   console.log("pathname in modal", pathname);
@@ -83,19 +84,18 @@ const Modal = (
     // const userArray = [...e.target.elements];
     // console.log(userArray);
 
-
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         setTimeout(() => {
           const user = userCredential.user;
-          sendEmailVerification(user)
+          sendEmailVerification(user);
           auth.signOut();
           const docRef = addDoc(collection(db, "users"), {
             firstname: firstname,
             lastname: lastname,
             email: email,
             phoneNumber: phoneNumber,
-            uid: user.uid
+            uid: user.uid,
           });
           console.log("Document written with ID: ", docRef.id);
           // const user = userCredential.user;
@@ -108,35 +108,33 @@ const Modal = (
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
-
       });
-  }
+  };
 
   const loginWithUsernameAndPassword = async (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/lessons");
+        navigate("/courses");
         console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
+        console.log(errorCode, errorMessage);
       });
-  }
+  };
 
   const loginWithGoogle = async () => {
     const response = await signInWithGooglePopup();
     console.log(response);
-  }
+  };
 
   const validate = () => {
     console.log(firstname.length && lastname.length);
     return firstname.length && lastname.length;
-  }
-
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -194,7 +192,7 @@ const Modal = (
   useEffect(() => {
     // setEmail("");
     // setPassword("");
-  })
+  });
 
   return (
     <>
@@ -355,12 +353,13 @@ const Modal = (
                       <button
                         type="submit"
                         className="inline-block w-full rounded bg-[#FB9060] border-[#E6777A] px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#FB9060] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#FB9060] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#FB9060] active:bg-[#FB9060] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FB9060] dark:hover:bg-[#FB9060] dark:focus:ring-[#FB9060] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                        onClick={(e) => signupWithUsernameAndPassword(e)} disabled={isLoading}
+                        onClick={(e) => signupWithUsernameAndPassword(e)}
+                        disabled={isLoading}
                       >
                         {/* {isLoading ? (
                           <span className="spinner-border spinner-border-sm text-white" role="status" aria-hidden="true"></span>
                         ) : */}
-                          Sign up
+                        Sign up
                         {/* } */}
                       </button>
                     </TERipple>
@@ -523,7 +522,21 @@ const Modal = (
                         role="button"
                         onClick={loginWithGoogle}
                       >
-                        <svg class="mr-2 h-3.5 w-3.5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="red" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
+                        <svg
+                          class="mr-2 h-3.5 w-3.5"
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fab"
+                          data-icon="google"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 488 512"
+                        >
+                          <path
+                            fill="red"
+                            d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                          ></path>
+                        </svg>
                         Sign in with Google
                       </a>
                     </TERipple>
