@@ -25,7 +25,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 
 function CoursesDetail() {
-
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -48,11 +47,10 @@ function CoursesDetail() {
   const handleLogOut = () => {
     auth.signOut();
     navigate("/");
-  }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchUserName();
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUID(user.uid);
@@ -60,8 +58,9 @@ function CoursesDetail() {
       } else {
         console.log("user is logged out");
       }
-    })
-  }, []);
+    });
+    fetchUserName();
+  }, [user]);
 
   return (
     <div className="md:flex flex-col h-screen">
