@@ -19,17 +19,17 @@ const Chapters = ({ id, chaptersData }) => {
           <>
             {index == 0 ? (
               <div className="p-4" key={item.hours + item.rating + index}>
-                {/* <NavLink
+                <NavLink
                   to={`/courses/book/${id}/chapter/${item.chapternumber}`}
                 >
                   {" "}
                   <h1 className="font-bold hover:text-greentwo">
                     {item.chaptertitle}
                   </h1>{" "}
-                </NavLink> */}
-                <h1 className="font-bold hover:text-greentwo">
+                </NavLink>
+                {/* <h1 className="font-bold hover:text-greentwo">
                   {item.chaptertitle}
-                </h1>
+                </h1> */}
                 <p className="pt-2 flex">
                   {" "}
                   Course {item.chapternumber} {item.hours}hours {item.rating}

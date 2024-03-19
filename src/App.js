@@ -11,7 +11,7 @@ import { UserAuthContextProvider } from "./components/Auth/UserAuthContext";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Checkout from "./components/Payment/Checkout";
-import LearnBook from "./components/LearnBook";
+import LearnBook from "./components/LearnBook/LearnBook";
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
               <Route exact path="/blogs" Component={BlogsDetail} />
               <Route exact path="/courses" Component={CoursesDetail} />
               <Route exact path="/programs" Component={ProgramsDetail} />
-              <Route exact path="/courses/book/:id" Component={Book} />
+              <Route exact path="/courses/book/:bookId" Component={Book} />
               <Route exact path="/book/:bookId/checkout" Component={Checkout} />
               <Route
                 exact
@@ -34,7 +34,7 @@ const App = () => {
 
               <Route
                 exact
-                path="/courses/book/:id/chapter/:chapternumber"
+                path="/courses/book/:bookId/chapter/:chapternumber"
                 Component={Chapter}
               />
             </Routes>

@@ -16,6 +16,8 @@ import Signup from "../Modal";
 import Header from "../Header";
 
 function Chapter(props) {
+  const { bookId } = useParams();
+  console.log("bookid is", bookId);
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,13 +39,12 @@ function Chapter(props) {
   //       const unsubscribe = fetch("api/chapternumber", (value, err)=>)
   //   }, []);
 
-  const handlePurchaseButton = (e) => {
+  const handlePurchase = () => {
+    console.log("user is", user ? user?.email : null);
     if (!user) {
-      console.log("navigation", location);
-      dispatch(setPathName(location.pathname));
-      dispatch(setSignUpOpen());
+      navigate(`/book/${bookId}/checkout`);
     } else {
-      navigate("/checkout");
+      dispatch(setSignInOpen());
     }
   };
 
@@ -83,12 +84,12 @@ function Chapter(props) {
             </div>
 
             <div className="p-4">
-              <button onClick={handlePurchaseButton} className="bg-buttoncolor">
+              <button onClick={handlePurchase} className="bg-buttoncolor">
                 Purchase Course
               </button>
             </div>
           </div>
-          <ChapterSummaryCard handlePurchaseButton2={handlePurchaseButton} />
+          <ChapterSummaryCard handlePurchaseButton2={handlePurchase} />
         </div>
       </div>
 
@@ -137,13 +138,13 @@ function Chapter(props) {
           </p>
         </div>
       </div>
-
+      {/* 
       <Signup
         showRegistrationModal={showRegistrationModal}
         handleshowRegistrationModal={setShowRegistrationModal}
         showLoginModal={showLoginModal}
         handleshowLoginModal={setShowLoginModal}
-      />
+      /> */}
     </div>
   );
 }
