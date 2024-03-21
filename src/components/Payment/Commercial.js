@@ -3,7 +3,7 @@ import cbe from "../../assets/images/cbe.jpeg";
 
 function Commercial() {
   return (
-    <div className="sm:photo-wrapper p-2 flex items-center border-t-2">
+    <div className="sm:photo-wrapper p-2 flex items-center border-t-2 bg-bodyback m-2">
       <div className="flex items-center">
         <img
           className="object-cover sm:w-[25%] h-[75%] object-cover md:w-[20%] lg:w-[20%] m-4 rounded-full"

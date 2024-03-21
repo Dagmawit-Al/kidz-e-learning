@@ -29,31 +29,31 @@ import {
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import { setPathName, listPathName } from "../../redux/slices/locationSlice";
 
-function formatCardNumber(value) {
-  const val = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
-  const matches = val.match(/\d{4,16}/g);
-  const match = (matches && matches[0]) || "";
-  const parts = [];
+// function formatCardNumber(value) {
+//   const val = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+//   const matches = val.match(/\d{4,16}/g);
+//   const match = (matches && matches[0]) || "";
+//   const parts = [];
 
-  for (let i = 0, len = match.length; i < len; i += 4) {
-    parts.push(match.substring(i, i + 4));
-  }
+//   for (let i = 0, len = match.length; i < len; i += 4) {
+//     parts.push(match.substring(i, i + 4));
+//   }
 
-  if (parts.length) {
-    return parts.join(" ");
-  } else {
-    return value;
-  }
-}
+//   if (parts.length) {
+//     return parts.join(" ");
+//   } else {
+//     return value;
+//   }
+// }
 
-function formatExpires(value) {
-  return value
-    .replace(/[^0-9]/g, "")
-    .replace(/^([2-9])$/g, "0$1")
-    .replace(/^(1{1})([3-9]{1})$/g, "0$1/$2")
-    .replace(/^0{1,}/g, "0")
-    .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
-}
+// function formatExpires(value) {
+//   return value
+//     .replace(/[^0-9]/g, "")
+//     .replace(/^([2-9])$/g, "0$1")
+//     .replace(/^(1{1})([3-9]{1})$/g, "0$1/$2")
+//     .replace(/^0{1,}/g, "0")
+//     .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
+// }
 
 export default function Checkout() {
   const { bookId } = useParams();
@@ -74,7 +74,7 @@ export default function Checkout() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div>
         <div className="flex w-full items-center justify-evenly">
           <Cards handlePayment={handlePayment} />;
@@ -91,17 +91,24 @@ export default function Checkout() {
 }
 
 const Cards = ({ handlePayment }) => {
+  const { userFirebase } = useSelector((state) => state.userData);
   const { bookId } = useParams();
   const location = useLocation();
   const { pathname } = useSelector((state) => state.locationslice);
   const navigate = useNavigate();
-  const { countries } = useCountries();
+  // const { countries } = useCountries();
   const [type, setType] = React.useState("card");
-  const [cardNumber, setCardNumber] = React.useState("");
-  const [cardExpires, setCardExpires] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = React.useState(
+    userFirebase?.phoneNumber
+  );
+  const [email, setEmail] = React.useState(userFirebase?.email);
+  const [name, setName] = React.useState(userFirebase?.firstname);
+  // const [cardExpires, setCardExpires] = React.useState("");
+
+  console.log("userFirebase", userFirebase);
   return (
     <div>
-      <Card className="items-center w-full h-[100%] m-4">
+      <Card className="items-center w-full h-[100%] bg-bodyback m-4">
         <CardHeader
           color="gray"
           floated={false}
@@ -109,7 +116,7 @@ const Cards = ({ handlePayment }) => {
           className="m-4 grid place-items-center px-4 py-8 text-center w-[75%]"
         >
           <div className="mb-4 h-20 p-6 text-white">
-            <img alt="paypal " className="w-14 " src={telebirr} />
+            <img alt="telebirr " className="w-14 " src={telebirr} />
           </div>
           <Typography className="w-full" variant="h5" color="white">
             Checkout
@@ -118,11 +125,7 @@ const Cards = ({ handlePayment }) => {
         <CardBody>
           <Tabs value={type} className="overflow-visible">
             <TabsHeader className="relative z-0 ">
-              <Tab
-                className="font-bold"
-                value="paypal"
-                onClick={() => setType("paypal")}
-              >
+              <Tab className="font-bold" value="Telebirr">
                 Pay with Telebirr
               </Tab>
             </TabsHeader>
@@ -153,8 +156,8 @@ const Cards = ({ handlePayment }) => {
 
                     <Input
                       maxLength={19}
-                      value={formatCardNumber(cardNumber)}
-                      onChange={(event) => setCardNumber(event.target.value)}
+                      value={phoneNumber}
+                      onChange={(event) => setPhoneNumber(event.target.value)}
                       icon={
                         <CreditCardIcon className="absolute left-0 h-4 w-4 text-blue-gray-300" />
                       }
@@ -175,6 +178,8 @@ const Cards = ({ handlePayment }) => {
                       Your Email
                     </Typography>
                     <Input
+                      onChange={(event) => setEmail(event.target.value)}
+                      value={email}
                       type="email"
                       placeholder="name@mail.com"
                       className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -186,12 +191,14 @@ const Cards = ({ handlePayment }) => {
                     <Typography
                       variant="small"
                       color="blue-gray"
-                      className="mb-2 font-medium"
+                      className="mb-2 mt-2 font-medium"
                     >
                       Holder Name
                     </Typography>
                     <Input
-                      placeholder="name@mail.com"
+                      onChange={(event) => setName(event.target.value)}
+                      value={name}
+                      placeholder="First Last"
                       className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                       labelProps={{
                         className: "before:content-none after:content-none",

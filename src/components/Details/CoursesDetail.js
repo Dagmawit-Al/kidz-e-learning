@@ -23,8 +23,12 @@ import { auth, db } from "../../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setUser, listUser } from "../../redux/slices/userSlice";
 
 function CoursesDetail() {
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [uid, setUID] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -36,11 +40,12 @@ function CoursesDetail() {
       console.log("DOCS", doc);
       const data = doc.docs[0].data();
       console.log("DATA", data);
+      dispatch(setUser(data));
       setName(data.firstname);
       console.log("NAME:", data.firstname);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      // alert("An error occured while fetching user data");
     }
   };
 

@@ -27,7 +27,7 @@ const Book = () => {
 
   const handlePurchase = () => {
     console.log("user is", user ? user?.email : null);
-    if (!user) {
+    if (user) {
       navigate(`/book/${bookId}/checkout`);
     } else {
       dispatch(setSignInOpen());
