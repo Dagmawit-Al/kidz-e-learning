@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import Checkout from "./components/Payment/Checkout";
 import LearnBook from "./components/LearnBook/LearnBook";
+import FullBlog from "./components/Details/FullBlog";
 
 const App = () => {
   return (
@@ -31,7 +32,7 @@ const App = () => {
                 path="/book/:bookId/checkout/learn"
                 Component={LearnBook}
               />
-
+              <Route exact path="blogs/fullBlog" Component={FullBlog} />
               <Route
                 exact
                 path="/courses/book/:bookId/chapter/:chapternumber"

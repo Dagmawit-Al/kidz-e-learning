@@ -50,3 +50,10 @@
   font-size: 17px;
   word-spacing: 3px;
 }
+
+.btn.outline-button {
+  border-color: #FB9060;
+  color: black;
+  background-color: transparent;
+  border: 2px solid #FB9060;
+}
