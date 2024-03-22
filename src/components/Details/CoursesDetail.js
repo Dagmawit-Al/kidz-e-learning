@@ -68,8 +68,8 @@ function CoursesDetail() {
   }, [user]);
 
   return (
-    <div className="md:flex flex-col h-screen">
-      <Header />
+    <div className="md:flex flex-col h-screen pt-24">
+      {/* <Header /> */}
       <div className="flex justify-between p-10">
         <h1 className="mystery-quest-modal">Welcome {name}!</h1>
         <div>

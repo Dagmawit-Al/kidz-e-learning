@@ -4,15 +4,15 @@ import profile from "../../assets/images/instructor.jpeg";
 
 const PaymentDetail = () => {
   return (
-    <div className="h-[100%] m-4 sm:flex flex-col h-[700px] w-[65%] items-center">
+    <div className="h-[100%] m-4 ml-8 sm:flex flex-col h-[700px] w-[70%] items-center">
       <div className="sm:flex justify-around">
         <img
-          className="object-cover sm:w-[25%] h-[75%] object-cover md:w-[20%] lg:w-[20%] m-4"
+          className="object-cover sm:w-[35%] h-[100%] object-cover"
           src={book}
           alt="bookimage"
         />
-        <div className="sm:w-[50%] flex flex-col items-start">
-          <h1 className="sm:text-7xl font-bold w-[100%] ">
+        <div className="sm:w-[70%] flex flex-col items-start">
+          <h1 className="sm:text-3xl font-bold w-[100%] ">
             Real World Money Lessons
           </h1>
           <div className="sm:photo-wrapper p-2 flex items-center border-t-2 w-full">

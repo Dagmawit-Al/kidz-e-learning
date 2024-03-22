@@ -92,7 +92,7 @@ const Navbar = () => {
     // console.log("input values are", values);
   };
   return (
-    <div className="flex justify-around pt-10 w-[100%] absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
+    <div className="flex justify-around pt-10 w-[100%] absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white ">
       <div className="flex items-center justify-around flex-1 fixed w-full">
         <div className="flex cursor-pointer items-center ">
           {" "}
@@ -112,7 +112,10 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/storys" className="bubblegum-sans-link text-[#F7F9F3]">
+            <NavLink
+              to="/storys"
+              className="bubblegum-sans-link text-[#F7F9F3]"
+            >
               Our Story
             </NavLink>
           </li>
@@ -122,10 +125,18 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/courses" className="bubblegum-sans-link text-[#F7F9F3]">Courses</NavLink>
+            <NavLink
+              to="/courses"
+              className="bubblegum-sans-link text-[#F7F9F3]"
+            >
+              Courses
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/programs" className="bubblegum-sans-link text-[#F7F9F3]">
+            <NavLink
+              to="/programs"
+              className="bubblegum-sans-link text-[#F7F9F3]"
+            >
               Programs
             </NavLink>
           </li>
