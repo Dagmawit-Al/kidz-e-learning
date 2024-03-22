@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 const ChapterSummaryCard = (props) => {
   return (
-    <Card className="p-4">
+    <Card className="p-4 bg-cardColor">
       <CardBody>
         <Typography variant="h4" color="blue-gray" className="mb-2">
           Course

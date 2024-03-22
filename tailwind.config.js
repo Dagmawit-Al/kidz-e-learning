@@ -51,7 +51,8 @@ module.exports = {
       button: "#FB9060",
 
       buttoncolor: "#ffd01e",
-      bodyback: "#bdf2ff",
+      bodyback: "#0081a1",
+      cardColor: "#41aac4",
     },
   },
   plugins: [

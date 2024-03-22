@@ -16,8 +16,8 @@ function Home() {
   return (
     <>
       <TobBar />
-      <Navbar />
-      <div className="space-y-10">
+      {/* <Navbar /> */}
+      <div className="space-y-10 h-full">
         <Hero />
         <Courses />
         <Blogs />

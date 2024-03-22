@@ -3,7 +3,7 @@ import cbe from "../../assets/images/cbe.jpeg";
 
 function Commercial() {
   return (
-    <div className="sm:photo-wrapper p-2 flex items-center border-t-2 bg-bodyback m-2">
+    <div className="sm:photo-wrapper p-2 flex items-center m-2">
       <div className="flex items-center">
         <img
           className="object-cover sm:w-[25%] h-[75%] object-cover md:w-[20%] lg:w-[20%] m-4 rounded-full"
@@ -11,10 +11,10 @@ function Commercial() {
           alt="bookimage"
         />
         <div className="sm:p-4">
-          <h3 class="text-center sm:text-center text-xl text-gray leading-8">
+          <h3 class="text-center sm:text-center text-xl text-white leading-8">
             Pay with Commercial Bank
           </h3>
-          <p className="text-center text-xs sm:text-center">
+          <p className="text-center text-xs sm:text-center text-white">
             CBE, mobile banking
           </p>
         </div>

@@ -4,30 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import PaymentDetail from "./PaymentDetail";
 import Apollo from "./Apollo";
 import Commercial from "./Commercial";
-import telebirr from "../../assets/images/telebirr.png";
+import logoImage from "../../assets/images/logoAndText.png";
 import Header from "../Header";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  Input,
-  Button,
-  Typography,
-  Tabs,
-  TabsHeader,
-  TabsBody,
-  Tab,
-  TabPanel,
-  Select,
-  Option,
-} from "@material-tailwind/react";
-import {
-  BanknotesIcon,
-  CreditCardIcon,
-  LockClosedIcon,
-} from "@heroicons/react/24/solid";
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+
+import { useNavigate, useLocation, useParams, NavLink } from "react-router-dom";
 import { setPathName, listPathName } from "../../redux/slices/locationSlice";
+
+import Telebirr from "./Telebirr";
 
 // function formatCardNumber(value) {
 //   const val = value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
@@ -75,157 +58,25 @@ export default function Checkout() {
   return (
     <>
       {/* <Header /> */}
-      <div>
-        <div className="flex w-full items-center justify-evenly">
-          <Cards handlePayment={handlePayment} />;
-          <PaymentDetail />
+      {/* <NavLink to="/" className="flex items-center sm:flex items-center">
+        <img
+          href="/"
+          src={logoImage}
+          alt="Logo"
+          className="sm:h-[100px] w-[100px] cursor-pointer rounded-full "
+        />
+      </NavLink> */}
+      <div className="flex flex-row pt-28">
+        <PaymentDetail />
+        <div className="flex flex-row w-full items-center justify-evenly">
+          <Telebirr handlePayment={handlePayment} />;
           {/* <Cards handlePayment={handlePayment} />; */}
-        </div>
-        <div className="flex">
-          <Apollo />
-          <Commercial />
+          <div className="flex flex-col h-full  w-[35%]">
+            <Apollo />
+            <Commercial />
+          </div>
         </div>
       </div>
     </>
   );
 }
-
-const Cards = ({ handlePayment }) => {
-  const { userFirebase } = useSelector((state) => state.userData);
-  const { bookId } = useParams();
-  const location = useLocation();
-  const { pathname } = useSelector((state) => state.locationslice);
-  const navigate = useNavigate();
-  // const { countries } = useCountries();
-  const [type, setType] = React.useState("card");
-  const [phoneNumber, setPhoneNumber] = React.useState(
-    userFirebase?.phoneNumber
-  );
-  const [email, setEmail] = React.useState(userFirebase?.email);
-  const [name, setName] = React.useState(userFirebase?.firstname);
-  // const [cardExpires, setCardExpires] = React.useState("");
-
-  console.log("userFirebase", userFirebase);
-  return (
-    <div>
-      <Card className="items-center w-full h-[100%] bg-bodyback m-4">
-        <CardHeader
-          color="gray"
-          floated={false}
-          shadow={false}
-          className="m-4 grid place-items-center px-4 py-8 text-center w-[75%]"
-        >
-          <div className="mb-4 h-20 p-6 text-white">
-            <img alt="telebirr " className="w-14 " src={telebirr} />
-          </div>
-          <Typography className="w-full" variant="h5" color="white">
-            Checkout
-          </Typography>
-        </CardHeader>
-        <CardBody>
-          <Tabs value={type} className="overflow-visible">
-            <TabsHeader className="relative z-0 ">
-              <Tab className="font-bold" value="Telebirr">
-                Pay with Telebirr
-              </Tab>
-            </TabsHeader>
-            <TabsBody
-              className="!overflow-x-hidden !overflow-y-visible"
-              animate={{
-                initial: {
-                  x: type === "card" ? 400 : -400,
-                },
-                mount: {
-                  x: 0,
-                },
-                unmount: {
-                  x: type === "card" ? 400 : -400,
-                },
-              }}
-            >
-              <TabPanel value="card" className="p-0">
-                <form className="mt-12 flex flex-col gap-4">
-                  <div>
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="mb-2 font-medium "
-                    >
-                      Phone Number
-                    </Typography>
-
-                    <Input
-                      maxLength={19}
-                      value={phoneNumber}
-                      onChange={(event) => setPhoneNumber(event.target.value)}
-                      icon={
-                        <CreditCardIcon className="absolute left-0 h-4 w-4 text-blue-gray-300" />
-                      }
-                      placeholder="+251 9121 29759"
-                      className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                      labelProps={{
-                        className: "before:content-none after:content-none",
-                      }}
-                    />
-                  </div>
-
-                  <div className="my-3">
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="mb-2 font-medium"
-                    >
-                      Your Email
-                    </Typography>
-                    <Input
-                      onChange={(event) => setEmail(event.target.value)}
-                      value={email}
-                      type="email"
-                      placeholder="name@mail.com"
-                      className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                      labelProps={{
-                        className: "before:content-none after:content-none",
-                      }}
-                    />
-
-                    <Typography
-                      variant="small"
-                      color="blue-gray"
-                      className="mb-2 mt-2 font-medium"
-                    >
-                      Holder Name
-                    </Typography>
-                    <Input
-                      onChange={(event) => setName(event.target.value)}
-                      value={name}
-                      placeholder="First Last"
-                      className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
-                      labelProps={{
-                        className: "before:content-none after:content-none",
-                      }}
-                    />
-                  </div>
-                  <Button
-                    className="text-black"
-                    onClick={handlePayment}
-                    size="lg"
-                  >
-                    Pay Now
-                  </Button>
-                  <Typography
-                    variant="small"
-                    color="gray"
-                    className="mt-2 flex items-center justify-center gap-2 font-medium opacity-60"
-                  >
-                    <LockClosedIcon className="-mt-0.5 h-4 w-4" /> Payments are
-                    secure and encrypted
-                  </Typography>
-                </form>
-              </TabPanel>
-            </TabsBody>
-          </Tabs>
-        </CardBody>
-      </Card>
-    </div>
-  );
-};
