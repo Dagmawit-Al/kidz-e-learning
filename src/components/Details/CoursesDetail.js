@@ -84,6 +84,7 @@ function CoursesDetail() {
 
       <div className="md:flex w-full items-center justify-between m-4">
         <img src={book1} alt="book1" />
+
         <div className="flex flex-col items-center">
           <h1 className="font-bold text-6xl">Books That Empower</h1>
           <p className="p-2">
