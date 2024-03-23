@@ -65,7 +65,7 @@ const Telebirr = ({ handlePayment }) => {
               {/* <Tab className="font-bold text-white" value="Telebirr">
                 Pay with Telebirr
               </Tab> */}
-              <Typography className="font-bold text-white">
+              <Typography className="font-bold text-white flex justify-center w-full">
                 Pay with Telebirr
               </Typography>
             </TabsHeader>
