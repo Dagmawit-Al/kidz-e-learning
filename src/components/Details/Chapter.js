@@ -84,7 +84,10 @@ function Chapter(props) {
             </div>
 
             <div className="p-4">
-              <button onClick={handlePurchase} className="bg-buttoncolor">
+              <button
+                onClick={handlePurchase}
+                className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+              >
                 Purchase Course
               </button>
             </div>

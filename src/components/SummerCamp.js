@@ -19,7 +19,7 @@ function SummerCamp() {
         <div className="col-span-2 ...">
           <TERipple rippleColor="light">
             <button
-              className="bubblegum-sans-subheader bg-black text-white"
+              className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
               href="#programs"
             >
               Learn More

@@ -95,11 +95,17 @@ const Book = () => {
             </div>
             <div className="p-4">
               {false ? (
-                <button onClick={handleStartCourses} className="bg-buttoncolor">
+                <button
+                  onClick={handleStartCourses}
+                  className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                >
                   Start Courses
                 </button>
               ) : (
-                <button onClick={handlePurchase} className="bg-buttoncolor">
+                <button
+                  onClick={handlePurchase}
+                  className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                >
                   Purchase Courses
                 </button>
               )}
@@ -158,13 +164,16 @@ const Book = () => {
             <Profile />
           </div>
           <div className="p-4">
-            <button onClick={handlePurchase} className="bg-buttoncolor">
+            <button
+              onClick={handlePurchase}
+              className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+            >
               Purchase Courses
             </button>
           </div>
         </div>
       </div>
-      <Modal />
+      {/* <Modal /> */}
     </div>
   );
 };

@@ -25,7 +25,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { setUser, listUser } from "../../redux/slices/userSlice";
+import { setUser, listUser, clearUser } from "../../redux/slices/userSlice";
 
 function CoursesDetail() {
   const dispatch = useDispatch();
@@ -51,6 +51,7 @@ function CoursesDetail() {
 
   const handleLogOut = () => {
     auth.signOut();
+    dispatch(clearUser());
     navigate("/");
   };
 
@@ -72,14 +73,14 @@ function CoursesDetail() {
       {/* <Header /> */}
       <div className="flex justify-between p-10">
         <h1 className="mystery-quest-modal">Welcome {name}!</h1>
-        <div>
-          {/* <button
+        {/* <div>
+          <button
             onClick={handleLogOut}
             className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
           >
             Logout
-          </button> */}
-        </div>
+          </button>
+        </div> */}
       </div>
 
       <div className="md:flex w-full items-center justify-between m-4">
@@ -111,7 +112,9 @@ function CoursesDetail() {
               students in
             </p>
             <div>
-              <button className="bg-buttoncolor px-8">Purchase Book</button>
+              <button className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
+                Purchase Book
+              </button>
             </div>
           </div>
         </div>
@@ -293,7 +296,9 @@ export function TabsDefault() {
                     <p>{item.incluede ? "included" : ""} </p>
                   </div>
                   <NavLink to={`/courses/book/${item.id}`}>
-                    <button className="bg-buttoncolor px-8">Learn More</button>
+                    <button className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
+                      Learn More
+                    </button>
                   </NavLink>
                 </div>
               );
