@@ -1,43 +1,45 @@
 import React from "react";
 import { TERipple } from "tw-elements-react";
-import kids from "../assets/images/summer_camp.jpeg";
+import girl from "../assets/images/img-girl.png";
+import { NavLink } from "react-router-dom";
 
 function SummerCamp() {
   return (
     <section className=" md:flex flex-col items-center  p-8 space-x-20">
       <div className="grid grid-rows-3 grid-flow-col gap-4">
-        <h2 className="mystery-quest-header mb-2 mt-0 text-4xl font-medium leading-tight text-green">
+        <h2 className="mystery-quest-header mb-2 mt-0 text-4xl font-medium leading-tight text-white">
           Join Our Summer Camp!
         </h2>
         <div className="col-span-2 ...">
-          <h4 className="bubblegum-sans-subheader mb-2 mt-0 text-1xl font-small leading-tight text-black">
+          <h4 className="bubblegum-sans-subheader mb-2 mt-0 text-1xl font-small leading-tight text-white">
             "I can'ts" become "I cans" when you hit summer camp. <br /> Learn
             new things this summer at camp. <br /> Dive into your passion at
             summer camp.
           </h4>
         </div>
         <div className="col-span-2 ...">
+        <NavLink to="/camp">
           <TERipple rippleColor="light">
             <button
-              className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
-              href="#programs"
+              className="bubblegum-sans-subheader bg-[#FB9060] text-white"
             >
               Learn More
             </button>
           </TERipple>
+          </NavLink>
         </div>
         <div className="row-span-3 ...">
-          <img src={kids} className="rounded-full" alt="" />
+          <img src={girl} className="" alt="" />
         </div>
       </div>
-      <div className="inline-flex items-center justify-center w-full">
-        <div className="absolute px-4 -translate-x-1/2 bg-[#faf8f0] left-1/2 dark:bg-[#faf8f0]">
+      <div className="inline-flex items-center justify-center w-full pt-10">
+        <div className="absolute px-4 -translate-x-1/2 left-1/2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="violet"
+            stroke="yellow"
             className="w-24 h-25"
           >
             <path

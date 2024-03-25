@@ -16,6 +16,7 @@ import LearnBook from "./components/LearnBook/LearnBook";
 import Navbar from "./components/Navbar";
 
 import FullBlog from "./components/Details/FullBlog";
+import SummerCampDetail from "./components/Details/SummerCampDetail";
 
 import SignInDialog from "./apps/account/components/SignInDialog";
 
@@ -47,6 +48,7 @@ const App = () => {
                 path="/book/:bookId/checkout/learn"
                 Component={LearnBook}
               />
+              <Route exact path="/camp" Component={SummerCampDetail} />
             </Routes>
 
             <SignInDialog />

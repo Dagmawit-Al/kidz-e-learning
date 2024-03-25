@@ -5,7 +5,7 @@
 :root {
   --primary-dark: #000000;
   --primary-light: #404040;
-  background: #7D9BE2;
+  background: linear-gradient(to right, #7E60CC, #E6777A, #FB9060);
 }
 
 @layer base {
@@ -17,17 +17,23 @@
   }
 }
 
+@font-face {
+  font-family: "Metavoria";
+  src: local(Playfulion),
+  url(./fonts/Metavoria.otf) format('opentype');
+}
+
 .rock-salt-regular {
-  font-family: "Rock Salt", cursive;
+  font-family: "Metavoria", cursive;
   font-weight: 1000;
   font-style: normal;
 }
 
 .mystery-quest-header {
-  font-family: "Mystery Quest", system-ui;
+  font-family: "Metavoria", system-ui;
   font-weight: 500;
   font-style: normal;
-  font-size: 50px;
+  font-size: 70px;
 }
 
 .mystery-quest-modal {
@@ -38,9 +44,9 @@
 }
 
 .bubblegum-sans-subheader {
-  font-family: "Bubblegum Sans", sans-serif;
+  font-family: "Metavoria", sans-serif;
   font-weight: 100;
-  font-size: 20px;
+  font-size: 30px;
   word-spacing: 3px;
 }
 
@@ -57,3 +63,7 @@
   background-color: transparent;
   border: 2px solid #FB9060;
 }
+
+/* .gradient-primary {
+  --tw-gradient-stops: theme
+} */

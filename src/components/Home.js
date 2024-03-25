@@ -16,7 +16,7 @@ function Home() {
   return (
     <div className="w-[100%] sm:flex flex-col">
       <TobBar />
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="space-y-10 ">
         <Hero />
         <Courses />
