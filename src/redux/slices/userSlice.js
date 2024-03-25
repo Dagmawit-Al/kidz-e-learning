@@ -17,10 +17,16 @@ const options = {
     listUser: (state, action) => {
       return state;
     },
+    clearUser: (state, action) => {
+      return {
+        ...state,
+        userFirebase: {},
+      };
+    },
   },
 };
 
 const userSlice = createSlice(options);
 
-export const { setUser, listUser } = userSlice.actions;
+export const { setUser, listUser, clearUser } = userSlice.actions;
 export default userSlice.reducer;

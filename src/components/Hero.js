@@ -19,7 +19,9 @@ const Hero = () => {
         </div>
         <div className="flex pt-10">
           <NavLink to="/courses">
-            <button className=" bg-button text-black ">Start Courses</button>
+            <button className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
+              Start Courses
+            </button>
           </NavLink>
           <div className="-m-8 p-2">
             <img src={btnart} alt="btnart" />

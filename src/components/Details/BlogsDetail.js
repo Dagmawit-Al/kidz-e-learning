@@ -113,7 +113,7 @@ export function PopularBlog() {
           height={600}
           width={600}
         />
-        <div className="flex flex-col space-y-5">
+        <div className="flex flex-col space-y-5 items-center">
           <a
             class="bubblegum-sans-subheader text-xl"
             href="/blogs/fullBlog"
@@ -149,7 +149,7 @@ export function PopularBlog() {
           </p>
           <button
             type="button"
-            className="text-black btn outline-button cursor-pointer hover:bg-[#FB9060]"
+            className=" w-[10%] bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
             onClick={goToFullBlog}
           >
             Read

@@ -17,6 +17,7 @@ import Navbar from "./components/Navbar";
 
 import FullBlog from "./components/Details/FullBlog";
 
+import SignInDialog from "./apps/account/components/SignInDialog";
 
 const App = () => {
   return (
@@ -47,6 +48,8 @@ const App = () => {
                 Component={LearnBook}
               />
             </Routes>
+
+            <SignInDialog />
           </BrowserRouter>
         </div>
       </UserAuthContextProvider>

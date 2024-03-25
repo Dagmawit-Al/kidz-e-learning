@@ -50,7 +50,7 @@ module.exports = {
       greentwo: "#15803d",
       middlesection: "#7D9BE2",
       button: "#FB9060",
-      navbarBack: "#000000",
+      navbarBack: "#7D9BE2",
       pdfBorder: "#05cbf7",
       buttoncolor: "#ffd01e",
       bodyback: "#0081a1",
