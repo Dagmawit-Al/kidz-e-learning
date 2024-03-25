@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
 import book from "../assets/images/book.png";
+import logoImage from "../assets/images/logoAndText.png";
 import profile from "../assets/images/instructor.jpeg";
 import profile2 from "../assets/images/instructor2.jpeg";
 import Chapters from "./Chapters";
@@ -38,8 +39,15 @@ const Book = () => {
     navigate(`/course/${bookId}`);
   };
   return (
-    <div className="sm:flex flex-col w-full h-screen">
-      <Header />
+    <div className="sm:flex flex-col w-full h-screen pt-24">
+      {/* <NavLink to="/" className="flex items-center sm:flex items-center">
+        <img
+          href="/"
+          src={logoImage}
+          alt="Logo"
+          className="sm:h-[100px] w-[100px] cursor-pointer rounded-full "
+        />
+      </NavLink> */}
       {/* <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
         KidsLearning
       </h1> */}
@@ -87,11 +95,17 @@ const Book = () => {
             </div>
             <div className="p-4">
               {false ? (
-                <button onClick={handleStartCourses} className="bg-buttoncolor">
+                <button
+                  onClick={handleStartCourses}
+                  className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                >
                   Start Courses
                 </button>
               ) : (
-                <button onClick={handlePurchase} className="bg-buttoncolor">
+                <button
+                  onClick={handlePurchase}
+                  className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                >
                   Purchase Courses
                 </button>
               )}
@@ -150,13 +164,16 @@ const Book = () => {
             <Profile />
           </div>
           <div className="p-4">
-            <button onClick={handlePurchase} className="bg-buttoncolor">
+            <button
+              onClick={handlePurchase}
+              className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+            >
               Purchase Courses
             </button>
           </div>
         </div>
       </div>
-      <Modal />
+      {/* <Modal /> */}
     </div>
   );
 };

@@ -14,10 +14,10 @@ import Description from "./Description";
 
 function Home() {
   return (
-    <>
+    <div className="w-[100%] sm:flex flex-col">
       <TobBar />
       <Navbar />
-      <div className="space-y-10 bg-gradient-to-br gradient-primary">
+      <div className="space-y-10 ">
         <Hero />
         <Courses />
         <Blogs />
@@ -30,7 +30,7 @@ function Home() {
         <Newsletter />
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

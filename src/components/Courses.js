@@ -59,7 +59,10 @@ const Courses = () => {
     },
   ];
   return (
-    <div id="products" className="pt-10 space-y-8 md:flex flex-col items-center">
+    <div
+      id="products"
+      className="pt-10 space-y-8 md:flex flex-col items-center"
+    >
       <h1 className="mystery-quest-header w-full text-white text-center text-4xl font-bold font-header">
         Shop our latest Courses
       </h1>
@@ -68,7 +71,7 @@ const Courses = () => {
         be limitless
       </p>
       <CourseList data={courseData} />
-      <button className=" opacity-80 my-5 bg-button text-black">
+      <button className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
         Start Courses
       </button>
 

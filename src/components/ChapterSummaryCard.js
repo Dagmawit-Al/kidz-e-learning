@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 const ChapterSummaryCard = (props) => {
   return (
-    <Card className="p-4">
+    <Card className="p-4 bg-regal-blue text-white">
       <CardBody>
         <Typography variant="h4" color="blue-gray" className="mb-2">
           Course
@@ -30,7 +30,7 @@ const ChapterSummaryCard = (props) => {
       <CardFooter className="pt-4">
         <button
           onClick={props.handlePurchaseButton2}
-          className="bg-buttoncolor"
+          className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
         >
           Purchase Course
         </button>

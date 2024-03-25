@@ -13,15 +13,18 @@ import { onAuthStateChanged } from "firebase/auth";
 
 import Modal from "./Modal";
 import { useUserAuth } from "./Auth/UserAuthContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   setSignInOpen,
   setSignUpOpen,
   setCloseAll,
 } from "../redux/slices/authDialogSlice";
+import { clearUser } from "../redux/slices/userSlice";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
+  // const userFirebase = useSelector((state) => state.userData.userFirebase);
+
   const [nav, setNav] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
@@ -87,56 +90,89 @@ const Navbar = () => {
     // setShowRegistrationModal(true);
   };
 
+  const handleSignIn = () => {
+    console.log("sign in is clicked");
+    dispatch(setSignInOpen());
+    // setShowRegistrationModal(true);
+  };
+
+  const handleLogOut = () => {
+    auth.signOut();
+
+    dispatch(setCloseAll());
+    navigate("/");
+    // setShowRegistrationModal(true);
+  };
+
   const handleModal = (values) => {
     setShowRegistrationModal(false);
     // console.log("input values are", values);
   };
   return (
-    <div className="flex justify-around pt-10 w-[100%] absolute sm:w-full min-h-[100px] flex justify-between items-center absolute z-10 text-white mt-[-15px] ">
-      <div className="flex items-center justify-around flex-1 fixed w-full">
+    <div className="flex justify-around pt-10 w-[100%] absolute sm:w-full min-h-[70px] flex justify-between items-center absolute z-10 text-white ">
+      <div className=" sm:flex items-center justify-around flex-1 fixed w-full h-[70px]">
         <div className="flex cursor-pointer items-center ">
           {" "}
-          <NavLink to="/" className="flex items-center sm:flex items-center">
+          <NavLink to="/" className=" sm:flex items-center">
             <img
               href="/"
               src={logoImage}
               alt="Logo"
-              className="sm:h-[200px] w-[200px] cursor-pointer rounded-full "
+              className="sm:h-[190px] w-[190px] cursor-pointer rounded-full "
             />
           </NavLink>
         </div>
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
-            <NavLink to="/" className="bubblegum-sans-link text-[#F7F9F3]">
+            <NavLink to="/" className="bubblegum-sans-link text-white">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/storys" className="bubblegum-sans-link text-[#F7F9F3]">
+            <NavLink to="/storys" className="bubblegum-sans-link text-white">
               Our Story
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" className="bubblegum-sans-link text-[#F7F9F3]">
+            <NavLink to="/blogs" className="bubblegum-sans-link text-white">
               Blog
             </NavLink>
           </li>
           <li>
-            <NavLink to="/courses" className="bubblegum-sans-link text-[#F7F9F3]">Courses</NavLink>
+            <NavLink to="/courses" className="bubblegum-sans-link text-white">
+              Courses
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/programs" className="bubblegum-sans-link text-[#F7F9F3]">
+            <NavLink to="/programs" className="bubblegum-sans-link text-white">
               Programs
             </NavLink>
           </li>
         </ul>
-        <div>
-          <button
-            onClick={handleSignUp}
-            className="opacity-90 bg-button text-black"
-          >
-            Sign Up
-          </button>
+        <div className=" sm:mr-2 ">
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+            >
+              Log Out
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={handleSignIn}
+                className=" bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
+              >
+                Sign In
+              </button>
+              <button
+                onClick={handleSignUp}
+                className=" bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
+              >
+                Sign Up
+              </button>
+            </>
+          )}
         </div>
       </div>
 
@@ -174,7 +210,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      <Modal />
+      {/* <Modal /> */}
     </div>
   );
 };

@@ -40,6 +40,7 @@ module.exports = {
       black: "#020617",
       header: "#5abea4",
       background: "#faf8f0",
+      white: "#F7F9F3",
     },
     fontFamily: {
       header: ["ui-serif", "Georgia"],
@@ -49,11 +50,15 @@ module.exports = {
       "regal-blue": "#243c5a",
       white: "#Ffffff",
       greentwo: "#15803d",
-      middlesection: "#f1faf0",
-      button: "#F7F9F3",
-
+      // middlesection: "#f1faf0",
+      // button: "#F7F9F3",
+      middlesection: "#7D9BE2",
+      button: "#FB9060",
+      navbarBack: "#7D9BE2",
+      pdfBorder: "#05cbf7",
       buttoncolor: "#ffd01e",
-      bodyback: "#bdf2ff",
+      bodyback: "#0081a1",
+      cardColor: "#41aac4",
     },
   },
   plugins: [
