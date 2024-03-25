@@ -7,10 +7,10 @@ const TobBar = () => {
         <h1 className="text-xl font-bold text-gray">WEEKAWAY</h1>
       </div> */}
       <div className="flex">
-        <div className="hidden md:flex items-center px-6">
+        <div className=" md:flex items-center px-6">
           <p className="text-sm text-blue font-bold">9AM-5AM</p>
         </div>
-        <div className="hidden md:flex items-center px-6">
+        <div className=" md:flex items-center px-6">
           <p className="text-sm text-blue font-bold">+251919191919</p>
         </div>
         {/* <button>Get Us</button> */}

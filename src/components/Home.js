@@ -17,7 +17,7 @@ function Home() {
     <>
       <TobBar />
       <Navbar />
-      <div className="space-y-10">
+      <div className="space-y-10 bg-gradient-to-br gradient-primary">
         <Hero />
         <Courses />
         <Blogs />

@@ -13,6 +13,7 @@ import store from "./redux/store";
 import Checkout from "./components/Payment/Checkout";
 import LearnBook from "./components/LearnBook/LearnBook";
 import FullBlog from "./components/Details/FullBlog";
+import SummerCampDetail from "./components/Details/SummerCampDetail";
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
                 path="/courses/book/:bookId/chapter/:chapternumber"
                 Component={Chapter}
               />
+              <Route exact path="/camp" Component={SummerCampDetail} />
             </Routes>
           </BrowserRouter>
         </div>

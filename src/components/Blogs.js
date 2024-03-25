@@ -27,10 +27,10 @@ const Blogs = () => {
   ];
   return (
     <div id="blogs" className="space-y-8 p-10 md:flex  flex-col items-center ">
-      <h1 className="mystery-quest-header w-full text-4xl text-center font-bold font-header">
+      <h1 className="mystery-quest-header w-full text-white text-4xl text-center font-bold font-header">
         Latest Articles And Updates
       </h1>
-      <p className="bubblegum-sans-subheader">
+      <p className="bubblegum-sans-subheader text-white">
         Entertaining and educational weekly posts that inspire kids te reach for
         the stars.
       </p>

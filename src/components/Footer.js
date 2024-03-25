@@ -3,7 +3,7 @@ import logo from "../assets/images/logoAndText.png";
 
 function Footer() {
   return (
-    <footer className="bg-[#7E60CC] dark:bg-gray-900">
+    <footer className="bg-[#7D9BE2]">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

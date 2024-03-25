@@ -60,10 +60,10 @@ const Courses = () => {
   ];
   return (
     <div id="products" className="pt-10 space-y-8 md:flex flex-col items-center">
-      <h1 className="mystery-quest-header w-full text-black text-center text-4xl font-bold font-header">
+      <h1 className="mystery-quest-header w-full text-white text-center text-4xl font-bold font-header">
         Shop our latest Courses
       </h1>
-      <p className="bubblegum-sans-subheader text-black font-paragraph">
+      <p className="bubblegum-sans-subheader text-white font-paragraph">
         Our Courses introduce children to key life skills that empower them to
         be limitless
       </p>
