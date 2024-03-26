@@ -5,8 +5,10 @@ import lesson3image from "../assets/images/booki-3-1.png";
 import lesson4image from "../assets/images/booki-6.png";
 
 import CourseList from "../container/CourseList";
+import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
+  const navigate = useNavigate();
   const courseData = [
     {
       src: lesson1image,
@@ -58,6 +60,10 @@ const Courses = () => {
         "some description about lessons and adding some other descriptions related to this one without limit just add some values and texts",
     },
   ];
+
+  const handleStartCourse = () => {
+    navigate("/courses");
+  };
   return (
     <div
       id="products"
@@ -71,7 +77,10 @@ const Courses = () => {
         be limitless
       </p>
       <CourseList data={courseData} />
-      <button className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
+      <button
+        onClick={handleStartCourse}
+        className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+      >
         Start Courses
       </button>
 

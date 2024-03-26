@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import {
   TERipple,
@@ -21,6 +22,7 @@ import {
   Input,
   Checkbox,
 } from "@material-tailwind/react";
+import { setSignInOpen } from "../../../redux/slices/authDialogSlice";
 
 function SignInForm({
   openModal,
@@ -29,6 +31,7 @@ function SignInForm({
   loginWithGoogle,
   handleOpenSignUp,
 }) {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -46,8 +49,13 @@ function SignInForm({
   };
 
   const handleLoginWithGoogle = () => {
+    console.log("handle with google");
     loginWithGoogle();
   };
+
+  useEffect(() => {
+    dispatch(setSignInOpen());
+  }, []);
 
   return (
     <>

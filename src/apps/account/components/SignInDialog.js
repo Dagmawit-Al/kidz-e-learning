@@ -33,6 +33,8 @@ import {
   setSignUpOpen,
   setCloseAll,
 } from "../../../redux/slices/authDialogSlice";
+import { listPathName } from "../../../redux/slices/locationSlice";
+import { setUser } from "../../../redux/slices/userSlice";
 
 const SignInDialog = () => {
   const navigate = useNavigate();
@@ -44,6 +46,9 @@ const SignInDialog = () => {
 
   const isSignInOpen = useSelector((state) => state.authDialog.isSignInOpen);
   const isSignUpOpen = useSelector((state) => state.authDialog.isSignUpOpen);
+  const pathname = useSelector((state) => state.locationslice);
+
+  console.log("path in dialog", pathname);
 
   const onSignInSubmit = (data) => {};
 
@@ -58,27 +63,32 @@ const SignInDialog = () => {
       .then((userCredential) => {
         setTimeout(() => {
           const user = userCredential.user;
+          dispatch(setUser());
 
-          //   sendEmailVerification(user);
+          // sendEmailVerification(user);
 
-          //   const docRef = addDoc(
-          //     collection(db, "users", {
-          //       firstname: data?.firstname,
-          //       lastname: data?.lastname,
-          //       email: data?.email,
-          //       phoneNumber: data?.phoneNumber,
-          //       uid: user?.uid,
-          //     })
-          //   );
+          // const docRef = addDoc(
+          //   collection(db, "users", {
+          //     firstname: data?.firstname,
+          //     lastname: data?.lastname,
+          //     email: data?.email,
+          //     phoneNumber: data?.phoneNumber,
+          //     uid: user?.uid,
+          //   })
+          // );
 
-          handleClose();
-          handleLogin();
+          // handleClose();
+          if (pathname) {
+            navigate(pathname);
+            handleClose();
+          } else {
+            handleLogin();
+          }
           console.log(user);
           //   setIsLoading(false);
         }, 5000);
       })
       .catch((error) => {
-        console.log("error is tiga", error);
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
@@ -105,15 +115,22 @@ const SignInDialog = () => {
   };
 
   const loginWithUsernameAndPassword = async (e, data) => {
-    console.log("here", e);
-    console.log("email", data.email);
-    console.log("password", data.password);
     e.preventDefault();
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/courses");
-        handleClose();
+        if (pathname) {
+          console.log("inside if", pathname);
+          dispatch(setUser());
+          navigate(pathname.pathname);
+          handleClose();
+          return;
+          // navigate(pathname?.pathname);
+          // handleClose();
+        } else {
+          navigate("/courses");
+          handleClose();
+        }
         console.log(user);
       })
       .catch((error) => {
@@ -124,9 +141,8 @@ const SignInDialog = () => {
   };
 
   const loginWithGoogle = async () => {
-    console.log("handlegoogle");
-    // const response = await signInWithGooglePopup();
-    // console.log(response);
+    const response = await signInWithGooglePopup();
+    console.log(response);
   };
 
   const onSignUpSubmit = (data) => {};
@@ -145,6 +161,7 @@ const SignInDialog = () => {
 
   const handleClose = () => {
     dispatch(setCloseAll());
+    // navigate("/");
   };
 
   const handleLogin = () => {

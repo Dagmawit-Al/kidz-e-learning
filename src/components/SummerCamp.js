@@ -2,7 +2,14 @@ import React from "react";
 import { TERipple } from "tw-elements-react";
 import kids from "../assets/images/summer_camp.jpeg";
 
+import { useNavigate } from "react-router-dom";
+
 function SummerCamp() {
+  const navigate = useNavigate();
+
+  const handleLearnMoreSummerCamp = () => {
+    navigate("/summercamp");
+  };
   return (
     <section className=" md:flex flex-col items-center  p-8 space-x-20">
       <div className="grid grid-rows-3 grid-flow-col gap-4">
@@ -19,6 +26,7 @@ function SummerCamp() {
         <div className="col-span-2 ...">
           <TERipple rippleColor="light">
             <button
+              onClick={handleLearnMoreSummerCamp}
               className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
               href="#programs"
             >

@@ -41,7 +41,7 @@ function Chapter(props) {
 
   const handlePurchase = () => {
     console.log("user is", user ? user?.email : null);
-    if (!user) {
+    if (user) {
       navigate(`/book/${bookId}/checkout`);
     } else {
       dispatch(setSignInOpen());
@@ -53,8 +53,8 @@ function Chapter(props) {
   };
 
   return (
-    <div className="sm:flex flex-col w-full h-screen">
-      <Header />
+    <div className="sm:flex flex-col w-full h-screen p-24">
+      {/* <Header /> */}
       <div className="h-screen m-4 sm:flex flex-col mt-5 h-[700px]">
         {/* <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
           KidsLearning
