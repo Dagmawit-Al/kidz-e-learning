@@ -3,7 +3,14 @@ import { TERipple } from "tw-elements-react";
 import girl from "../assets/images/img-girl.png";
 import { NavLink } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 function SummerCamp() {
+  const navigate = useNavigate();
+
+  const handleLearnMoreSummerCamp = () => {
+    navigate("/summercamp");
+  };
   return (
     <section className=" md:flex flex-col items-center  p-8 space-x-20">
       <div className="grid grid-rows-3 grid-flow-col gap-4">
@@ -21,7 +28,13 @@ function SummerCamp() {
         <NavLink to="/camp">
           <TERipple rippleColor="light">
             <button
+
+              onClick={handleLearnMoreSummerCamp}
+              className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+              href="#programs"
+
               className="bubblegum-sans-subheader bg-[#FB9060] text-white"
+
             >
               Learn More
             </button>

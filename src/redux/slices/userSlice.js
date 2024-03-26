@@ -4,13 +4,13 @@ import { createSlice } from "@reduxjs/toolkit";
 //Configuration object for createSlice()
 const options = {
   name: "userslice", //Name of slice
-  initialState: { userFirebase: {} }, //Initial state of slice
+  initialState: { user: false }, //Initial state of slice
   reducers: {
     //Reducer for "addTodo" action
     setUser: (state, action) => {
       return {
         ...state,
-        userFirebase: action.payload,
+        user: true,
       };
     },
     //Reducer for "toggleTodo" action
@@ -20,7 +20,7 @@ const options = {
     clearUser: (state, action) => {
       return {
         ...state,
-        userFirebase: {},
+        user: false,
       };
     },
   },

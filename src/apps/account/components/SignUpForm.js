@@ -226,7 +226,7 @@ function SignUpForm({
                   style={{ backgroundColor: "white" }}
                   href="#!"
                   role="button"
-                  onClick={(e) => handleLoginWithUsernameAndPassword(e)}
+                  onClick={(e) => handleLoginWithGoogle(e)}
                 >
                   <svg
                     className="mr-2 h-3.5 w-3.5"

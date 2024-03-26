@@ -38,3 +38,4 @@ const SummerCampDetail = () => {
 }
 
 export default SummerCampDetail;
+
