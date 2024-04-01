@@ -21,7 +21,6 @@ import SummerCampDetail from "./components/Details/SummerCampDetail";
 import SignInDialog from "./apps/account/components/SignInDialog";
 import PrivateRoutes from "./apps/account/components/PrivateRoute";
 import Login from "./apps/account/components/Login";
-import SummerCampDetail from "./components/Details/SummerCampDetail";
 
 const App = () => {
   return (
@@ -55,7 +54,7 @@ const App = () => {
                 }
               />
               <Route
-                path="/summercamp"
+                path="/camp"
                 element={
                   <PrivateRoutes>
                     <SummerCampDetail />
@@ -78,7 +77,7 @@ const App = () => {
                 path="/book/:bookId/checkout/learn"
                 Component={LearnBook}
               />
-              <Route exact path="/camp" Component={SummerCampDetail} />
+              {/* <Route exact path="/camp" Component={SummerCampDetail} /> */}
             </Routes>
 
             <SignInDialog />
