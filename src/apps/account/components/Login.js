@@ -8,7 +8,7 @@ const Login = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const path = location.state.path;
-  console.log("path in login", path);
+  // console.log("path in login", path);
   // useEffect(() => {
   //   dispatch(setSignInOpen(path));
   //   // dispatch(setPathName())

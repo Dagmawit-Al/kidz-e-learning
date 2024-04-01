@@ -9,7 +9,7 @@ function SummerCamp() {
   const navigate = useNavigate();
 
   const handleLearnMoreSummerCamp = () => {
-    navigate("/summercamp");
+    navigate("/camp");
   };
   return (
     <section className=" md:flex flex-col items-center  p-8 space-x-20">
@@ -25,20 +25,17 @@ function SummerCamp() {
           </h4>
         </div>
         <div className="col-span-2 ...">
-        <NavLink to="/camp">
-          <TERipple rippleColor="light">
-            <button
-
-              onClick={handleLearnMoreSummerCamp}
-              className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
-              href="#programs"
-
-              className="bubblegum-sans-subheader bg-[#FB9060] text-white"
-
-            >
-              Learn More
-            </button>
-          </TERipple>
+          <NavLink to="/camp">
+            <TERipple rippleColor="light">
+              <button
+                onClick={handleLearnMoreSummerCamp}
+                // className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                href="#programs"
+                className="bubblegum-sans-subheader bg-[#FB9060] text-white"
+              >
+                Learn More
+              </button>
+            </TERipple>
           </NavLink>
         </div>
         <div className="row-span-3 ...">
