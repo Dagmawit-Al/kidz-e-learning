@@ -20,6 +20,6 @@ const Course = ({ data }) => {
       </div>
     </NavLink>
   );
-};
+}
 
 export default Course;

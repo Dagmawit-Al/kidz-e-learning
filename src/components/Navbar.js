@@ -148,7 +148,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink to="/programs" className="bubblegum-sans-link text-white">
-              Programs
+              Events
             </NavLink>
           </li>
         </ul>
