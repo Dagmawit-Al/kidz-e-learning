@@ -20,6 +20,7 @@ import {
   setCloseAll,
 } from "../redux/slices/authDialogSlice";
 import { clearUser } from "../redux/slices/userSlice";
+import { clearPathName } from "../redux/slices/locationSlice";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
@@ -29,7 +30,7 @@ const Navbar = () => {
   const [showBackground, setShowBackground] = useState(false);
   const [showRegistrationModal, setShowRegistrationModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-
+  const firebaseUser = useSelector((state) => state.userData.user);
   const [user, loading, error] = useAuthState(auth);
   const [users, setUsers] = useState(user);
 
@@ -44,14 +45,14 @@ const Navbar = () => {
       setName(data.firstname);
     } catch (err) {
       console.error(err);
-      alert("An error occured while fetching user data");
+      // alert("An error occured while fetching user data");
     }
   };
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // fetchUserName();
+    fetchUserName();
     const handleScroll = () => {
       // console.log(window.scrollY);
       if (window.scrollY >= TOP_OFFSET) {
@@ -100,6 +101,8 @@ const Navbar = () => {
     auth.signOut();
 
     dispatch(setCloseAll());
+    dispatch(clearUser());
+    dispatch(clearPathName());
     navigate("/");
     // setShowRegistrationModal(true);
   };
@@ -150,7 +153,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className=" sm:mr-2 ">
-          {user ? (
+          {user && firebaseUser ? (
             <button
               onClick={handleLogOut}
               className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "

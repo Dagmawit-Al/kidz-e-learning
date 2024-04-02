@@ -12,7 +12,7 @@ import {
 } from "@material-tailwind/react";
 
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
@@ -33,8 +33,12 @@ import {
   setSignUpOpen,
   setCloseAll,
 } from "../../../redux/slices/authDialogSlice";
+import { listPathName } from "../../../redux/slices/locationSlice";
+import { setUser } from "../../../redux/slices/userSlice";
+import Modal from "./Modal";
 
 const SignInDialog = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
@@ -44,6 +48,9 @@ const SignInDialog = () => {
 
   const isSignInOpen = useSelector((state) => state.authDialog.isSignInOpen);
   const isSignUpOpen = useSelector((state) => state.authDialog.isSignUpOpen);
+  const pathname = useSelector((state) => state.locationslice);
+
+  // console.log("path in dialog", pathname);
 
   const onSignInSubmit = (data) => {};
 
@@ -58,27 +65,33 @@ const SignInDialog = () => {
       .then((userCredential) => {
         setTimeout(() => {
           const user = userCredential.user;
+          dispatch(setUser());
 
-          //   sendEmailVerification(user);
+          sendEmailVerification(user);
+          const { firstname, lastname, email, phoneNumber } = data;
 
-          //   const docRef = addDoc(
-          //     collection(db, "users", {
-          //       firstname: data?.firstname,
-          //       lastname: data?.lastname,
-          //       email: data?.email,
-          //       phoneNumber: data?.phoneNumber,
-          //       uid: user?.uid,
-          //     })
-          //   );
+          const docRef = addDoc(collection(db, "users"), {
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
+            phoneNumber: phoneNumber,
+            uid: user?.uid,
+          });
 
-          handleClose();
+          console.log("docRef", docRef);
+
+          // handleClose();
+
           handleLogin();
+          // navigate(pathname);
+
+          // handleClose();
+
           console.log(user);
           //   setIsLoading(false);
         }, 5000);
       })
       .catch((error) => {
-        console.log("error is tiga", error);
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
@@ -105,15 +118,21 @@ const SignInDialog = () => {
   };
 
   const loginWithUsernameAndPassword = async (e, data) => {
-    console.log("here", e);
-    console.log("email", data.email);
-    console.log("password", data.password);
     e.preventDefault();
     signInWithEmailAndPassword(auth, data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
-        navigate("/courses");
-        handleClose();
+        if (pathname) {
+          dispatch(setUser());
+          navigate(pathname.pathname);
+          handleClose();
+          return;
+          // navigate(pathname?.pathname);
+          // handleClose();
+        } else {
+          navigate("/courses");
+          handleClose();
+        }
         console.log(user);
       })
       .catch((error) => {
@@ -124,9 +143,8 @@ const SignInDialog = () => {
   };
 
   const loginWithGoogle = async () => {
-    console.log("handlegoogle");
-    // const response = await signInWithGooglePopup();
-    // console.log(response);
+    const response = await signInWithGooglePopup();
+    console.log(response);
   };
 
   const onSignUpSubmit = (data) => {};
@@ -144,7 +162,25 @@ const SignInDialog = () => {
   };
 
   const handleClose = () => {
+    console.log(
+      "inside handleclose",
+      "pathname",
+      pathname,
+      "locatio",
+      location
+    );
+    if (location?.pathname === "/login") {
+      navigate("/");
+      dispatch(setCloseAll());
+    }
     dispatch(setCloseAll());
+    // if (location.pathname === "/login") {
+    //   navigate("/");
+    // } else {
+    //   console.log("else ", pathname.pathname);
+    //   navigate(pathname.pathname);
+    // }
+    // navigate("/");
   };
 
   const handleLogin = () => {
@@ -160,30 +196,100 @@ const SignInDialog = () => {
   //   }, []);
 
   return (
-    <>
-      {isSignInOpen && (
-        <SignInForm
-          handleOpenSignUp={handleOpenSignUp}
-          onSubmit={onSignInSubmit}
-          openModal={isDialogOpen}
-          handleClose={handleClose}
-          loginWithUsernameAndPassword={loginWithUsernameAndPassword}
-          loginWithGoogle={loginWithGoogle}
-        />
-      )}
-      {isSignUpOpen && (
-        <SignUpForm
-          handleSubmit={handleSubmit}
-          signupWithUsernameAndPassword={signupWithUsernameAndPassword}
-          handleOpenSignIn={handleOpenSignIn}
-          openModal={isDialogOpen}
-          handleClose={handleClose}
-          //   loginWithUsernameAndPassword={loginWithUsernameAndPassword}
-          loginWithGoogle={loginWithGoogle}
-          onSubmit={onSignUpSubmit}
-        />
-      )}
-    </>
+    // <Dialog className="w-[550px] " size="xs" open={isDialogOpen}>
+    <Modal open={isDialogOpen} onClose={handleClose}>
+      <Card className="mx-auto max-w-[30rem] mt-8  ">
+        <CardBody className="flex flex-col gap-4">
+          {isSignInOpen && (
+            <>
+              <Typography variant="h4" color="blue-gray">
+                Sign In
+              </Typography>
+              <Typography
+                className="mb-3 font-normal"
+                variant="paragraph"
+                color="gray"
+              >
+                Enter your email and password to Sign In.
+              </Typography>
+            </>
+          )}
+
+          {isSignUpOpen && (
+            <>
+              <Typography variant="h4" color="blue-gray">
+                Sign Up
+              </Typography>
+              <Typography
+                className="mb-3 font-normal"
+                variant="paragraph"
+                color="gray"
+              >
+                Enter your email and password to Sign Up.
+              </Typography>
+            </>
+          )}
+          {isSignInOpen && (
+            <SignInForm
+              handleOpenSignUp={handleOpenSignUp}
+              onSubmit={onSignInSubmit}
+              openModal={isDialogOpen}
+              handleClose={handleClose}
+              loginWithUsernameAndPassword={loginWithUsernameAndPassword}
+              loginWithGoogle={loginWithGoogle}
+            />
+          )}
+          {isSignUpOpen && (
+            <SignUpForm
+              handleSubmit={handleSubmit}
+              signupWithUsernameAndPassword={signupWithUsernameAndPassword}
+              handleOpenSignIn={handleOpenSignIn}
+              openModal={isDialogOpen}
+              handleClose={handleClose}
+              //   loginWithUsernameAndPassword={loginWithUsernameAndPassword}
+              loginWithGoogle={loginWithGoogle}
+              onSubmit={onSignUpSubmit}
+            />
+          )}
+
+          <Typography>
+            {isSignInOpen && (
+              <Typography variant="small" className="mt-4 flex justify-center">
+                Don&apos;t have an account?
+                <Typography
+                  as="a"
+                  href="#signup"
+                  variant="small"
+                  color="blue-gray"
+                  className="ml-1 font-bold"
+                  onClick={handleOpenSignUp}
+                >
+                  Sign Up
+                </Typography>
+              </Typography>
+            )}
+
+            {isSignUpOpen && (
+              <Typography variant="small" className=" flex justify-center">
+                Already have an account?
+                <Typography
+                  as="a"
+                  href="#signup"
+                  variant="small"
+                  color="blue-gray"
+                  className="ml-1 font-bold"
+                  onClick={handleOpenSignIn}
+                >
+                  Log in
+                </Typography>
+              </Typography>
+            )}
+          </Typography>
+        </CardBody>
+      </Card>
+    </Modal>
+
+    // </Dialog>
   );
 };
 

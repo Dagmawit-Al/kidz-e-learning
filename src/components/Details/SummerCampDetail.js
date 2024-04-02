@@ -6,11 +6,10 @@ import { Typography } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
 
 const SummerCampDetail = () => {
-
-    return (
-        <>
-            <TobBar />
-            <section className="container flex flex-col items-center mx-auto md:w-[75%] w-[45%] mt-10 space-y-10 px-8 py-10 lg:py-20">
+  return (
+    <>
+      <TobBar />
+      <section className="container flex flex-col items-center mx-auto md:w-[75%] w-[45%] mt-10 space-y-10 px-8 py-10 lg:py-20">
                 <Typography
                     variant="h2"
                     color="blue-gray"
@@ -32,8 +31,8 @@ const SummerCampDetail = () => {
                     <button className=" bg-button text-black ">Register Now</button>
                 </NavLink>
             </section>
-        </>
-    )
-}
+    </>
+  );
+};
 
 export default SummerCampDetail;

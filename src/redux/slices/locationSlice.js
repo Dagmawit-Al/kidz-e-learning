@@ -17,10 +17,16 @@ const options = {
     listPathName: (state, action) => {
       return state;
     },
+    clearPathName: (state, action) => {
+      return {
+        pathname: "",
+      };
+    },
   },
 };
 
 const locationSlice = createSlice(options);
 
-export const { setPathName, listPathName } = locationSlice.actions;
+export const { setPathName, listPathName, clearPathName } =
+  locationSlice.actions;
 export default locationSlice.reducer;

@@ -30,9 +30,12 @@ import { setUser, listUser, clearUser } from "../../redux/slices/userSlice";
 function CoursesDetail() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
+  const firebaseUser = useSelector((state) => state.userData.user);
+  console.log("firebase user in coursedetail", firebaseUser);
   const [uid, setUID] = useState("");
   const [user, loading, error] = useAuthState(auth);
   let navigate = useNavigate();
+
   const fetchUserName = async () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
@@ -67,6 +70,10 @@ function CoursesDetail() {
     });
     fetchUserName();
   }, [user]);
+
+  // useEffect(() => {
+  //   dispatch(clearUser());
+  // }, []);
 
   return (
     <div className="md:flex flex-col h-screen pt-24">

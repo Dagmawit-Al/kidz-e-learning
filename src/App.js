@@ -19,6 +19,8 @@ import FullBlog from "./components/Details/FullBlog";
 import SummerCampDetail from "./components/Details/SummerCampDetail";
 
 import SignInDialog from "./apps/account/components/SignInDialog";
+import PrivateRoutes from "./apps/account/components/PrivateRoute";
+import Login from "./apps/account/components/Login";
 
 const App = () => {
   return (
@@ -30,9 +32,35 @@ const App = () => {
             <Routes>
               <Route exact path="/" Component={Home} />
               <Route exact path="/blogs" Component={BlogsDetail} />
-              <Route exact path="/courses" Component={CoursesDetail} />
               <Route exact path="/programs" Component={ProgramsDetail} />
-              <Route exact path="/courses/book/:bookId" Component={Book} />
+              <Route
+                exact
+                path="/courses/book/:bookId"
+                element={
+                  <PrivateRoutes>
+                    <Book />
+                  </PrivateRoutes>
+                }
+              />
+              {/* <Route element={<PrivateRoutes />}>
+                <Route exact path="/courses" Component={CoursesDetail} />
+              </Route> */}
+              <Route
+                path="/courses"
+                element={
+                  <PrivateRoutes>
+                    <CoursesDetail />
+                  </PrivateRoutes>
+                }
+              />
+              <Route
+                path="/camp"
+                element={
+                  <PrivateRoutes>
+                    <SummerCampDetail />
+                  </PrivateRoutes>
+                }
+              />
               <Route
                 exact
                 path="/courses/book/:bookId/chapter/:chapternumber"
@@ -42,13 +70,14 @@ const App = () => {
               <Route exact path="/book/:bookId/checkout" Component={Checkout} />
 
               <Route exact path="blogs/fullBlog" Component={FullBlog} />
+              <Route exact path="/login" Component={Login} />
 
               <Route
                 exact
                 path="/book/:bookId/checkout/learn"
                 Component={LearnBook}
               />
-              <Route exact path="/camp" Component={SummerCampDetail} />
+              {/* <Route exact path="/camp" Component={SummerCampDetail} /> */}
             </Routes>
 
             <SignInDialog />
