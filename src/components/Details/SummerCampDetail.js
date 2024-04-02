@@ -10,14 +10,13 @@ const SummerCampDetail = () => {
     return (
         <>
             <TobBar />
-            <Navbar />
             <section className="container flex flex-col items-center mx-auto md:w-[75%] w-[45%] mt-10 space-y-10 px-8 py-10 lg:py-20">
                 <Typography
                     variant="h2"
                     color="blue-gray"
                     className="mystery-quest-header leading-normal pt-8"
                 >
-                    The Ultimate Virtual Experience <br />For Kids Aged 6-12
+                    The Ultimate Experience <br />For Kids Aged 6-12
                 </Typography>
                 <iframe
                     className=" rounded-lg"

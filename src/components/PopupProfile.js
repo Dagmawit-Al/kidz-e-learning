@@ -19,16 +19,26 @@ function PopupProfile() {
         role="tooltip"
         className="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 space-y-8"
       >
-        <div className="p-3">
-          <div className="flex items-center justify-between mb-2">
+        <div className="  p-3">
+          <div className="flex items-center flex-col  mb-2">
             <a href="#">
               <img
-                className="w-18 h-18 rounded-full"
+                className="w-20 h-20 ounded-full"
                 src={pediatrician}
                 alt=""
               />
             </a>
-            <div>
+            
+          </div>
+          <p className="text-base font-semibold leading-none text-gray-900 dark:text-white">
+            <a href="#">Dr. Kalkidan Tesfaye</a>
+          </p>
+          <p className="mb-3 text-sm font-normal">Pediatrician</p>
+          <p className="mb-4 text-black text-sm">
+            Dedicated pediatrician with a background in delivering quality
+            pediatric care to enhance dynamic healthcare team.
+          </p>
+          <div className="ml-3">
               <button
                 type="button"
                 data-te-ripple-init
@@ -76,15 +86,6 @@ function PopupProfile() {
                 </svg>
               </button>
             </div>
-          </div>
-          <p className="text-base font-semibold leading-none text-gray-900 dark:text-white">
-            <a href="#">Dr. Kalkidan Tesfaye</a>
-          </p>
-          <p className="mb-3 text-sm font-normal">Pediatrician</p>
-          <p className="mb-4 text-black text-sm">
-            Dedicated pediatrician with a background in delivering quality
-            pediatric care to enhance dynamic healthcare team.
-          </p>
           <div className="pl-9">
             <ul className="flex text-sm">
               <li className="me-2">

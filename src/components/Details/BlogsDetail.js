@@ -106,12 +106,12 @@ export function PopularBlog() {
 
   return (
     <>
-      <Card className="flex flex-row bg-purple-200 w-full h-auto p-10 space-x-8">
+      <Card className="flex flex-row bg-purple-200 w-full  p-10 space-x-8">
         <img
           src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/card-blog2.jpg"
           className="rounded-2xl shadow-4-strong"
-          height={600}
-          width={600}
+          height="50%"
+          width="50%"
         />
         <div className="flex flex-col space-y-5 items-center">
           <a

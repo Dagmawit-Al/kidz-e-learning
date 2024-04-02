@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+// import firebase from "firebase/compat/app"
+import { db } from "../firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 function Newsletter() {
+  const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
+
+  function handleInput(event) {
+    setEmail(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    if(email === "" || !/\S+@\S+\.\S+/.test(email)) {
+      setIsEmailValid(false);
+    } else {
+      setIsEmailValid(true);
+      //add to firebase
+      // const time = serverTimestamp()
+      const docRef = addDoc(collection(db, "emails"), {
+        email: email,
+        createdAt: serverTimestamp()
+      });
+      // db.collection("emails").add({
+        // email: email,
+        // createdAt: serverTimestamp()
+        // time: firebase.firestore.FieldValue.serverTimestamp(),
+      // });
+      alert(`Thank you for subscribing with ${email}`);
+      setEmail("");
+    }
+  }
+
   return (
     <section className="bg-green dark:bg-gray-900">
       <div className="rounded-lg py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -13,7 +46,7 @@ function Newsletter() {
             and exclusive discounts! <br /> Feel free to sign up with your
             email.
           </p>
-          <form action="#">
+          <form action="#" onSubmit={handleSubmit}>
             <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
               <div className="relative w-full">
                 <label
@@ -37,14 +70,17 @@ function Newsletter() {
                   className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   placeholder="Enter your email"
                   type="email"
+                  value={email}
+                  onChange={handleInput}
                   id="newsletteremail"
-                  required=""
+                  required
                 />
               </div>
               <div>
                 <button
                   type="submit"
-                  className="bubblegum-sans-subheader py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-button border-[#E5588D] sm:rounded-none sm:rounded-r-lg hover:bg-[#E5588D] focus:ring-4 focus:ring-[#E5588D] dark:bg-[#FDB7D1] dark:hover:bg-[#E5588D] dark:focus:ring-[#E5588D]"
+                  className="bubblegum-sans-subheader py-3 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-button border-[#E5588D] sm:rounded-none sm:rounded-r-lg dark:bg-[#FDB7D1]"
+                  disabled={!isEmailValid}
                 >
                   Subscribe
                 </button>
