@@ -16,8 +16,8 @@ function Home() {
   return (
     <div className="w-[100%] sm:flex flex-col">
       <TobBar />
-      <Navbar />
-      <div className="space-y-10 ">
+      {/* <Navbar /> */}
+      <div className="space-y-20 ">
         <Hero />
         <Courses />
         <Blogs />

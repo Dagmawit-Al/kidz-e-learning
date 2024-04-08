@@ -1,39 +1,64 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import heroImage from "../assets/images/img-banner.png";
+import background from "../assets/images/kidsImage.png";
 import btnart from "../assets/images/btn-art.png";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+  const content = 'This is where I place my content';
   return (
-    <div id="hero" className="flex flex-col  mt-[100px]  ">
-      <div className="w-full flex items-center flex-col m-4 p-4">
-        <div className="space-y-5 w-full md:w-[50%] w-[45%] items-center m-4 h-full flex flex-col text-black p-4">
-          <h1 className="mystery-quest-header font-bold text-white font-header	">
-            Empowering kids through entrepreneurship
+    <div className="container max-w-screen-xl mx-auto flex justify-center items-center min-h-screen m-5">
+      {/* Container for the hero section into 12 columns */}
+      <div className="grid md:grid-cols-12">
+        {/* Hero image */}
+        <div className="col-span-6 place-self-center ml-8">
+          <h1 className="mystery-quest-header text-5xl text-yellow-100 whitespace-pre-line leading-tight">
+            {t('title')}
           </h1>
-          <p className="bubblegum-sans-subheader text-white">
-            Our books and online programs empower kids aged 6-12 to excel in
-            entrepreneurship and in life... all while putting smiles on their
-            faces!
-          </p>
+          <h1 className="roboto-medium mt-8 text-lg text-yellow-100 whitespace-pre-line leading-snug">
+            {t('subtitle')}
+          </h1>
+          <button
+            className="mt-8 btn outline-button text-white py-1 px-6 border rounded-2xl">
+            {t('startCourses')}
+          </button>
         </div>
-        <div className="flex pt-10">
+        {/* Hero content */}
+        <div className="col-span-6 place-self-center">
+          <img src={background} alt="Kids" />
+        </div>
+      </div>
+    </div>
+  );
+  // <div id="hero" className="w-full flex flex-row   ">
+  //   <div className="flex items-center flex-col p-4">
+  //     <div className="space-y-5 h-full flex flex-col text-black p-4">
+  {/* <h1 className=" text-white mt-20">
+          {t('title')}
+          </h1> */}
+  {/* <p className="bubblegum-sans-subheader text-white">
+          {t('subtitle')}
+          </p> */}
+  //</div>
+  {/* <div className="flex pt-10">
           <NavLink to="/courses">
             <button className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
-              Start Courses
+              {t('startCourses')}
             </button>
           </NavLink>
           <div className="-m-8 p-2">
             <img src={btnart} alt="btnart" />
-          </div>
-        </div>
-      </div>
+          </div> */}
+  {/* </div> */ }
+  //</div>
 
-      <div>
-        <img src={heroImage} alt="heroImage" className="w-full object-cover" />
-      </div>
-    </div>
-  );
+  //   <div className="flex justify-end mt-10">
+  //     <img src={background} alt="heroImage" className="w-[65%]   object-cover" />
+  //   </div>
+  // </div>
+
+
 };
 
 export default Hero;

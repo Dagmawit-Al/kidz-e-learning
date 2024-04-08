@@ -2,7 +2,7 @@ import React from "react";
 
 const TobBar = () => {
   return (
-    <div className="flex justify-end items-center px-4 pt-2 z-1000">
+    <div className="flex justify-end items-center px-4 pt-5 z-1000">
       {/* <div className="flex items-center">
         <h1 className="text-xl font-bold text-gray">WEEKAWAY</h1>
       </div> */}
@@ -14,6 +14,9 @@ const TobBar = () => {
           <p className="text-sm text-blue font-bold">+251919191919</p>
         </div>
         {/* <button>Get Us</button> */}
+        <a href="#" className="no-underline hover:underline">አማርኛ </a>
+        <p> | </p>
+        <a> English</a>
       </div>
     </div>
   );

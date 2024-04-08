@@ -185,13 +185,13 @@ function SignUpForm({
         <TERipple rippleColor="light" className="w-full flex">
           <button
             type="submit"
-            className="inline-block w-full rounded  border-[#E6777A] px-7 pb-2.5 pt-3 text-sm font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#FB9060] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#FB9060] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#FB9060] active:bg-[#FB9060] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FB9060] dark:hover:bg-[#FB9060] dark:focus:ring-[#FB9060] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+            className="inline-block w-full rounded border-[#E6777A] px-7 pb-2.5 pt-3 text-sm font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-[#FB9060] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-[#FB9060] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-1 focus:ring-[#FB9060] active:bg-[#FB9060] active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:bg-[#FB9060] dark:hover:bg-[#FB9060] dark:focus:ring-[#FB9060] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
             onClick={(e) => handleSignUpWithUsernameAndPassword(e)}
             //   disabled={isLoading}
           >
             Sign up
           </button>
-          <Button className="text-black bg-[#FB9060]" onClick={handleClose}>
+          <Button className="text-black bg-[#84d4d8]" onClick={handleClose}>
             Close
           </Button>
         </TERipple>

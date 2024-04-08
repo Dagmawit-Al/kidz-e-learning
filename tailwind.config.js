@@ -65,4 +65,5 @@ module.exports = {
     require("tw-elements-react/dist/plugin.cjs"),
     require("flowbite/plugin"),
   ],
+  
 };

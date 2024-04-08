@@ -21,10 +21,13 @@ import {
 } from "../redux/slices/authDialogSlice";
 import { clearUser } from "../redux/slices/userSlice";
 import { clearPathName } from "../redux/slices/locationSlice";
+import  { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
   // const userFirebase = useSelector((state) => state.userData.userFirebase);
+
+  const { t } = useTranslation();
 
   const [nav, setNav] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
@@ -112,7 +115,7 @@ const Navbar = () => {
     // console.log("input values are", values);
   };
   return (
-    <div className="flex justify-around pt-10 w-[100%] absolute sm:w-full min-h-[70px] flex justify-between items-center absolute z-10 text-white ">
+    <div className="flex justify-around pt-20 w-[100%] absolute sm:w-full min-h-[70px] flex justify-between items-center absolute z-10 text-white mb-10">
       <div className=" sm:flex items-center justify-around flex-1 fixed w-full h-[70px]">
         <div className="flex cursor-pointer items-center ">
           {" "}
@@ -128,27 +131,27 @@ const Navbar = () => {
         <ul className="hidden  sm:flex px-4 text-black">
           <li>
             <NavLink to="/" className="bubblegum-sans-link text-white">
-              Home
+              {t('home')}
             </NavLink>
           </li>
           <li>
             <NavLink to="/storys" className="bubblegum-sans-link text-white">
-              Our Story
+              {t('ourStory')}
             </NavLink>
           </li>
           <li>
             <NavLink to="/blogs" className="bubblegum-sans-link text-white">
-              Blog
+              {t('blog')}
             </NavLink>
           </li>
           <li>
             <NavLink to="/courses" className="bubblegum-sans-link text-white">
-              Courses
+              {t('courses')}
             </NavLink>
           </li>
           <li>
             <NavLink to="/programs" className="bubblegum-sans-link text-white">
-              Events
+              {t('events')}
             </NavLink>
           </li>
         </ul>
@@ -156,23 +159,23 @@ const Navbar = () => {
           {user && firebaseUser ? (
             <button
               onClick={handleLogOut}
-              className=" bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+              className="btn outline-button border rounded-2xl hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
             >
-              Log Out
+              {t('logOut')}
             </button>
           ) : (
             <>
               <button
                 onClick={handleSignIn}
-                className=" bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
+                className="btn outline-button border rounded-2xl bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
               >
-                Sign In
+                {t('signIn')}
               </button>
               <button
                 onClick={handleSignUp}
-                className=" bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
+                className="btn outline-button border rounded-2xl bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
               >
-                Sign Up
+                {t('signUp')}
               </button>
             </>
           )}
