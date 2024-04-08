@@ -5,13 +5,15 @@
 :root {
   --primary-dark: #000000;
   --primary-light: #404040;
-  background: linear-gradient(to right, #7E60CC, #E6777A, #FB9060);
+  /* background: linear-gradient(to bottom right, #fd39a1, #a43bcb, #fcce90, #e293ac, #84d4d8); */
+  background-image: linear-gradient(80deg, #FB9060, #e293ac, #a43bcb, #84d4d8, #fcce90);
 }
 
 @layer base {
   button {
-    @apply px-8 py-4 mr-5 border rounded-full  text-black;
+    @apply px-8 py-4 mr-5 border rounded-full text-black;
   }
+
   li {
     @apply p-4 text-sm font-bold hover:underline;
   }
@@ -20,8 +22,89 @@
 @font-face {
   font-family: "Metavoria";
   src: local(Playfulion),
-  url(./fonts/Metavoria.otf) format('opentype');
+    url(./fonts/Metavoria.otf) format('opentype');
 }
+
+@font-face {
+  font-family: "ComicSans";
+  src: url(./fonts/COMICSANS.TTF) format('truetype'),
+    url(./fonts/COMICSANSBOLD.TTF) format('truetype'),
+    url(./fonts/COMICSANSBOLDITALIC.TTF) format('truetype'),
+    url(./fonts/COMICSANSITALIC.TTF) format('truetype');
+}
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 .rock-salt-regular {
   font-family: "Metavoria", cursive;
@@ -30,7 +113,7 @@
 }
 
 .mystery-quest-header {
-  font-family: "Metavoria", system-ui;
+  font-family: "ComicSans", system-ui;
   font-weight: 500;
   font-style: normal;
   font-size: 70px;
@@ -44,24 +127,39 @@
 }
 
 .bubblegum-sans-subheader {
-  font-family: "Metavoria", sans-serif;
+  font-family: "ComicSans", sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  word-spacing: 3px;
+}
+
+.comic-sans-medium {
+  font-family: "ComicSans", sans-serif;
   font-weight: 100;
   font-size: 30px;
   word-spacing: 3px;
 }
 
+.comic-sans-large {
+  font-family: "ComicSans", sans-serif;
+  font-weight: 00;
+  font-size: 50px;
+  word-spacing: 3px;
+}
+
 .bubblegum-sans-link {
-  font-family: "Bubblegum Sans", sans-serif;
+  font-family: "ComicSans", sans-serif;
   font-weight: 50;
   font-size: 17px;
   word-spacing: 3px;
 }
 
 .btn.outline-button {
-  border-color: #FB9060;
+  border-color: #fcce90;
   color: black;
-  background-color: transparent;
-  border: 2px solid #FB9060;
+  background-color: #fcce90;
+  border: 2px solid #a43bcb;
+  padding: 10px;
 }
 
 /* .gradient-primary {

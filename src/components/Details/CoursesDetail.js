@@ -78,8 +78,8 @@ function CoursesDetail() {
   return (
     <div className="md:flex flex-col h-screen pt-24">
       {/* <Header /> */}
-      <div className="flex justify-between p-10">
-        <h1 className="mystery-quest-modal">Welcome {name}!</h1>
+      <div className="flex justify-center items-center p-10">
+        <h1 className="comic-sans-medium  text-yellow-100">Welcome {name}!</h1>
         {/* <div>
           <button
             onClick={handleLogOut}
@@ -90,38 +90,41 @@ function CoursesDetail() {
         </div> */}
       </div>
 
-      <div className="md:flex w-full items-center justify-between m-4">
-        <img src={book1} alt="book1" />
+      {/* <div className="md:flex w-full flex flex-col justify-center items-center m-4"> */}
+        {/* <img src={book1} alt="book1" /> */}
 
-        <div className="flex flex-col items-center">
-          <h1 className="font-bold text-6xl">Books That Empower</h1>
-          <p className="p-2">
+        {/* <div className="flex flex-col space-y-8 items-center">
+          <h1 className="roboto-medium font-bold text-6xl text-yellow-200">Books That Empower</h1>
+          <p className="roboto-light-italic p-2 text-yellow-200">
             Shop Children’s Books that Inspire Kids to THINK BIG
           </p>
-        </div>
+        </div> */}
 
-        <img src={book2} alt="book2" />
-      </div>
+        {/* <img src={book2} alt="book2" /> */}
+      {/* </div> */}
       <div className="md:flex items-center flex-col border-t-2 w-full">
-        <div className="md:flex justify-around p-2 m-2 w-[60%] h-[500px] bg-middlesection ">
+        <div className="md:flex justify-around p-2 m-2 w-[60%] h-[500px] ">
           <img
             className="object-cover"
             src={middlesection}
             alt="middlesectionimage"
           />
-          <div className="md:p-4 m-2 flex flex-col w-[50%] justify-around">
-            <h1 className="font-bold text-6xl">The Book That Started All</h1>
-            <p className="text-gray-light">
-              Author, Abel Dawit <br />
+          <div className="md:p-4 m-2 flex flex-col w-[50%] space-y-5 justify-around">
+            <h1 className="comic-sans-large font-bold text-6xl text-yellow-100">The Book That Started It All</h1>
+            <p className="text-yellow-100">
+              Author, Filagot Tesfaye <br />
+              </p><p className="text-yellow-100">
               Our books are the perfect supplement for your entrepreneurship or
               financial literacy programs. Schools and enrichment centers around
               the world have experienced that our products even help their
               students in
             </p>
             <div>
-              <button className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
+              <NavLink to={`/courses/book/${1}`}>
+              <button className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
                 Purchase Book
               </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -200,7 +203,7 @@ export function TabsDefault() {
       ],
     },
     {
-      label: "TOODLE",
+      label: "TODDLER",
       value: "toodle",
       booklist: [
         {
@@ -303,7 +306,7 @@ export function TabsDefault() {
                     <p>{item.incluede ? "included" : ""} </p>
                   </div>
                   <NavLink to={`/courses/book/${item.id}`}>
-                    <button className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
+                    <button className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
                       Learn More
                     </button>
                   </NavLink>

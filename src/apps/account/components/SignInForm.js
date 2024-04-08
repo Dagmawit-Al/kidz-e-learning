@@ -23,6 +23,7 @@ import {
   Checkbox,
 } from "@material-tailwind/react";
 import { setSignInOpen } from "../../../redux/slices/authDialogSlice";
+import { useNavigate } from "react-router-dom";
 
 function SignInForm({
   openModal,
@@ -32,6 +33,9 @@ function SignInForm({
   handleOpenSignUp,
 }) {
   const dispatch = useDispatch();
+
+  let navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -46,6 +50,7 @@ function SignInForm({
       password: password,
     };
     loginWithUsernameAndPassword(e, data);
+    navigate("/courses");
   };
 
   const handleLoginWithGoogle = () => {
@@ -115,7 +120,7 @@ function SignInForm({
           Sign In
         </Button>
 
-        <Button className="text-black bg-[#FB9060] " onClick={handleClose}>
+        <Button className="text-black bg-[#84d4d8] " onClick={handleClose}>
           Close
         </Button>
         {/* <button onClick={handleClose}>Close</button> */}
@@ -127,7 +132,7 @@ function SignInForm({
           style={{ backgroundColor: "white" }}
           href="#!"
           role="button"
-          onClick={handleLoginWithGoogle}
+        // onClick={handleLoginWithGoogle}
         >
           <svg
             class="mr-2 h-3.5 w-3.5"

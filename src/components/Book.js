@@ -51,15 +51,15 @@ const Book = () => {
       {/* <h1 className="flex justify-center font-bold text-4xl p-4 text-buttoncolor ">
         KidsLearning
       </h1> */}
-      <div className="h-screen m-4 sm:flex flex-col h-[700px]">
+      <div className="h-screen m-4 sm:flex flex-col h-[700px] mt-20">
         <div className="sm:flex justify-around">
           <img
             className="object-cover sm:w-[25%] h-[100%] object-cover sm:w-[50%] md:w-[50%] lg:w-[25%]"
             src={book}
             alt="bookimage"
           />
-          <div className="sm:w-[50%] flex flex-col items-start">
-            <h1 className="sm:text-7xl font-bold w-[75%] ">
+          <div className="sm:w-[40%] flex flex-col items-start">
+            <h1 className="comic-sans-large text-yellow-100 font-bold w-[100%] ">
               Real World Money Lessons
             </h1>
             <div className="sm:photo-wrapper p-2 flex items-center border-t-2 w-full">
@@ -70,11 +70,11 @@ const Book = () => {
                   alt="John Doe"
                 />
                 <div className="sm:p-4">
-                  <h3 class="text-center sm:text-center text-xl text-gray leading-8">
-                    Seble Doez
+                  <h3 class="text-yellow-100 text-center sm:text-center text-xl text-gray leading-8">
+                    Filagot Tesfaye
                   </h3>
-                  <p className="text-center text-xs sm:text-center">
-                    Author, Photographer
+                  <p className="text-yellow-100 text-center text-xs sm:text-center">
+                    Author
                   </p>
                 </div>
               </div>
@@ -97,16 +97,16 @@ const Book = () => {
               {false ? (
                 <button
                   onClick={handleStartCourses}
-                  className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                  className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
                 >
-                  Start Courses
+                  Go To Course
                 </button>
               ) : (
                 <button
                   onClick={handlePurchase}
-                  className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+                  className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
                 >
-                  Purchase Courses
+                  Purchase Course
                 </button>
               )}
             </div>

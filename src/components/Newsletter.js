@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import firebase from "firebase/compat/app"
 import { db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
@@ -19,16 +18,10 @@ function Newsletter() {
     } else {
       setIsEmailValid(true);
       //add to firebase
-      // const time = serverTimestamp()
       const docRef = addDoc(collection(db, "emails"), {
         email: email,
         createdAt: serverTimestamp()
       });
-      // db.collection("emails").add({
-        // email: email,
-        // createdAt: serverTimestamp()
-        // time: firebase.firestore.FieldValue.serverTimestamp(),
-      // });
       alert(`Thank you for subscribing with ${email}`);
       setEmail("");
     }
