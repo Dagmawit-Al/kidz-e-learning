@@ -19,6 +19,18 @@
   }
 }
 
+@media  screen and (max-width: 1366px) {
+  body p {
+    font-size: 30px;
+  }
+}
+
+@media  screen and (max-width: 1366px) {
+  body p {
+    font-size: 30px;
+  }
+}
+
 @font-face {
   font-family: "Metavoria";
   src: local(Playfulion),
