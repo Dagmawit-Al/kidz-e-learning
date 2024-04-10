@@ -21,7 +21,7 @@ import {
 } from "../redux/slices/authDialogSlice";
 import { clearUser } from "../redux/slices/userSlice";
 import { clearPathName } from "../redux/slices/locationSlice";
-import  { useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const TOP_OFFSET = 50;
@@ -115,20 +115,16 @@ const Navbar = () => {
     // console.log("input values are", values);
   };
   return (
-    <div className="flex justify-around pt-20 w-[100%] absolute sm:w-full min-h-[70px] flex justify-between items-center absolute z-10 text-white mb-10">
-      <div className=" sm:flex items-center justify-around flex-1 fixed w-full h-[70px]">
-        <div className="flex cursor-pointer items-center ">
-          {" "}
-          <NavLink to="/" className=" sm:flex items-center">
-            <img
-              href="/"
-              src={logoImage}
-              alt="Logo"
-              className="sm:h-[190px] w-[190px] cursor-pointer rounded-full "
-            />
-          </NavLink>
-        </div>
-        <ul className="hidden  sm:flex px-4 text-black">
+    <div className="flex justify-around w-full absolute sm:w-full min-h-[70px] flex justify-between items-center absolute z-10 text-white mb-10">      <div className="container mx-auto flex justify-between items-center">
+      <div className="flex items-center">
+        <NavLink to="/">
+          <img
+            src={logoImage}
+            alt="Logo"
+            className="h-190 w-190 sm:h-[190px] w-[190px] rounded-full mr-4"
+          />
+        </NavLink>
+        <ul className="hidden md:flex space-x-8">
           <li>
             <NavLink to="/" className="bubblegum-sans-link text-white">
               {t('home')}
@@ -155,48 +151,45 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
-        <div className=" sm:mr-2 ">
-          {user && firebaseUser ? (
+      </div>
+      <div className="flex items-center">
+        {user && firebaseUser ? (
+          <button
+            onClick={handleLogOut}
+            className="btn outline-button border rounded-2xl text-white"
+          >
+            {t('logOut')}
+          </button>
+        ) : (
+          <>
             <button
-              onClick={handleLogOut}
-              className="btn outline-button border rounded-2xl hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
+              onClick={handleSignIn}
+              className="btn outline-button border rounded-2xl text-white"
             >
-              {t('logOut')}
+              {t('signIn')}
             </button>
-          ) : (
-            <>
-              <button
-                onClick={handleSignIn}
-                className="btn outline-button border rounded-2xl bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
-              >
-                {t('signIn')}
-              </button>
-              <button
-                onClick={handleSignUp}
-                className="btn outline-button border rounded-2xl bg-button hover:bg-middlesection text-black hover:text-black py-2 px-2  hover:border-black rounded "
-              >
-                {t('signUp')}
-              </button>
-            </>
-          )}
+            <button
+              onClick={handleSignUp}
+              className="btn outline-button border rounded-2xl text-white"
+            >
+              {t('signUp')}
+            </button>
+          </>
+        )}
+        <div className="md:hidden">
+          <FaBars
+            size={20}
+            className="text-white cursor-pointer"
+            onClick={handleNavClick}
+          />
         </div>
       </div>
-
-      <div className="flex justify-evenly items-center">
-        {/* Hamburger Icon */}
-
-        <div
-          onClick={handleNavClick}
-          className="sm:hidden z-10 text-black absolute right-0"
-        >
-          <FaBars size={20} className="mr-4 cursor-pointer" />
-        </div>
-        {/* Hamburger Menu */}
-        <div
+    </div>
+    <div
           onClick={handleNavClick}
           className={
             nav
-              ? "overflow-y-hidden md:hidden ease-in duration-300 absolute text-black left-0 w-full top-0 h-screen bg-logo/80 px-4 py-7 flex flex-col"
+              ? "overflow-y-hidden md:hidden ease-in duration-300 absolute text-black left-0 w-full top-0 h-screen bg-logo/80 px-4 py-7 mt-5 flex flex-col"
               : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
           }
         >
@@ -215,8 +208,32 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
-      {/* <Modal /> */}
+      {/* {nav && (
+        <div className="flex justify-evenly items-center md:hidden  ">
+          <ul className="space-y-4">
+            <li>
+              <NavLink to="/storys" onClick={handleNavClick}>
+                {t('ourStory')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/blogs" onClick={handleNavClick}>
+                {t('blog')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/courses" onClick={handleNavClick}>
+                {t('courses')}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/programs" onClick={handleNavClick}>
+                {t('events')}
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      )} */}
     </div>
   );
 };

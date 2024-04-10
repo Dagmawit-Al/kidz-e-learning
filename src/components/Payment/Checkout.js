@@ -48,7 +48,7 @@ export default function Checkout() {
   const [cardNumber, setCardNumber] = React.useState("");
   const [cardExpires, setCardExpires] = React.useState("");
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const handlePayment = () => {
     console.log("location pathname", location.pathname);
@@ -66,17 +66,18 @@ export default function Checkout() {
           className="sm:h-[100px] w-[100px] cursor-pointer rounded-full "
         />
       </NavLink> */}
-      <div className="flex flex-row pt-28">
+      <div className="flex flex-col md:flex-row items-center pt-28">
         <PaymentDetail />
-        <div className="flex flex-row w-full items-center justify-evenly">
-          <Telebirr handlePayment={handlePayment} />;
+        <div className="flex flex-col sm:flex-row w-full items-center justify-evenly mt-8 sm:mt-0">
+          <Telebirr handlePayment={handlePayment} />
           {/* <Cards handlePayment={handlePayment} />; */}
-          <div className="flex flex-col h-full  w-[35%]">
-            <Apollo />
+          <div className="flex flex-col sm:flex-row sm:w-[35%] mt-8 sm:mt-0">
+            {/* <Apollo /> */}
             <Commercial />
           </div>
         </div>
       </div>
+
     </>
   );
 }

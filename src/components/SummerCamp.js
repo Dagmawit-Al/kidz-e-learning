@@ -1,6 +1,6 @@
 import React from "react";
 import { TERipple } from "tw-elements-react";
-import girl from "../assets/images/img-girl.png";
+import girl from "../assets/images/camp.png";
 import { NavLink } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
@@ -12,34 +12,34 @@ function SummerCamp() {
     navigate("/camp");
   };
   return (
-    <section className=" md:flex flex-col items-center  p-8 space-x-20">
+    <section className="relative md:flex flex-col items-center p-8 space-x-20">
+      {/* 'Coming soon' banner */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center bg-yellow-500 text-white font-bold px-4 py-2 rounded z-10">
+        Coming soon
+      </div>
+
       <div className="grid grid-rows-3 grid-flow-col gap-4">
-        <h2 className="mystery-quest-header mb-2 mt-0 text-4xl font-medium leading-tight text-white">
+        <h2 className="mystery-quest-header mb-2 mt-0 text-4xl font-medium leading-tight text-white text-center md:text-left">
           Join Our Summer Camp!
         </h2>
-        <div className="col-span-2 ...">
-          <h4 className="bubblegum-sans-subheader mb-2 mt-0 text-1xl font-small leading-tight text-white">
+        <div className="col-span-2">
+          <h4 className="bubblegum-sans-subheader mb-2 mt-0 text-1xl font-small leading-tight text-white text-center md:text-left">
             "I can'ts" become "I cans" when you hit summer camp. <br /> Learn
             new things this summer at camp. <br /> Dive into your passion at
             summer camp.
           </h4>
         </div>
-        <div className="col-span-2 ...">
+        {/* <div className="col-span-2 flex justify-center md:justify-start">
           <NavLink to="/camp">
             <TERipple rippleColor="light">
-              <button
-                onClick={handleLearnMoreSummerCamp}
-                // className="bubblegum-sans-subheader bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
-                href="#programs"
-                className="bubblegum-sans-subheader bg-[#FB9060] text-white"
-              >
+              <button className="bubblegum-sans-subheader bg-[#FB9060] text-white py-2 px-4 rounded">
                 Learn More
               </button>
             </TERipple>
           </NavLink>
-        </div>
-        <div className="row-span-3 ...">
-          <img src={girl} className="" alt="" />
+        </div> */}
+        <div className="row-span-3 flex justify-center items-center md:justify-end">
+          <img src={girl} width={300} height={300} alt="" />
         </div>
       </div>
       <div className="inline-flex items-center justify-center w-full pt-10">
@@ -50,7 +50,7 @@ function SummerCamp() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="yellow"
-            className="w-24 h-25"
+            className="w-24 h-24"
           >
             <path
               strokeLinecap="round"

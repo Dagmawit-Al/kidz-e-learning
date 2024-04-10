@@ -11,14 +11,16 @@ import Divider from "./Divider";
 import TobBar from "./TobBar";
 import Testimony from "./Testimony";
 import Description from "./Description";
+import MentorableVideo from "./MentorableVideo";
 
 function Home() {
   return (
-    <div className="w-[100%] sm:flex flex-col">
+    <div className="w-full sm:flex flex-col">
       <TobBar />
       {/* <Navbar /> */}
-      <div className="space-y-20 ">
-        <Hero />
+      <div className="space-y-20">
+        <Hero className="ml-20 md:m-10" />
+        {/* <MentorableVideo /> */}
         <Courses />
         <Blogs />
         <Description />
