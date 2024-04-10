@@ -82,7 +82,7 @@ function Newsletter() {
             <div className="mx-auto max-w-screen-sm text-sm text-center text-black newsletter-form-footer dark:text-gray-300 pt-5">
               We care about the protection of your data.{" "}
               <a
-                href="#"
+                href=""
                 className="font-medium text-primary-600 dark:text-primary-500 hover:underline"
               >
                 Read our Privacy Policy

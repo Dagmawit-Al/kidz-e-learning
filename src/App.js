@@ -24,6 +24,7 @@ import Login from "./apps/account/components/Login";
 import Blog2 from "./components/Details/Blog2";
 import Blog3 from "./components/Details/Blog3";
 import Blog4 from "./components/Details/Blog4";
+import OurStory from "./components/OurStory";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             <Navbar />
             <Routes>
               <Route exact path="/" Component={Home} />
+              <Route exact path="/story" Component={OurStory} />
               <Route exact path="/blogs" Component={BlogsDetail} />
               <Route exact path="/programs" Component={ProgramsDetail} />
               <Route
@@ -73,9 +75,21 @@ const App = () => {
               <Route exact path="/book/:bookId/checkout" Component={Checkout} />
 
               <Route exact path="blogs/fullBlog" Component={FullBlog} />
+              <Route exact path="blogs/blog2" Component={Blog2} />
+              <Route exact path="blogs/blog3" Component={Blog3} />
+              <Route exact path="blogs/blog4" Component={Blog4} />
               <Route exact path="blogs/fullBlog/blog2" Component={Blog2} />
               <Route exact path="blogs/fullBlog/blog3" Component={Blog3} />
               <Route exact path="blogs/fullBlog/blog4" Component={Blog4} />
+              <Route exact path="blogs/blog2/fullBlog" Component={FullBlog} />
+              <Route exact path="blogs/blog2/blog3" Component={Blog3} />
+              <Route exact path="blogs/blog2/blog4" Component={Blog4} />
+              <Route exact path="blogs/blog3/fullBlog" Component={FullBlog} />
+              <Route exact path="blogs/blog3/blog2" Component={Blog2} />
+              <Route exact path="blogs/blog3/blog4" Component={Blog4} />
+              <Route exact path="blogs/blog4/fullBlog" Component={FullBlog} />
+              <Route exact path="blogs/blog4/blog2" Component={Blog2} />
+              <Route exact path="blogs/blog4/blog3" Component={Blog3} />
               <Route exact path="/login" Component={Login} />
 
               <Route

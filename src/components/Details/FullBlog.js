@@ -6,6 +6,10 @@ import Footer from "../Footer";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Blog2 from "./Blog2";
+import blog1 from "../../assets/images/Blog1.jpg";
+import blog2 from "../../assets/images/Blog2.jpg";
+import blog3 from "../../assets/images/Blog3.jpg";
+import profile from "../../assets/images/Filagot pic.jpg";
 
 const FullBlog = () => {
   let navigate = useNavigate();
@@ -54,23 +58,22 @@ const FullBlog = () => {
                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                   <img
                     className="mr-4 w-24 h-24 rounded-full"
-                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                    alt="Jese Leos"
+                    src={profile}
                   />
                   <div>
                     <a
                       href="#"
                       rel="author"
-                      className="text-xl font-bold text-yellow-100 dark:text-white"
+                      className="text-md md:text-xl font-bold text-yellow-100 dark:text-white"
                     >
                       Filagot Tesfaye
                     </a>
-                    <p className="text-base text-white dark:text-white">
-                      Graphic Designer, educator & CEO Flowbite
+                    <p className="text-sm md:text-xl text-base text-white dark:text-white">
+                      Entrepreneur, Engineer & International Advisor
                     </p>
-                    <p className="text-base text-white dark:text-white">
+                    <p className="text-sm md:text-xl text-base text-white dark:text-white">
                       <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                        Apr. 8, 2024
+                        Apr. 10, 2024
                       </time>
                     </p>
                   </div>
@@ -83,9 +86,9 @@ const FullBlog = () => {
 
             <figure className="mb-6">
               <img
-                src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png"
+                src={blog1}
                 alt=""
-                className="w-full"
+                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
               />
             </figure>
             <div className="space-y-6 text-lg">
@@ -577,7 +580,7 @@ const FullBlog = () => {
             <article className="max-w-xs mx-auto">
               <a href="#">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png"
+                  src={blog2}
                   className="mb-5 rounded-lg"
                   alt="Image 1"
                 />
@@ -594,13 +597,13 @@ const FullBlog = () => {
                 onClick={goToBlog2}
                 className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
               >
-                Read in 2 minutes
+                Read in 3 minutes
               </button>
             </article>
             <article className="max-w-xs mx-auto">
               <a href="#">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-2.png"
+                  src={blog3}
                   className="mb-5 rounded-lg"
                   alt="Image 2"
                 />
@@ -617,13 +620,13 @@ const FullBlog = () => {
                 onClick={goToBlog3}
                 className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
               >
-                Read in 12 minutes
+                Read in 3 minutes
               </button>
             </article>
             <article className="max-w-xs mx-auto">
               <a href="#">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-3.png"
+                  src={blog1}
                   className="mb-5 rounded-lg"
                   alt="Image 3"
                 />
@@ -640,7 +643,7 @@ const FullBlog = () => {
                 onClick={goToBlog4}
                 className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline"
               >
-                Read in 8 minutes
+                Read in 5 minutes
               </button>
             </article>
           </div>

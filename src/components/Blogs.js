@@ -1,7 +1,7 @@
 import React from "react";
-import blogimage1 from "../assets/images/blogimage1.jpg";
-import blogimage2 from "../assets/images/blogimage2.jpg";
-import blogimage3 from "../assets/images/blogimage3.jpg";
+import blogimage1 from "../assets/images/Blog1.jpg";
+import blogimage2 from "../assets/images/Blog2.jpg";
+import blogimage3 from "../assets/images/Blog3.jpg";
 import BlogBody from "../container/BlogBody";
 
 const Blogs = () => {
@@ -10,19 +10,19 @@ const Blogs = () => {
       src: blogimage1,
       date: Date.now(),
       description:
-        "Kids and Intellectual Property: A Teaching Guide for Parents of Kidpreneurs",
+        "Harnessing Electronics for Productivity and Creativity",
     },
     {
       src: blogimage2,
       date: Date.now(),
       description:
-        "The Psychology of Entrepreneurship for Kids: Fostering a Growth Mindset",
+        "Entrepreneurship: A Path to Economic Empowerment in Developing Countries",
     },
     {
       src: blogimage3,
       date: Date.now(),
       description:
-        "STEM and Entrepreneurship: How Kidpreneurs are Leading the Way",
+        "Why Kids Should Learn About Entrepreneurship and Business Early On",
     },
   ];
   return (

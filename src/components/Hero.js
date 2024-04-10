@@ -3,24 +3,28 @@ import { NavLink } from "react-router-dom";
 import background from "../assets/images/kidsImage.png";
 import btnart from "../assets/images/btn-art.png";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  
+  const handleStartCourse = () => {
+    navigate("/courses");
+  };
 
   return (
-    <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center min-h-screen m-5 p-10 md:p-3">
+    <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center min-h-screen m-7 p-10 md:p-3">
       {/* Container for the hero section into 12 columns */}
       <div className="grid md:grid-cols-12">
         {/* Hero image */}
         <div className="col-span-12 md:col-span-6 place-self-center md:ml-20">
-          <h1 className="comic-sans-large md:comic-sans-large text-xl text-yellow-100 whitespace-pre-line leading-tight">
+          <h1 className="comic-sans-hero text-yellow-100 whitespace-pre-line leading-tight">
             {t('title')}
           </h1>
-          <h1 className="roboto-bold mt-8 text-lg text-yellow-100 whitespace-pre-line leading-snug">
-            {t('subtitle')}
-          </h1>
           <button
-            className="mt-8 btn outline-button text-white py-1 px-6 border rounded-2xl">
+            className="mt-8 btn outline-button text-white py-1 px-6 border rounded-2xl"
+            onClick={handleStartCourse}>
             {t('startCourses')}
           </button>
         </div>
