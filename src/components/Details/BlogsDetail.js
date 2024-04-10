@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import TobBar from "../TobBar";
 import Footer from "../Footer";
 import { Link, useNavigate } from "react-router-dom";
+import blog1 from "../../assets/images/Blog1.jpg";
 
 function ContentCard({ id, img, title, desc, name, date }) {
   let navigate = useNavigate();
@@ -58,7 +59,7 @@ function ContentCard({ id, img, title, desc, name, date }) {
 const contents = [
   {
     id: 1,
-    img: "https://www.material-tailwind.com/image/blog-11.jpeg",
+    img: "/images/Blog1.jpg",
     title: "Harnessing Electronics for Productivity and Creativity",
     desc: "In today's digital age, it's no secret that electronics play a significant role in the lives of children.",
     name: "Filagot Tesfaye",
@@ -66,7 +67,7 @@ const contents = [
   },
   {
     id: 2,
-    img: "https://www.material-tailwind.com/image/blog-10.jpeg",
+    img: "/images/Blog3.jpg",
     title: "Why Kids Should Learn About Entrepreneurship and Business Early On",
     desc: "In today's rapidly changing world, the importance of entrepreneurship and business education for kids cannot be overstated.",
     name: "Filagot Tesfaye",
@@ -74,7 +75,7 @@ const contents = [
   },
   {
     id: 3,
-    img: "https://demos.creative-tim.com/material-kit-pro/assets/img/examples/card-blog2.jpg",
+    img: "/images/Blog2.jpg",
     title: "Entrepreneurship: A Path to Economic Empowerment in Developing Countries",
     desc: "In the battle against poverty, entrepreneurship has emerged as a powerful tool to uplift communities and drive economic growth in developing countries.",
     name: "Filagot Tesfaye",
@@ -132,7 +133,7 @@ export function PopularBlog() {
     <>
       <Card className="flex flex-col md:flex-row bg-purple-200 w-full p-6 md:p-10 space-y-6 md:space-y-3 md:space-x-12 items-center">
         <img
-          src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/card-blog2.jpg"
+          src={blog1}
           className="rounded-2xl shadow-4-strong w-full md:w-1/2 h-auto"
           alt="Blog Image"
         />

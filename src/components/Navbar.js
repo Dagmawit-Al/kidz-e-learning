@@ -131,7 +131,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/storys" className="bubblegum-sans-link text-white">
+            <NavLink to="/story" className="bubblegum-sans-link text-white">
               {t('ourStory')}
             </NavLink>
           </li>
@@ -195,7 +195,7 @@ const Navbar = () => {
         >
           <ul className="h-full w-full text-center pt-12">
             <li className="text-2xl py-8">
-              <a href="/">Our Story</a>
+              <a href="/story">Our Story</a>
             </li>
             <li className="text-2xl py-8">
               <a href="#Blog">Blog</a>

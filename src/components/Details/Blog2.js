@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import { Typography } from "@material-tailwind/react";
 import Footer from "../Footer";
 import { useNavigate } from "react-router-dom";
+import blog2 from "../../assets/images/Blog2.jpg";
+import profile from "../../assets/images/Filagot pic.jpg";
 
 const Blog2 = () => {
     let navigate = useNavigate();
@@ -52,37 +54,36 @@ const Blog2 = () => {
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                     <img
                                         className="mr-4 w-24 h-24 rounded-full"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                        alt="Jese Leos"
+                                        src={profile}
                                     />
                                     <div>
                                         <a
                                             href="#"
                                             rel="author"
-                                            className="text-xl font-bold text-yellow-100 dark:text-white"
+                                            className="text-md md:text-xl font-bold text-yellow-100 dark:text-white"
                                         >
                                             Filagot Tesfaye
                                         </a>
-                                        <p className="text-base text-white dark:text-white">
-                                            Graphic Designer, educator & CEO Flowbite
+                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
+                                            Entrepreneur, Engineer & International Advisor
                                         </p>
-                                        <p className="text-base text-white dark:text-white">
+                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
                                             <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                                                Apr. 8, 2024
+                                                Apr. 10, 2024
                                             </time>
                                         </p>
                                     </div>
                                 </div>
                             </address>
                             <h1 className="comic-sans-medium mb-4 text-yellow-100 font-extrabold leading-tight dark:text-white">
-                                Entrepreneurship: A Path to Economic Empowerment <br/> in Developing Countries
+                                Entrepreneurship: A Path to Economic Empowerment <br /> in Developing Countries
                             </h1>
                         </header>
                         <figure className="mb-6">
                             <img
-                                src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png"
+                                src={blog2}
                                 alt=""
-                                className="w-full"
+                                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
                             />
                         </figure>
                         <div className="space-y-6 text-lg">

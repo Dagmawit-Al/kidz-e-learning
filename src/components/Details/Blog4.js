@@ -4,6 +4,8 @@ import Navbar from "../Navbar";
 import { Typography } from "@material-tailwind/react";
 import Footer from "../Footer";
 import { useNavigate } from "react-router-dom";
+import blog4 from "../../assets/images/Blog1.jpg";
+import profile from "../../assets/images/Filagot pic.jpg";
 
 const Blog4 = () => {
     let navigate = useNavigate();
@@ -43,21 +45,20 @@ const Blog4 = () => {
                                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
                                     <img
                                         className="mr-4 w-24 h-24 rounded-full"
-                                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                        alt="Jese Leos"
+                                        src={profile}
                                     />
                                     <div>
                                         <a
                                             href="#"
                                             rel="author"
-                                            className="text-xl font-bold text-yellow-100 dark:text-white"
+                                            className="text-md md:text-xl text-xl font-bold text-yellow-100 dark:text-white"
                                         >
                                             Filagot Tesfaye
                                         </a>
-                                        <p className="text-base text-white dark:text-white">
-                                            Graphic Designer, educator & CEO Flowbite
+                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
+                                            Entrepreneur, Engineer & International Advisor
                                         </p>
-                                        <p className="text-base text-white dark:text-white">
+                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
                                             <time pubdate datetime="2022-02-08" title="February 8th, 2022">
                                                 Apr. 10, 2024
                                             </time>
@@ -65,15 +66,15 @@ const Blog4 = () => {
                                     </div>
                                 </div>
                             </address>
-                            <h1 className="comic-sans-medium mb-4 text-yellow-100 font-extrabold leading-tight dark:text-white">
+                            <h1 className="comic-sans-medium mb-10 text-yellow-100 font-extrabold leading-tight dark:text-white">
                                 ለምርታማነት እና ለፈጠራ ኤሌክትሮኒክስ መጠቀም
                             </h1>
                         </header>
                         <figure className="mb-6">
                             <img
-                                src="https://flowbite.s3.amazonaws.com/typography-plugin/typography-image-1.png"
+                                src={blog4}
                                 alt=""
-                                className="w-full"
+                                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
                             />
                         </figure>
                         <div className="space-y-6 text-lg">
@@ -109,42 +110,23 @@ const Blog4 = () => {
                                 እንዲገነቡ መንገዶችን ይሰጣሉ። ልጆች የፈጠራ ፍላጎቶቻቸውን እንዲመረምሩ እና በዲጂታል ሚዲያ ራሳቸውን እንዲገልጹ
                                 በማበረታታት፣ ሙሉ አቅማቸውን እንዲለቁ እና በአለም ላይ በጎ ተጽእኖ እንዲፈጥሩ ልናበረታታቸው እንችላለን።
                             </p>
-                            <h2 className="comic-sans-medium text-yellow-100">3. Promoting Sustainable Development</h2>
+                            <h2 className="comic-sans-medium text-yellow-100">፫. አበረታች ሥራ ፈጣሪነት</h2>
                             <p class="roboto-medium text-xl lead text-yellow-100">
-                                Entrepreneurship plays a crucial role in promoting sustainable development by
-                                addressing environmental and social challenges while fostering economic growth.
-                                In countries like Brazil, social entrepreneurs are leading initiatives to tackle
-                                issues such as poverty, inequality, and environmental degradation.
-                                One notable example is the Cooperativa Central dos Assentamentos do MST (COCAMAR),
-                                a cooperative movement in Brazil that supports landless farmers by providing training,
-                                resources, and market access to produce organic and fair-trade products.
-                                By promoting sustainable farming practices and empowering marginalized communities,
-                                initiatives like COCAMAR contribute to both economic development and environmental
-                                conservation.
+                                ኢንተርፕረነርሺፕ ህጻናት ሃሳባቸውን ወደ እውነት እንዲቀይሩ፣ ጠቃሚ ክህሎቶችን እንዲያዳብሩ እና ለህብረተሰቡ ትርጉም 
+                                ያለው አስተዋፅኦ እንዲያበረክቱ መንገድ ይሰጣል። የኢ፡ኮሜርስ መድረኮች፣ የማህበራዊ ሚዲያ ግብይት እና የመስመር ላይ 
+                                የንግድ መሳሪያዎች እየጨመሩ በመጡ ጊዜ ንግድ መጀመር ለወጣት ስራ ፈጣሪዎች የበለጠ ተደራሽ ሆኖ አያውቅም። 
+                                ልጆች የራሳቸውን የመስመር ላይ መደብሮች መክፈት፣ በእጅ የተሰሩ የእጅ ስራዎችን ወይም ዲጂታል ምርቶችን መሸጥ 
+                                እና ሌላው ቀርቶ እውቀታቸውን እና እውቀታቸውን ለሌሎች ለማካፈል የራሳቸውን የዩቲዩብ ቻናሎች ወይም ፖድካስቶች 
+                                መጀመር ይችላሉ። ሥራ ፈጣሪ አስተሳሰብን በማዳበር እና ድጋፍ እና መመሪያን በመስጠት ወላጆች እና አስተማሪዎች 
+                                በዲጂታል ዘመን እንደ ሥራ ፈጣሪነት ስኬታማ ለመሆን የሚያስፈልጋቸውን በራስ መተማመን፣ ጽናትን እና ብልሃትን 
+                                እንዲያዳብሩ መርዳት ይችላሉ።
                             </p>
-                            <h2 className="comic-sans-medium text-yellow-100">4. Creating Resilient Economies</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                Entrepreneurship cultivates resilience in developing countries by diversifying
-                                economies and reducing vulnerability to external shocks. In Rwanda, the government
-                                has prioritized entrepreneurship as a key driver of economic growth and poverty
-                                reduction following the devastating genocide in 1994. Through initiatives like the
-                                Rwanda Development Board and the Kigali Innovation City, Rwanda has fostered a
-                                vibrant startup ecosystem, attracting investment, promoting innovation, and
-                                creating opportunities for youth entrepreneurship. Today, Rwanda's resilient
-                                economy continues to grow, driven by entrepreneurship and innovation across
-                                various sectors.
-
-                            </p>
-
                             <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                Entrepreneurship holds immense potential as a tool for eradicating economic poverty in
-                                developing countries. By empowering individuals, fostering innovation, promoting
-                                sustainable development, and creating resilient economies, entrepreneurship not
-                                only provides pathways out of poverty but also cultivates prosperity and opportunity
-                                for future generations. As we continue to witness the transformative impact of
-                                entrepreneurship in countries around the world, let us support and celebrate the
-                                entrepreneurial spirit as a driving force for positive change and inclusive growth
-                                on a global scale. Together, we can build a brighter and more prosperous future for all.
+                                ኤሌክትሮኒክስ የስክሪን ጊዜን ለመቆጣጠር እና የመዝናኛዎችን አሉታዊ ተፅእኖዎች ለመቅረፍ ፈታኝ ሁኔታዎችን እንደሚያመጣ 
+                                ምንም ጥርጥር የለውም፣ ለመማር፣ ለፈጠራ እና ለስራ ፈጠራ ትልቅ እድሎችን ይሰጣሉ። ቴክኖሎጂን ከማዘናጋት ይልቅ እንደ 
+                                ማበረታቻ መሳሪያ አድርገን በመቀበል ልጆች የሕይወታቸውን ግባቸውን ለማሳካት፣ ፍላጎቶቻቸውን እንዲያሳድዱ እና በአለም ላይ 
+                                በጎ ተጽእኖን ለመፍጠር የኤሌክትሮኒክስ ሀይልን እንዲጠቀሙ ልንረዳቸው እንችላለን። ቀጣዩ ትውልድ ፈጣሪዎች፣ ፈጣሪዎች 
+                                እና ስራ ፈጣሪዎች በዲጂታል ዘመን እንዲበለጽጉ እና ለራሳቸው እና ለሌሎች ብሩህ የወደፊት ጊዜ እንዲፈጥሩ እናነሳሳ።
                             </p>
                         </div>
 

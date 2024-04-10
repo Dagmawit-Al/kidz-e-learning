@@ -13,7 +13,7 @@ function Footer() {
             <div>
               <ul className="text-black font-medium mt-4">
                 <li>
-                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
+                  <a href="/story" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     Our Story
                   </a>
                 </li>
@@ -52,14 +52,14 @@ function Footer() {
               <ul className="text-black font-medium">
                 <li className="mb-4">
                   <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
-                    E-book #1
+                    Teaser #1
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     E-book #2
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>
@@ -68,12 +68,12 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-black font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline bubblegum-sans-link text-black">
+                  <a href="" className="hover:underline bubblegum-sans-link text-black">
                     Facebook
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline bubblegum-sans-link text-black">
+                  <a href="" className="hover:underline bubblegum-sans-link text-black">
                     Twitter
                   </a>
                 </li>
@@ -85,12 +85,12 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
+                  <a href="" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     Privacy Policy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
+                  <a href="" className="hover:underline bubblegum-sans-link text-[#F7F9F3]">
                     Terms &amp; Conditions
                   </a>
                 </li>
@@ -109,7 +109,7 @@ function Footer() {
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a
-              href="#"
+              href=""
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <svg
@@ -128,7 +128,7 @@ function Footer() {
               <span className="sr-only">Facebook page</span>
             </a>
             <a
-              href="#"
+              href=""
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
               <svg

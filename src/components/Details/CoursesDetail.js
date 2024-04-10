@@ -16,7 +16,7 @@ import book7 from "../../assets/images/booki-1-1.png";
 import book8 from "../../assets/images/booki-2-1.png";
 
 import Header from "../Header";
-import middlesection from "../../assets/images/BookCover_YoungTrepTeenBizCourseJournal.png";
+import middlesection from "../../assets/images/bookCover.png";
 import { NavLink } from "react-router-dom";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { auth, db } from "../../firebase";
@@ -80,17 +80,17 @@ function CoursesDetail() {
     <div className="md:flex flex-col h-screen pt-24">
       {/* <Header /> */}
       <div className="flex justify-center items-center p-5 sm:mt-20 md:p-10">
-        <h1 className="comic-sans-medium text-yellow-100 text-center">Welcome {name}!</h1>
+        <h1 className="comic-sans-medium text-yellow-100 text-center p-10">Welcome {name}!</h1>
       </div>
 
       <div className="md:flex items-center flex-col border-t-2 w-full">
-        <div className="md:flex justify-around p-2 m-2 w-full md:w-5/6 max-w-6xl">
+        <div className="md:flex justify-around p-5 m-2 w-full md:w-5/6 max-w-6xl">
           <img
             className="object-cover w-full md:w-1/2"
             src={middlesection}
             alt="middlesectionimage"
           />
-          <div className="md:p-4 m-2 flex flex-col w-full md:w-1/2 justify-around">
+          <div className="md:p-4 m-2 flex flex-col space-y-5 w-full md:w-1/2 justify-around">
             <h1 className="comic-sans-large font-bold text-6xl text-yellow-100">The Book That Started It All</h1>
             <p className="text-base text-yellow-100">
               Author: Filagot Tesfaye <br />
@@ -113,7 +113,7 @@ function CoursesDetail() {
       </div>
 
       <div className="md:flex items-center flex-col w-full">
-        <TabsDefault />
+        {/* <TabsDefault /> */}
       </div>
     </div>
   );

@@ -164,6 +164,12 @@
   font-size: 60px;
   word-spacing: 3px;
 }
+.comic-sans-hero {
+  font-family: "ComicSans", sans-serif;
+  font-weight: 100;
+  font-size: 50px;
+  word-spacing: 3px;
+}
 
 .bubblegum-sans-link {
   font-family: "ComicSans", sans-serif;

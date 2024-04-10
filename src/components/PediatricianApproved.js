@@ -1,6 +1,6 @@
 import React from "react";
 import PopupProfile from "./PopupProfile";
-import pediatrician from "../assets/images/avatar.jpeg";
+import pediatrician from "../assets/images/DrKal.jpg";
 
 function PediatricianApproved() {
   return (
@@ -12,18 +12,20 @@ function PediatricianApproved() {
       </div>
       <div className="flex justify-center">
         <img
-          className="border-solid border-4 border-green-100 w-50 h-50 rounded-full"
+          className="border-solid border-4 border-green-100 rounded-full"
+          width={200}
+          height={200}
           src={pediatrician}
           alt=""
         />
       </div>
       <blockquote>
-        <p className="bubblegum-sans-subheader text-4xl italic font-medium text-black ">
-          "Lorem ipsum dolor sit amet. Qui dolor accusantium rem necessitatibus
-          totam sit omnis totam quo totam beatae qui praesentium facilis. Aut
-          galisum ipsa ut ipsa ratione ea Quis dolores. Qui voluptas dolor cum
-          repudiandae similique ut dolore voluptate et odio reiciendis ad
-          veritatis rerum."
+        <p className="bubblegum-sans-subheader text-4xl italic font-medium text-white ">
+          "I firmly believe that entrepreneurship education nurtures not just young minds
+          but whole individuals, fostering creativity, problem-solving skills, and resilience
+          essential for navigating life's challenges. Encouraging our children to explore
+          entrepreneurship not only ignites their potential for innovation but also empowers
+          them to shape their futures with confidence and purpose."
         </p>
         <div className="flex justify-center pt-8">
           <svg
