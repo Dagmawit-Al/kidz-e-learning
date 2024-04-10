@@ -26,6 +26,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { setUser, listUser, clearUser } from "../../redux/slices/userSlice";
+import { motion } from "framer-motion";
 
 function CoursesDetail() {
   const dispatch = useDispatch();
@@ -78,42 +79,23 @@ function CoursesDetail() {
   return (
     <div className="md:flex flex-col h-screen pt-24">
       {/* <Header /> */}
-      <div className="flex justify-center items-center p-10">
-        <h1 className="comic-sans-medium  text-yellow-100">Welcome {name}!</h1>
-        {/* <div>
-          <button
-            onClick={handleLogOut}
-            className="bubblegum-sans-subheader opacity-70 bg-buttoncolor text-black font-bold"
-          >
-            Logout
-          </button>
-        </div> */}
+      <div className="flex justify-center items-center p-5 sm:mt-20 md:p-10">
+        <h1 className="comic-sans-medium text-yellow-100 text-center">Welcome {name}!</h1>
       </div>
 
-      {/* <div className="md:flex w-full flex flex-col justify-center items-center m-4"> */}
-        {/* <img src={book1} alt="book1" /> */}
-
-        {/* <div className="flex flex-col space-y-8 items-center">
-          <h1 className="roboto-medium font-bold text-6xl text-yellow-200">Books That Empower</h1>
-          <p className="roboto-light-italic p-2 text-yellow-200">
-            Shop Children’s Books that Inspire Kids to THINK BIG
-          </p>
-        </div> */}
-
-        {/* <img src={book2} alt="book2" /> */}
-      {/* </div> */}
       <div className="md:flex items-center flex-col border-t-2 w-full">
-        <div className="md:flex justify-around p-2 m-2 w-[60%] h-[500px] ">
+        <div className="md:flex justify-around p-2 m-2 w-full md:w-5/6 max-w-6xl">
           <img
-            className="object-cover"
+            className="object-cover w-full md:w-1/2"
             src={middlesection}
             alt="middlesectionimage"
           />
-          <div className="md:p-4 m-2 flex flex-col w-[50%] space-y-5 justify-around">
+          <div className="md:p-4 m-2 flex flex-col w-full md:w-1/2 justify-around">
             <h1 className="comic-sans-large font-bold text-6xl text-yellow-100">The Book That Started It All</h1>
-            <p className="text-yellow-100">
-              Author, Filagot Tesfaye <br />
-              </p><p className="text-yellow-100">
+            <p className="text-base text-yellow-100">
+              Author: Filagot Tesfaye <br />
+            </p>
+            <p className="roboto-medium text-xl text-yellow-100">
               Our books are the perfect supplement for your entrepreneurship or
               financial literacy programs. Schools and enrichment centers around
               the world have experienced that our products even help their
@@ -121,15 +103,16 @@ function CoursesDetail() {
             </p>
             <div>
               <NavLink to={`/courses/book/${1}`}>
-              <button className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
-                Purchase Book
-              </button>
+                <button className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2 hover:border-black rounded">
+                  Purchase Book
+                </button>
               </NavLink>
             </div>
           </div>
         </div>
       </div>
-      <div className=" md:flex items-center flex-col w-full">
+
+      <div className="md:flex items-center flex-col w-full">
         <TabsDefault />
       </div>
     </div>
@@ -271,13 +254,10 @@ export function TabsDefault() {
   ];
 
   return (
-    <Tabs
-      className="md:w-[75%] border-t-2 mt-4 items-center flex flex-col h-screen"
-      value="all"
-    >
+    <Tabs className="md:w-[75%] border-t-2 mt-4 flex flex-col h-full overflow-y-auto">
       {/* {data.map((item, index) => {
-        return <BookList item={item} key={index} />;
-      })} */}
+    return <BookList item={item} key={index} />;
+  })} */}
       <TabsHeader className="p-4">
         {data.map(({ label, value }) => (
           <Tab key={value} value={value}>
@@ -285,37 +265,33 @@ export function TabsDefault() {
           </Tab>
         ))}
       </TabsHeader>
-      <TabsBody>
+      <TabsBody className="flex-grow">
         {data.map(({ value, booklist }) => (
-          <TabPanel
-            key={value}
-            value={value}
-            className="md:flex w-[100%] flex-wrap justify-evenly"
-          >
-            {booklist?.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="md:flex w-[25%] h-[25%] flex-col m-2 p-2 items-center hover:scale-110 "
-                >
-                  <img src={item.src} alt="imageindex" />
-                  <h1 className="font-bold text-xl">{item.des} </h1>
-
-                  <div className="flex p-4">
-                    <p>{item.age}&nbsp; </p> <p>{item.page}&nbsp; </p>
-                    <p>{item.incluede ? "included" : ""} </p>
-                  </div>
-                  <NavLink to={`/courses/book/${item.id}`}>
-                    <button className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded ">
-                      Learn More
-                    </button>
-                  </NavLink>
+          <TabPanel key={value} value={value} className="flex flex-wrap justify-center">
+            {booklist?.map((item, index) => (
+              <div
+                key={index}
+                className="md:w-[25%] w-full md:h-[25%] h-auto flex flex-col m-2 p-2 items-center hover:scale-110"
+              >
+                <img src={item.src} alt="imageindex" />
+                <h1 className="font-bold text-xl">{item.des}</h1>
+                <div className="flex p-4">
+                  <p className="roboto-regular text-sm">{item.age}&nbsp;</p>
+                  <p className="roboto-regular text-sm">{item.page}&nbsp;</p>
+                  <p className="roboto-regular text-sm">{item.incluede ? "included" : ""}</p>
                 </div>
-              );
-            })}
+                <NavLink to={`/courses/book/${item.id}`}>
+                  <button className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2 hover:border-black rounded">
+                    Learn More
+                  </button>
+                </NavLink>
+              </div>
+            ))}
           </TabPanel>
         ))}
       </TabsBody>
     </Tabs>
+
+
   );
 }

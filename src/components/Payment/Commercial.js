@@ -11,7 +11,7 @@ function Commercial() {
           alt="bookimage"
         />
         <div className="sm:p-4">
-          <h3 class="text-center sm:text-center text-xl text-white leading-8">
+          <h3 className="text-center sm:text-center text-xl text-white leading-8">
             Pay with Commercial Bank
           </h3>
           <p className="text-center text-xs sm:text-center text-white">
@@ -20,6 +20,7 @@ function Commercial() {
         </div>
       </div>
     </div>
+
   );
 }
 

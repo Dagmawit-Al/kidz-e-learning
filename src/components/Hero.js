@@ -6,17 +6,17 @@ import { useTranslation } from "react-i18next";
 
 const Hero = () => {
   const { t } = useTranslation();
-  const content = 'This is where I place my content';
+
   return (
-    <div className="container max-w-screen-xl mx-auto flex justify-center items-center min-h-screen m-5">
+    <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center min-h-screen m-5 p-10 md:p-3">
       {/* Container for the hero section into 12 columns */}
       <div className="grid md:grid-cols-12">
         {/* Hero image */}
-        <div className="col-span-6 place-self-center ml-8">
-          <h1 className="mystery-quest-header text-5xl text-yellow-100 whitespace-pre-line leading-tight">
+        <div className="col-span-12 md:col-span-6 place-self-center md:ml-20">
+          <h1 className="comic-sans-large md:comic-sans-large text-xl text-yellow-100 whitespace-pre-line leading-tight">
             {t('title')}
           </h1>
-          <h1 className="roboto-medium mt-8 text-lg text-yellow-100 whitespace-pre-line leading-snug">
+          <h1 className="roboto-bold mt-8 text-lg text-yellow-100 whitespace-pre-line leading-snug">
             {t('subtitle')}
           </h1>
           <button
@@ -25,8 +25,8 @@ const Hero = () => {
           </button>
         </div>
         {/* Hero content */}
-        <div className="col-span-6 place-self-center">
-          <img src={background} alt="Kids" />
+        <div className="col-span-12 md:col-span-6 place-self-center mt-4 md:mt-0">
+          <img src={background} alt="Kids" className="max-w-full" />
         </div>
       </div>
     </div>

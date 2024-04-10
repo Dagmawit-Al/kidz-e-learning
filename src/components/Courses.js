@@ -77,53 +77,52 @@ const Courses = () => {
     navigate("/courses");
   };
 
-  const dupSlides = [...courseData, ...courseData];
+  const dupSlides = [...courseData];
   return (
 
-    <div
-      id="products"
-      className="pt-10 space-y-8 md:flex flex-col items-center space-y-8"
-    >
-      <h1 className="mystery-quest-header w-full text-yellow-100 text-center text-4xl font-bold font-header">
+    <div id="products" className="pt-10 space-y-8 md:flex flex-col items-center space-y-8">
+      <h1 className="mystery-quest-header w-full text-yellow-100 text-center text-4xl font-bold font-header leading-tight md:leading-normal">
         {t('shopTitle')}
       </h1>
       <p className="text-xl text-yellow-100 font-paragraph m-5">
-      {t('shopSubtitle')}
+        {t('shopSubtitle')}
       </p>
-      {/* <CourseList data={courseData} /> */}
 
-      <motion.div
-      className="flex"
-      animate={{
-        x: ['0%', '-100%'],
-        transition: {
-          ease: 'linear',
-          duration: 15,
-          repeat: Infinity,
-        }
-      }}
-    >
-      {dupSlides.map((slide, index) => (
-        <div key={index} className="flex-shrink-0" style={{ width: `${100 / courseData.length}%` }}>
-          {/* <div className="flex items-center justify-center h-full py-4 border-y border-textColorPrimary"> */}
-          <div className="flex items-center justify-center h-full py-4 border-y border-textColorPrimary">
-
-          <Course key={index + slide.description} data={slide} />
+      {/* Course cards with motion animation */}
+      {/* <motion.div
+        className="flex flex-wrap justify-center"
+        animate={{
+          x: ['0%', '-100%'],
+          transition: {
+            ease: 'linear',
+            duration: 15,
+            repeat: Infinity,
+          }
+        }}
+      > */}
+        <div className="flex flex-col md:flex-row">
+        {dupSlides.map((slide, index) => (
+          <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4">
+            <Course key={index + slide.description} data={slide} />
           </div>
+        ))}
         </div>
-      ))}
-    </motion.div>
+      {/* </motion.div> */}
 
-      <button
-        onClick={handleStartCourse}
-        className="btn outline-button bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-2  hover:border-black rounded "
-      >
-        {t('startCourses')}
-      </button>
+      {/* Start courses button */}
+      <div className="flex justify-center">
+        <button
+          onClick={handleStartCourse}
+          className="btn outline-button bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4 rounded"
+        >
+          {t('startCourses')}
+        </button>
+      </div>
 
-      <div class="inline-flex items-center justify-center w-full my-8 pt-10">
-        <hr class="w-64 h-1 my-8 bg-[#7E60CC] border-0 rounded dark:bg-[#E5588D]" />
-        <div class="absolute px-4 -translate-x-1/2 bg-[#7E60CC] left-1/2 dark:bg-gray-900">
+      {/* Separator */}
+      <div className="relative w-full my-8 pt-10">
+        <hr className="w-full h-1 my-8 bg-white border-0 rounded dark:bg-[#E5588D]" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 dark:bg-gray-900 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

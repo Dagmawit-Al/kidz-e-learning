@@ -21,6 +21,9 @@ import SummerCampDetail from "./components/Details/SummerCampDetail";
 import SignInDialog from "./apps/account/components/SignInDialog";
 import PrivateRoutes from "./apps/account/components/PrivateRoute";
 import Login from "./apps/account/components/Login";
+import Blog2 from "./components/Details/Blog2";
+import Blog3 from "./components/Details/Blog3";
+import Blog4 from "./components/Details/Blog4";
 
 const App = () => {
   return (
@@ -70,6 +73,9 @@ const App = () => {
               <Route exact path="/book/:bookId/checkout" Component={Checkout} />
 
               <Route exact path="blogs/fullBlog" Component={FullBlog} />
+              <Route exact path="blogs/fullBlog/blog2" Component={Blog2} />
+              <Route exact path="blogs/fullBlog/blog3" Component={Blog3} />
+              <Route exact path="blogs/fullBlog/blog4" Component={Blog4} />
               <Route exact path="/login" Component={Login} />
 
               <Route

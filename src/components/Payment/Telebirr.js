@@ -44,27 +44,24 @@ const Telebirr = ({ handlePayment }) => {
 
   console.log("userFirebase", userFirebase);
   return (
-    <div className="w-[45%] flex items-center">
-      <Card className="items-center w-full h-[100%] bg-gray m-4">
+    <div className="w-full sm:w-[45%] flex items-center justify-center">
+      <Card className="w-full h-full bg-gray m-4">
         <CardHeader
           color="gray"
           floated={false}
           shadow={true}
-          className="m-4 grid place-items-center px-4 py-8 text-center w-[75%]"
+          className="m-4 grid place-items-center px-4 py-8 text-center"
         >
           <div className="mb-4 h-20 p-6 text-white">
-            <img alt="telebirr " className="w-14 " src={telebirr} />
+            <img alt="telebirr " className="w-14" src={telebirr} />
           </div>
-          <Typography className="w-full" variant="h5" color="white">
+          <Typography variant="h5" color="white">
             Checkout
           </Typography>
         </CardHeader>
         <CardBody>
           <Tabs value={type} className="overflow-visible">
             <TabsHeader className="relative z-0 ">
-              {/* <Tab className="font-bold text-white" value="Telebirr">
-                Pay with Telebirr
-              </Tab> */}
               <Typography className="font-bold text-white flex justify-center w-full">
                 Pay with Telebirr
               </Typography>
@@ -76,20 +73,19 @@ const Telebirr = ({ handlePayment }) => {
                     <Typography
                       variant="small"
                       color="blue-gray"
-                      className="mb-2 font-medium text-white "
+                      className="mb-2 font-medium text-white"
                     >
                       Phone Number
                     </Typography>
                     <input
                       name="phonenumber"
                       id="phone"
-                      class="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       placeholder="0912121212"
                       value={phoneNumber}
                       onChange={(event) => setPhoneNumber(event.target.value)}
                     />
                   </div>
-
                   <div className="my-3">
                     <Typography
                       variant="small"
@@ -102,12 +98,11 @@ const Telebirr = ({ handlePayment }) => {
                       type="email"
                       name="email"
                       id="email"
-                      class="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       placeholder="name@gmail.com"
                       value={email}
                       onChange={(event) => setEmail(event.target.value)}
                     />
-
                     <Typography
                       variant="small"
                       color="blue-gray"
@@ -119,7 +114,7 @@ const Telebirr = ({ handlePayment }) => {
                       type="name"
                       name="name"
                       id="name"
-                      class="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       placeholder="Name Last"
                       value={name}
                       onChange={(event) => setName(event.target.value)}
@@ -135,9 +130,9 @@ const Telebirr = ({ handlePayment }) => {
                   <Typography
                     variant="small"
                     color="gray"
-                    className="mt-2 flex items-center justify-center gap-2 font-medium opacity-60 text-white"
+                    className="mt-2 flex items-center justify-center gap-2 font-medium opacity-60 text-center text-white"
                   >
-                    <LockClosedIcon className="-mt-0.5 h-4 w-4 text-white" />{" "}
+                    <LockClosedIcon className="-mt-0.5 h-4 w-4 text-white" />
                     Payments are secure and encrypted
                   </Typography>
                 </form>

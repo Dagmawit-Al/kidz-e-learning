@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 
-import pdfFile from "../../utils/pdf/Biz_Kids_Lesson_112.pdf";
+import pdfFile from "../../utils/pdf/Ebook1.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 function PdfViewr() {
