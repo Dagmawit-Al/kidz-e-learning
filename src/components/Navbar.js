@@ -198,13 +198,13 @@ const Navbar = () => {
               <a href="/story">Our Story</a>
             </li>
             <li className="text-2xl py-8">
-              <a href="#Blog">Blog</a>
+              <a href="/blogs">Blog</a>
             </li>
             <li className="text-2xl py-8">
               <NavLink to="/courses">Courses</NavLink>
             </li>
             <li className="text-2xl py-8">
-              <a href="#Programs">Programs</a>
+              <a href="/programs">Programs</a>
             </li>
           </ul>
         </div>

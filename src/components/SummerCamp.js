@@ -12,14 +12,14 @@ function SummerCamp() {
     navigate("/camp");
   };
   return (
-    <section className="relative md:flex flex-col items-center p-8 space-x-20">
+    <section className="relative flex flex-col items-center p-8 space-y-8 md:flex-col md:items-center md:space-x-20 md:space-y-10">
       {/* 'Coming soon' banner */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full text-center bg-yellow-500 text-white font-bold px-4 py-2 rounded z-10">
+      <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1 md:transform -translate-y-1/8 w-full text-center bg-yellow-500 text-white font-bold px-4 py-2 rounded z-10">
         Coming soon
       </div>
 
-      <div className="grid grid-rows-3 grid-flow-col gap-4">
-        <h2 className="mystery-quest-header mb-2 mt-0 text-4xl font-medium leading-tight text-white text-center md:text-left">
+      <div className="flex flex-col justify-center items-center md:w-2/3">
+        <h2 className="mystery-quest-header mb-2 mt-0 md:pb-5 text-4xl font-medium leading-tight text-white text-center md:text-left">
           Join Our Summer Camp!
         </h2>
         <div className="col-span-2">
@@ -29,28 +29,31 @@ function SummerCamp() {
             summer camp.
           </h4>
         </div>
-        {/* <div className="col-span-2 flex justify-center md:justify-start">
-          <NavLink to="/camp">
-            <TERipple rippleColor="light">
-              <button className="bubblegum-sans-subheader bg-[#FB9060] text-white py-2 px-4 rounded">
-                Learn More
-              </button>
-            </TERipple>
-          </NavLink>
-        </div> */}
-        <div className="row-span-3 flex justify-center items-center md:justify-end">
-          <img src={girl} width={300} height={300} alt="" />
+        <div className="flex justify-center md:justify-start">
+          {/* <NavLink to="/camp">
+        <TERipple rippleColor="light">
+          <button className="bubblegum-sans-subheader bg-[#FB9060] text-white py-2 px-4 rounded">
+            Learn More
+          </button>
+        </TERipple>
+      </NavLink> */}
         </div>
       </div>
-      <div className="inline-flex items-center justify-center w-full pt-10">
-        <div className="absolute px-4 -translate-x-1/2 left-1/2">
+
+      <div className="hidden md:block md:w-1/3">
+        <div className="flex justify-center items-center">
+          {/* <img src={girl} width={300} height={300} alt="" /> */}
+        </div>
+      </div>
+
+      <div className="inline-flex items-center justify-center w-full pt-10">        <div className="px-4">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="yellow"
-            className="w-24 h-24"
+            className="w-24 h-24 mx-auto md:mx-0"
           >
             <path
               strokeLinecap="round"
