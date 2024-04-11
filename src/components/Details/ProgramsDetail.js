@@ -4,6 +4,7 @@ import React from "react";
 import green from "../../assets/images/green1.JPG";
 import second from "../../assets/images/green2.JPG";
 import ethiopia from "../../assets/images/Ethiopia.png"
+import comingSoon from "../../assets/images/comingSoon.png"
 import TobBar from "../TobBar";
 
 function ProgramsDetail() {
@@ -73,11 +74,11 @@ function ProgramsDetail() {
               SummerBiz Startup Camp!
             </h1>
             <div className="flex flex-col space-y-8 md:flex-row md:space-x-10">
-              <div className="h-96 w-full md:w-1/2">
-                <Carousel className="h-full rounded-xl">
-                  <img src={green} alt="image 1" className="h-full object-cover" />
-                  <img src={second} alt="image 2" className="h-full object-cover" />
-                </Carousel>
+              <div className="h-auto w-full md:w-1/2">
+                {/* <Carousel className="h-full rounded-xl"> */}
+                  <img src={comingSoon} alt="image 1" className="h-full w-full md:h-auto md:w-full rounded-xl md:mt-10 object-cover" />
+                  {/* <img src={second} alt="image 2" className="h-full object-cover" /> */}
+                {/* </Carousel> */}
               </div>
               <div className="flex flex-col space-y-8 w-full md:w-1/2">
                 <p className="bubblegum-sans-subheader">
