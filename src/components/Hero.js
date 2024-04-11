@@ -14,12 +14,12 @@ const Hero = () => {
   };
 
   return (
-    <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center min-h-screen m-7 p-10 md:p-3">
+    <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center min-h-screen m-7 p-3 md:p-3">
       {/* Container for the hero section into 12 columns */}
       <div className="grid md:grid-cols-12">
         {/* Hero image */}
         <div className="col-span-12 md:col-span-6 place-self-center md:ml-20">
-          <h1 className="comic-sans-hero text-yellow-100 whitespace-pre-line leading-relaxed">
+          <h1 className="comic-sans-medium md:text-5xl text-yellow-100 whitespace-pre-line md:leading-relaxed">
             {t('title')}
           </h1>
           <button

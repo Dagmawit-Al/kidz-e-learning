@@ -6,7 +6,7 @@ function PediatricianApproved() {
   return (
     <figure className="max-w-screen-md mx-auto text-center p-8 space-y-8">
       <div className="flex flex-row justify-center items-start space-x-5">
-        <h2 className="mystery-quest-header m-0 text-white md:whitespace-nowrap">
+        <h2 className="comic-sans-hero m-3 text-white md:whitespace-nowrap">
           Pediatrician - Approved
         </h2>
       </div>

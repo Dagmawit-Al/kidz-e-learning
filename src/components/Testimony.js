@@ -7,8 +7,8 @@ function Testimony() {
       <h2 className="mystery-quest-header text-center font-extrabold text-yellow-100 dark:text-yellow-100">
         Helping Parents and Teachers
       </h2>
-      <div className="w-full sm:flex flex-col items-center sm:flex-row sm:justify-between justify-center space-y-8 sm:space-y-0 sm:space-x-20 px-10 flex md:items-center">
-        <video className="relative w-full md:w-1/2 h-[50%] rounded-lg" width="640" height="264" src="MentorableAdVideo .mp4" loop autoPlay controls>
+      <div className="sm:flex flex-col items-center sm:flex-row sm:justify-between justify-center space-y-8 sm:space-y-0 sm:space-x-20 px-10 flex md:items-center">
+        <video className="relative w-full md:w-1/2 h-[50%] rounded-lg" width="640" height="264" src="MentorableAdVideo .mp4" loop controls>
           {/* <source src="MentorableAdVideo.mp4" type="video/mp4"> */}
             {/* Your browser does not support the video tag. I suggest you upgrade your browser. */}
           {/* </source> */}
