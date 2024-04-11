@@ -1,5 +1,5 @@
 import React from "react";
-import pediatrician from "../assets/images/avatar.jpeg";
+import pediatrician from "../assets/images/DrKal.jpg";
 
 function PopupProfile() {
   return (
@@ -23,7 +23,7 @@ function PopupProfile() {
           <div className="flex items-center flex-col  mb-2">
             <a href="#">
               <img
-                className="w-20 h-20 ounded-full"
+                className="w-20 h-20 mt-8 md:mt-10 rounded-full"
                 src={pediatrician}
                 alt=""
               />

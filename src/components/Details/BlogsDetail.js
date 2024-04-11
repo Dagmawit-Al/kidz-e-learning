@@ -7,51 +7,51 @@ import blog1 from "../../assets/images/Blog1.jpg";
 
 function ContentCard({ id, img, title, desc, name, date }) {
   let navigate = useNavigate();
-    const goToBlog = () => {
-      console.log("ID: ", id);
-      if (id === 1) {
-        navigate("./fullBlog");
-      }
-      else if (id === 2) {
-        navigate("./fullBlog/blog3");
-      }
-      if (id === 3) {
-        navigate("./fullBlog/blog2");
-      }
-    };
+  const goToBlog = () => {
+    console.log("ID: ", id);
+    if (id === 1) {
+      navigate("./fullBlog");
+    }
+    else if (id === 2) {
+      navigate("./fullBlog/blog3");
+    }
+    if (id === 3) {
+      navigate("./fullBlog/blog2");
+    }
+  };
   return (
     // <Link to={goToBlog}>
-      <Card
-        className="relative grid min-h-[30rem] items-end overflow-hidden rounded-xl cursor-pointer hover:scale-110 "
-        color="transparent"
-        onClick={goToBlog}
-      >
-        <img
-          src={img}
-          alt="bg"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-black/70 space-y-5" />
-        <CardBody className="relative flex flex-col justify-end">
-          <div>
-            <Typography variant="h4" color="white" className="comic-sans-medium">
-              {title}
-            </Typography>
-          </div>
-          <div>
-            <Typography
-              variant="paragraph"
-              color="white"
-              className="my-2 font-normal"
-            >
-              {desc}
-            </Typography>
-            <Typography color="white" className="text-sm">
-              {name} | {date}
-            </Typography>
-          </div>
-        </CardBody>
-      </Card>
+    <Card
+      className="relative grid min-h-[30rem] items-end overflow-hidden rounded-xl cursor-pointer hover:scale-110 "
+      color="transparent"
+      onClick={goToBlog}
+    >
+      <img
+        src={img}
+        alt="bg"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-black/70 space-y-5" />
+      <CardBody className="relative flex flex-col justify-end">
+        <div>
+          <Typography variant="h4" color="white" className="comic-sans-medium leading-relaxed">
+            {title}
+          </Typography>
+        </div>
+        <div>
+          <Typography
+            variant="paragraph"
+            color="white"
+            className="my-2 font-normal"
+          >
+            {desc}
+          </Typography>
+          <Typography color="white" className="text-sm">
+            {name} | {date}
+          </Typography>
+        </div>
+      </CardBody>
+    </Card>
     // </Link>
   );
 }
@@ -60,7 +60,7 @@ const contents = [
   {
     id: 1,
     img: "/images/Blog1.jpg",
-    title: "Harnessing Electronics for Productivity and Creativity",
+    title: "Revolutionizing Children's Electronic Engagement",
     desc: "In today's digital age, it's no secret that electronics play a significant role in the lives of children.",
     name: "Filagot Tesfaye",
     date: "April 10, 2024",
@@ -92,7 +92,7 @@ export function BlogsDetail() {
         <Typography
           variant="h2"
           color="blue-gray"
-          className="mystery-quest-header text-center pt-8 leading-tight md:leading-normal"
+          className="mystery-quest-header text-yellow-100 text-center pt-8 leading-tight md:leading-normal"
         >
           Mentorable Blog
         </Typography>
@@ -103,7 +103,7 @@ export function BlogsDetail() {
           Entrepreneurship for Kids
         </Typography> */}
         <PopularBlog />
-        <div className=" mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="w-full mt-10 grid grid-cols-1 gap-10 sm:grid-cols-1 md:grid-cols-3">
           {contents.map(({ id, img, title, desc, name, date }) => (
             <ContentCard
               id={id}
@@ -131,7 +131,7 @@ export function PopularBlog() {
 
   return (
     <>
-      <Card className="flex flex-col md:flex-row bg-purple-200 w-full p-6 md:p-10 space-y-6 md:space-y-3 md:space-x-12 items-center">
+      <Card className="flex flex-col md:flex-row bg-gray-700 w-full p-6 md:p-10 space-y-6 md:space-y-3 md:space-x-12 items-center">
         <img
           src={blog1}
           className="rounded-2xl shadow-4-strong w-full md:w-1/2 h-auto"
@@ -140,13 +140,13 @@ export function PopularBlog() {
         <div className="flex flex-col w-full space-y-3 md:w-1/2 md:space-y-5 items-center md:items-start">
           <a
             href="/blogs/fullBlog"
-            className="comic-sans-medium font-bold text-center md:text-left"
+            className="comic-sans-medium font-bold text-yellow-100 text-center md:text-left"
             title="Business Plans: A Step-by-Step Guide for Kid Entrepreneurs"
           >
-            Harnessing Electronics for Productivity and Creativity
+            Revolutionizing Children's Electronic Engagement
           </a>
-          <div className="flex flex-row space-x-3 text-gray-600 text-sm">
-            <p className="roboto-regular-italic text-sm">Filagot Tesfaye</p>
+          <div className="flex flex-row space-x-3 text-yellow-100 text-sm">
+            <p className="roboto-regular-italic text-yellow-100 text-sm">Filagot Tesfaye</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -161,9 +161,9 @@ export function PopularBlog() {
                 d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
               />
             </svg>
-            <p className="roboto-regular-italic text-sm">March 21, 2024</p>
+            <p className="roboto-regular-italic text-yellow-100 text-sm">April 10, 2024</p>
           </div>
-          <p className="bubblegum-sans-subheader text-center md:text-left">
+          <p className="bubblegum-sans-subheader text-yellow-100 text-center md:text-left">
             In today's digital age, it's no secret that electronics play a significant role in the lives
             of children. From smartphones and tablets to laptops and gaming consoles,
             technology has become an integral part of daily life for many kids. However, [...]

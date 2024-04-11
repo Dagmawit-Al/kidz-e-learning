@@ -80,7 +80,7 @@ const FullBlog = () => {
                 </div>
               </address>
               <h1 className="comic-sans-medium md:comic-sans-large mb-4 text-yellow-100 font-extrabold leading-tight md:leading-normal dark:text-white text-center">
-                Harnessing Electronics for Productivity and Creativity
+                Revolutionizing Children's Electronic Engagement
               </h1>
             </header>
 

@@ -19,7 +19,7 @@ const Hero = () => {
       <div className="grid md:grid-cols-12">
         {/* Hero image */}
         <div className="col-span-12 md:col-span-6 place-self-center md:ml-20">
-          <h1 className="comic-sans-hero text-yellow-100 whitespace-pre-line leading-tight">
+          <h1 className="comic-sans-hero text-yellow-100 whitespace-pre-line leading-relaxed">
             {t('title')}
           </h1>
           <button
