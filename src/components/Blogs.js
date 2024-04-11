@@ -10,7 +10,7 @@ const Blogs = () => {
       src: blogimage1,
       date: Date.now(),
       description:
-        "Harnessing Electronics for Productivity and Creativity",
+        "Revolutionizing Children's Electronic Engagement",
     },
     {
       src: blogimage2,

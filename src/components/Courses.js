@@ -102,7 +102,7 @@ const Courses = () => {
       > */}
         <div className="flex flex-col md:flex-row">
         {dupSlides.map((slide, index) => (
-          <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 px-4">
+          <div key={index} className="flex justify-center items-center md:w-full  px-5">
             <Course key={index + slide.description} data={slide} />
           </div>
         ))}
