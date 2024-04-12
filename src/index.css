@@ -5,7 +5,7 @@
 :root {
   --primary-dark: #000000;
   --primary-light: #404040;
-  /* background: linear-gradient(to bottom right, #fd39a1, #a43bcb, #fcce90, #e293ac, #84d4d8); */
+  /* background: white; */
   background-image: linear-gradient(80deg, #FB9060, #e293ac, #a43bcb, #84d4d8, #fcce90);
 }
 

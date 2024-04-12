@@ -18,13 +18,14 @@ function Home() {
     <div className="w-full sm:flex flex-col">
       <TobBar />
       {/* <Navbar /> */}
-      <div className="space-y-20">
-        <Hero className="ml-20 md:m-10" />
+      <div className="space-y-10">
+        <Hero className="ml-20 m-0" />
+        <Divider />
         {/* <MentorableVideo /> */}
         <Courses />
         <Blogs />
         <Description />
-        <div className="row-span-10 ..."></div>
+        {/* <div className="row-span-10 ..."></div> */}
         <Testimony />
         <SummerCamp />
         <PediatricianApproved />

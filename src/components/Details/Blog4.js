@@ -8,16 +8,16 @@ import blog4 from "../../assets/images/Blog1.jpg";
 import profile from "../../assets/images/Filagot pic.jpg";
 
 const Blog4 = () => {
-    let navigate = useNavigate();
-    const goToFullBlog = () => {
-        navigate("./fullBlog");
-    };
+  let navigate = useNavigate();
+  const goToFullBlog = () => {
+    navigate("./fullBlog");
+  };
 
-    return (
-        <div id="blog4">
-            <TobBar />
-            {/* <Navbar /> */}
-            {/* <section className="container relative flex flex-col justify-start items-center mx-auto space-y-10 px-8 py-10 lg:py-28">
+  return (
+    <div id="blog4">
+      <TobBar />
+      {/* <Navbar /> */}
+      {/* <section className="container relative flex flex-col justify-start items-center mx-auto space-y-10 px-8 py-10 lg:py-28">
                 <Typography
                     variant="h2"
                     color="blue-gray"
@@ -37,100 +37,100 @@ const Blog4 = () => {
                 </div>
             </section> */}
 
-            <main id="blog4" className="container relative flex flex-col justify-start items-center mx-auto space-y-8 sm:space-y-10 mt-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28 antialiased">
-                <div className="flex justify-between w-full px-4 sm:px-0">
-                    <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                        <header className="mb-4 lg:mb-6 not-format">
-                            <address className="flex items-center mb-6 not-italic">
-                                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                    <img
-                                        className="mr-4 w-24 h-24 rounded-full"
-                                        src={profile}
-                                    />
-                                    <div>
-                                        <a
-                                            href="#"
-                                            rel="author"
-                                            className="text-md md:text-xl text-xl font-bold text-yellow-100 dark:text-white"
-                                        >
-                                            Filagot Tesfaye
-                                        </a>
-                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
-                                            Entrepreneur, Engineer & International Advisor
-                                        </p>
-                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
-                                            <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                                                Apr. 10, 2024
-                                            </time>
-                                        </p>
-                                    </div>
-                                </div>
-                            </address>
-                            <h1 className="comic-sans-medium mb-10 text-yellow-100 font-extrabold leading-tight dark:text-white">
-                                ለምርታማነት እና ለፈጠራ ኤሌክትሮኒክስ መጠቀም
-                            </h1>
-                        </header>
-                        <figure className="mb-6">
-                            <img
-                                src={blog4}
-                                alt=""
-                                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
-                            />
-                        </figure>
-                        <div className="space-y-6 text-lg">
-                            <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                በዚህ በዲጂታል ዘመን፣ ኤሌክትሮኒክስ በልጆች ህይወት ውስጥ ትልቅ ሚና እንደሚጫወት ለማንም ሚስጥር አይደለም።
-                                ከስማርትፎኖች እና ታብሌቶች እስከ ላፕቶፖች እና ጌም ኮንስል ቴክኖሎጂ በብዙ ልጆች የዕለት ተዕለት ህይወት ውስጥ ኣንደኛ
-                                አካል ሆኗል። ነገር ግን፣ ይህ ከመጠን በላይ የሆነ የስክሪን ጊዜ ያለው አሉታዊ ተፅእኖ፣ በተለይም ፊልሞች መመልከት እና
-                                ጨዋታዎችን መጫወትን በተመለከተ ያለ ስጋቶች በብዙዎች ዘንድ ይነሳል። ታዲያ ምን ማድረግ ኣለብን?
-                                የብዙ ወላጆችና በልጆች ላይ የሚሰሩ ኣካላት ዋና ጥያቄ ሆኑዋል።  ነገር ግን የኤሌክትሮኒክስ ሀይልን ብንጠቀምስ ልጆች
-                                ውጤታማ፣ ፈጣሪዎች እንዲሆኑ ብንጠቀምበስ ።
-                            </p>
-                            <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                በዚህ ብሎግ ልጆች የህይወት ግባቸውን እንዲያሳኩ እና የስራ ፈጠራ ባህልን እንዲያዳብሩ እንዴት
-                                ቴክኖሎጂን መጠቀም እንደምንችል እናያለን።
-                            </p>
+      <main id="blog4" className="container relative flex flex-col justify-start items-center mx-auto space-y-8 sm:space-y-10 mt-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28 antialiased">
+        <div className="flex justify-between w-full px-4 sm:px-0">
+          <article className="mx-auto w-full p-5 md:w-[75%] p-10 md:p-20 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert bg-white shadow-2xl rounded-lg">
+            <header className="mb-4 lg:mb-6 not-format">
+              <address className="flex items-center mb-6 not-italic">
+                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                  <img
+                    className="mr-4 w-24 h-24 rounded-full"
+                    src={profile}
+                  />
+                  <div>
+                    <a
+                      href="#"
+                      rel="author"
+                      className="text-md md:text-xl text-xl font-bold text-black dark:text-black"
+                    >
+                      Filagot Tesfaye
+                    </a>
+                    <p className="text-sm md:text-xl text-base  text-black dark:text-black">
+                      Entrepreneur, Engineer & International Advisor
+                    </p>
+                    <p className="text-sm md:text-xl text-base text-black dark:text-black">
+                      <time pubdate datetime="2022-02-08" title="February 8th, 2022">
+                        Apr. 10, 2024
+                      </time>
+                    </p>
+                  </div>
+                </div>
+              </address>
+              <h1 className="comic-sans-medium md:comic-sans-large mb-4 text-gray-700 font-extrabold leading-tight md:leading-normal dark:text-gray-7000 text-center">
+                ለምርታማነት እና ለፈጠራ ኤሌክትሮኒክስ መጠቀም
+              </h1>
+            </header>
+            <figure className="mb-6">
+              <img
+                src={blog4}
+                alt=""
+                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
+              />
+            </figure>
+            <div className="space-y-10 text-lg">
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
+                በዚህ በዲጂታል ዘመን፣ ኤሌክትሮኒክስ በልጆች ህይወት ውስጥ ትልቅ ሚና እንደሚጫወት ለማንም ሚስጥር አይደለም።
+                ከስማርትፎኖች እና ታብሌቶች እስከ ላፕቶፖች እና ጌም ኮንስል ቴክኖሎጂ በብዙ ልጆች የዕለት ተዕለት ህይወት ውስጥ ኣንደኛ
+                አካል ሆኗል። ነገር ግን፣ ይህ ከመጠን በላይ የሆነ የስክሪን ጊዜ ያለው አሉታዊ ተፅእኖ፣ በተለይም ፊልሞች መመልከት እና
+                ጨዋታዎችን መጫወትን በተመለከተ ያለ ስጋቶች በብዙዎች ዘንድ ይነሳል። ታዲያ ምን ማድረግ ኣለብን?
+                የብዙ ወላጆችና በልጆች ላይ የሚሰሩ ኣካላት ዋና ጥያቄ ሆኑዋል።  ነገር ግን የኤሌክትሮኒክስ ሀይልን ብንጠቀምስ ልጆች
+                ውጤታማ፣ ፈጣሪዎች እንዲሆኑ ብንጠቀምበስ ።
+              </p>
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
+                በዚህ ብሎግ ልጆች የህይወት ግባቸውን እንዲያሳኩ እና የስራ ፈጠራ ባህልን እንዲያዳብሩ እንዴት
+                ቴክኖሎጂን መጠቀም እንደምንችል እናያለን።
+              </p>
 
-                            <h2 className="comic-sans-medium text-yellow-100">፩. የማሳያ ጊዜን እንደገና መወሰን</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                ኤሌክትሮኒክስን ለውጤታማነት እንቅፋት ኣድርጎ ከመመልከት፣የስክሪን ጊዜን የመማር፣የእድገት እና የፈጠራ እድል
-                                እንዲሆን መወሰን እንችላለን። ትምህርታዊ መተግበሪያዎች፣ ኦንላይን ኮርሶች እና የኣይነ መረብ መድረኮች ልጆች
-                                አዳዲስ እውቀቶችን አንዲያገኙ፣ ጠቃሚ ክህሎቶችን እንዲያዳብሩ እና ፍላጎቶቻቸውን እንዲከተሉ የሚያነሳሷቸው ብዙ
-                                ሃሳቦችን ይሰጣሉ። ለምሳሌ፣ ኮድ አድራጊ አፕሊኬሽኖች ልጆች ፕሮግራሚንግን በአስደሳች እና አጓጊ መንገድ እንዲማሩ
-                                ያበረታቷቸዋል፣ እንደ ሚኔቶርብል ባሉ መድረኮች ልጆች በተለያዩ ርዕሰ ጉዳዮች ላይ ትምህርታዊ ቪዲዮዎችን እና አጋዥ
-                                ስልጠናዎችን ያገኛሉ።
-                            </p>
-                            <h2 className="comic-sans-medium text-yellow-100">፪. ፈጠራን ማዳበር</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                ኤሌክትሮኒክስ በልጆች ውስጥ የፈጠራ ችሎታን ለማሳደግ ኃይለኛ መሳሪያ ሊሆን ይችላል። ከዲጂታል ጥበብ እና ከሙዚቃ
-                                ፕሮዳክሽን እስከ ቪዲዮ አርትዖት እና አኒሜሽን ድረስ ቴክኖሎጂ ለፈጠራ አገላለጽ ማለቂያ የለሽ እድሎችን ይሰጣል። ልጆች
-                                ፎቶዎችን እና ቪዲዮዎችን ለመቅረጽ፣የፈጠራ መተግበሪያዎችን በመጠቀም አርትዕ ለማድረግ እና ስራቸውን በመስመር ላይ
-                                ለሌሎች ለማካፈል ስማርት ስልኮችን እና ታብሌቶችን መጠቀም ይችላሉ። እንደ Yኦኡጡበ እና ጢክጦክ ያሉ መድረኮች ልጆች
-                                ተሰጥኦዎቻቸውን እንዲያሳዩ፣ ተመሳሳይ አስተሳሰብ ካላቸው እኩዮቻቸው ጋር እንዲገናኙ እና በፈጠራ ጥረታቸው ዙሪያ ተከታዮችን
-                                እንዲገነቡ መንገዶችን ይሰጣሉ። ልጆች የፈጠራ ፍላጎቶቻቸውን እንዲመረምሩ እና በዲጂታል ሚዲያ ራሳቸውን እንዲገልጹ
-                                በማበረታታት፣ ሙሉ አቅማቸውን እንዲለቁ እና በአለም ላይ በጎ ተጽእኖ እንዲፈጥሩ ልናበረታታቸው እንችላለን።
-                            </p>
-                            <h2 className="comic-sans-medium text-yellow-100">፫. አበረታች ሥራ ፈጣሪነት</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                ኢንተርፕረነርሺፕ ህጻናት ሃሳባቸውን ወደ እውነት እንዲቀይሩ፣ ጠቃሚ ክህሎቶችን እንዲያዳብሩ እና ለህብረተሰቡ ትርጉም 
-                                ያለው አስተዋፅኦ እንዲያበረክቱ መንገድ ይሰጣል። የኢ፡ኮሜርስ መድረኮች፣ የማህበራዊ ሚዲያ ግብይት እና የመስመር ላይ 
-                                የንግድ መሳሪያዎች እየጨመሩ በመጡ ጊዜ ንግድ መጀመር ለወጣት ስራ ፈጣሪዎች የበለጠ ተደራሽ ሆኖ አያውቅም። 
-                                ልጆች የራሳቸውን የመስመር ላይ መደብሮች መክፈት፣ በእጅ የተሰሩ የእጅ ስራዎችን ወይም ዲጂታል ምርቶችን መሸጥ 
-                                እና ሌላው ቀርቶ እውቀታቸውን እና እውቀታቸውን ለሌሎች ለማካፈል የራሳቸውን የዩቲዩብ ቻናሎች ወይም ፖድካስቶች 
-                                መጀመር ይችላሉ። ሥራ ፈጣሪ አስተሳሰብን በማዳበር እና ድጋፍ እና መመሪያን በመስጠት ወላጆች እና አስተማሪዎች 
-                                በዲጂታል ዘመን እንደ ሥራ ፈጣሪነት ስኬታማ ለመሆን የሚያስፈልጋቸውን በራስ መተማመን፣ ጽናትን እና ብልሃትን 
-                                እንዲያዳብሩ መርዳት ይችላሉ።
-                            </p>
-                            <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                ኤሌክትሮኒክስ የስክሪን ጊዜን ለመቆጣጠር እና የመዝናኛዎችን አሉታዊ ተፅእኖዎች ለመቅረፍ ፈታኝ ሁኔታዎችን እንደሚያመጣ 
-                                ምንም ጥርጥር የለውም፣ ለመማር፣ ለፈጠራ እና ለስራ ፈጠራ ትልቅ እድሎችን ይሰጣሉ። ቴክኖሎጂን ከማዘናጋት ይልቅ እንደ 
-                                ማበረታቻ መሳሪያ አድርገን በመቀበል ልጆች የሕይወታቸውን ግባቸውን ለማሳካት፣ ፍላጎቶቻቸውን እንዲያሳድዱ እና በአለም ላይ 
-                                በጎ ተጽእኖን ለመፍጠር የኤሌክትሮኒክስ ሀይልን እንዲጠቀሙ ልንረዳቸው እንችላለን። ቀጣዩ ትውልድ ፈጣሪዎች፣ ፈጣሪዎች 
-                                እና ስራ ፈጣሪዎች በዲጂታል ዘመን እንዲበለጽጉ እና ለራሳቸው እና ለሌሎች ብሩህ የወደፊት ጊዜ እንዲፈጥሩ እናነሳሳ።
-                            </p>
-                        </div>
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">፩. የማሳያ ጊዜን እንደገና መወሰን</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
+                ኤሌክትሮኒክስን ለውጤታማነት እንቅፋት ኣድርጎ ከመመልከት፣የስክሪን ጊዜን የመማር፣የእድገት እና የፈጠራ እድል
+                እንዲሆን መወሰን እንችላለን። ትምህርታዊ መተግበሪያዎች፣ ኦንላይን ኮርሶች እና የኣይነ መረብ መድረኮች ልጆች
+                አዳዲስ እውቀቶችን አንዲያገኙ፣ ጠቃሚ ክህሎቶችን እንዲያዳብሩ እና ፍላጎቶቻቸውን እንዲከተሉ የሚያነሳሷቸው ብዙ
+                ሃሳቦችን ይሰጣሉ። ለምሳሌ፣ ኮድ አድራጊ አፕሊኬሽኖች ልጆች ፕሮግራሚንግን በአስደሳች እና አጓጊ መንገድ እንዲማሩ
+                ያበረታቷቸዋል፣ እንደ ሚኔቶርብል ባሉ መድረኮች ልጆች በተለያዩ ርዕሰ ጉዳዮች ላይ ትምህርታዊ ቪዲዮዎችን እና አጋዥ
+                ስልጠናዎችን ያገኛሉ።
+              </p>
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">፪. ፈጠራን ማዳበር</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
+                ኤሌክትሮኒክስ በልጆች ውስጥ የፈጠራ ችሎታን ለማሳደግ ኃይለኛ መሳሪያ ሊሆን ይችላል። ከዲጂታል ጥበብ እና ከሙዚቃ
+                ፕሮዳክሽን እስከ ቪዲዮ አርትዖት እና አኒሜሽን ድረስ ቴክኖሎጂ ለፈጠራ አገላለጽ ማለቂያ የለሽ እድሎችን ይሰጣል። ልጆች
+                ፎቶዎችን እና ቪዲዮዎችን ለመቅረጽ፣የፈጠራ መተግበሪያዎችን በመጠቀም አርትዕ ለማድረግ እና ስራቸውን በመስመር ላይ
+                ለሌሎች ለማካፈል ስማርት ስልኮችን እና ታብሌቶችን መጠቀም ይችላሉ። እንደ Yኦኡጡበ እና ጢክጦክ ያሉ መድረኮች ልጆች
+                ተሰጥኦዎቻቸውን እንዲያሳዩ፣ ተመሳሳይ አስተሳሰብ ካላቸው እኩዮቻቸው ጋር እንዲገናኙ እና በፈጠራ ጥረታቸው ዙሪያ ተከታዮችን
+                እንዲገነቡ መንገዶችን ይሰጣሉ። ልጆች የፈጠራ ፍላጎቶቻቸውን እንዲመረምሩ እና በዲጂታል ሚዲያ ራሳቸውን እንዲገልጹ
+                በማበረታታት፣ ሙሉ አቅማቸውን እንዲለቁ እና በአለም ላይ በጎ ተጽእኖ እንዲፈጥሩ ልናበረታታቸው እንችላለን።
+              </p>
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">፫. አበረታች ሥራ ፈጣሪነት</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
+                ኢንተርፕረነርሺፕ ህጻናት ሃሳባቸውን ወደ እውነት እንዲቀይሩ፣ ጠቃሚ ክህሎቶችን እንዲያዳብሩ እና ለህብረተሰቡ ትርጉም
+                ያለው አስተዋፅኦ እንዲያበረክቱ መንገድ ይሰጣል። የኢ፡ኮሜርስ መድረኮች፣ የማህበራዊ ሚዲያ ግብይት እና የመስመር ላይ
+                የንግድ መሳሪያዎች እየጨመሩ በመጡ ጊዜ ንግድ መጀመር ለወጣት ስራ ፈጣሪዎች የበለጠ ተደራሽ ሆኖ አያውቅም።
+                ልጆች የራሳቸውን የመስመር ላይ መደብሮች መክፈት፣ በእጅ የተሰሩ የእጅ ስራዎችን ወይም ዲጂታል ምርቶችን መሸጥ
+                እና ሌላው ቀርቶ እውቀታቸውን እና እውቀታቸውን ለሌሎች ለማካፈል የራሳቸውን የዩቲዩብ ቻናሎች ወይም ፖድካስቶች
+                መጀመር ይችላሉ። ሥራ ፈጣሪ አስተሳሰብን በማዳበር እና ድጋፍ እና መመሪያን በመስጠት ወላጆች እና አስተማሪዎች
+                በዲጂታል ዘመን እንደ ሥራ ፈጣሪነት ስኬታማ ለመሆን የሚያስፈልጋቸውን በራስ መተማመን፣ ጽናትን እና ብልሃትን
+                እንዲያዳብሩ መርዳት ይችላሉ።
+              </p>
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
+                ኤሌክትሮኒክስ የስክሪን ጊዜን ለመቆጣጠር እና የመዝናኛዎችን አሉታዊ ተፅእኖዎች ለመቅረፍ ፈታኝ ሁኔታዎችን እንደሚያመጣ
+                ምንም ጥርጥር የለውም፣ ለመማር፣ ለፈጠራ እና ለስራ ፈጠራ ትልቅ እድሎችን ይሰጣሉ። ቴክኖሎጂን ከማዘናጋት ይልቅ እንደ
+                ማበረታቻ መሳሪያ አድርገን በመቀበል ልጆች የሕይወታቸውን ግባቸውን ለማሳካት፣ ፍላጎቶቻቸውን እንዲያሳድዱ እና በአለም ላይ
+                በጎ ተጽእኖን ለመፍጠር የኤሌክትሮኒክስ ሀይልን እንዲጠቀሙ ልንረዳቸው እንችላለን። ቀጣዩ ትውልድ ፈጣሪዎች፣ ፈጣሪዎች
+                እና ስራ ፈጣሪዎች በዲጂታል ዘመን እንዲበለጽጉ እና ለራሳቸው እና ለሌሎች ብሩህ የወደፊት ጊዜ እንዲፈጥሩ እናነሳሳ።
+              </p>
+            </div>
 
-                        {/* <section class="not-format">
+            {/* <section class="not-format">
               <div class="flex justify-between items-center mb-6">
                 <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
                   Discussion (20)
@@ -541,11 +541,11 @@ const Blog4 = () => {
                 </div>
               </article>
             </section> */}
-                    </article>
-                </div>
-            </main>
+          </article>
+        </div>
+      </main>
 
-            {/* <aside
+      {/* <aside
                 aria-label="Related articles"
                 class="py-8 lg:py-24 bg-[#e293ac] dark:bg-gray-800"
             >
@@ -623,9 +623,9 @@ const Blog4 = () => {
                     </div>
                 </div>
             </aside> */}
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default Blog4;

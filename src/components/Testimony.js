@@ -1,7 +1,12 @@
 import React from "react";
-// import video from "../../public/MentorableAdVideo.mp3"
+import { useNavigate } from "react-router-dom";
 
 function Testimony() {
+  const navigate = useNavigate();
+
+  const handleStartCourse = () => {
+    navigate("/courses");
+  };
   return (
     <div className="flex flex-col items-center space-y-10 md:space-y-10">
       <h2 className="mystery-quest-header text-center font-extrabold text-yellow-100 dark:text-yellow-100">
@@ -23,11 +28,12 @@ function Testimony() {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */}
         <div className="flex flex-col justify-center space-y-5">
-          <h1 className="comic-sans-medium leading-loose text-yellow-100">
+          <h1 className="comic-sans-medium leading-loose text-center text-yellow-100">
           We are Mentorable kids. <br/> Come, let us learn business. Exploring the adventure of the business world 
           <br/>..... 
-          <br/>Starts HERE TODAY
+          <br/>
           </h1>
+          <button className="btn outline-button text-lg" onClick={handleStartCourse}>START HERE TODAY </button>
         </div>
       </div>
     </div>

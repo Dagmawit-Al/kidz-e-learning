@@ -52,7 +52,7 @@ const FullBlog = () => {
 
       <main className="container relative flex flex-col justify-start items-center mx-auto space-y-8 sm:space-y-10 mt-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28 antialiased">
         <div className="flex justify-between w-full px-4 sm:px-0">
-          <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+          <article className="mx-auto w-full p-5 md:w-[75%] p-10 md:p-20 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert bg-white shadow-2xl rounded-lg">
             <header className="mb-4 lg:mb-6 not-format">
               <address className="flex items-center mb-6 not-italic">
                 <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
@@ -64,14 +64,14 @@ const FullBlog = () => {
                     <a
                       href="#"
                       rel="author"
-                      className="text-md md:text-xl font-bold text-yellow-100 dark:text-white"
+                      className="text-md md:text-xl font-bold text-black dark:text-black"
                     >
                       Filagot Tesfaye
                     </a>
-                    <p className="text-sm md:text-xl text-base text-white dark:text-white">
+                    <p className="text-sm md:text-xl text-base text-black dark:text-black">
                       Entrepreneur, Engineer & International Advisor
                     </p>
-                    <p className="text-sm md:text-xl text-base text-white dark:text-white">
+                    <p className="text-sm md:text-xl text-base text-black dark:text-black">
                       <time pubdate datetime="2022-02-08" title="February 8th, 2022">
                         Apr. 10, 2024
                       </time>
@@ -79,7 +79,7 @@ const FullBlog = () => {
                   </div>
                 </div>
               </address>
-              <h1 className="comic-sans-medium md:comic-sans-large mb-4 text-yellow-100 font-extrabold leading-tight md:leading-normal dark:text-white text-center">
+              <h1 className="comic-sans-medium md:comic-sans-large mb-4 text-gray-700 font-extrabold leading-tight md:leading-normal dark:text-white text-center">
                 Revolutionizing Children's Electronic Engagement
               </h1>
             </header>
@@ -91,14 +91,14 @@ const FullBlog = () => {
                 className="w-full rounded-lg shadow-lg dark:shadow-black/30"
               />
             </figure>
-            <div className="space-y-6 text-lg">
-              <p class="roboto-medium-italic text-xl lead text-yellow-100">
+            <div className="space-y-10 text-lg">
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
                 In today's digital age, it's no secret that electronics play a
                 significant role in the lives of children. From smartphones and tablets to
                 laptops and gaming consoles, technology has become an integral part of daily life
                 for many kids.
               </p>
-              <p class="roboto-medium-italic text-xl lead text-yellow-100">
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
                 However, concerns have been raised about the negative impact of excessive screen time,
                 particularly when it comes to passive activities like watching movies and playing games.
                 But what if we could harness the power of electronics to empower kids to be productive,
@@ -106,8 +106,8 @@ const FullBlog = () => {
                 to help children achieve their life goals and foster a culture of entrepreneurship.
               </p>
 
-              <h2 className="comic-sans-medium text-yellow-100">1. Redefining Screen Time</h2>
-              <p class="roboto-medium text-xl lead text-yellow-100">
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">1. Redefining Screen Time</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
                 Rather than viewing electronics as a distraction or a barrier to productivity,
                 we can redefine screen time as an opportunity for learning, growth, and creativity.
                 Educational apps, online courses, and interactive platforms offer a wealth of resources
@@ -116,8 +116,8 @@ const FullBlog = () => {
                 fun and engaging way, while platforms such as Mentorable provide access to educational
                 videos and tutorials on a wide range of subjects.
               </p>
-              <h2 className="comic-sans-medium text-yellow-100">2. Cultivating Creativity</h2>
-              <p class="roboto-medium text-xl lead text-yellow-100">
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">2. Cultivating Creativity</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
                 Electronics can be a powerful tool for nurturing creativity and innovation in children.
                 From digital art and music production to video editing and animation, technology offers
                 endless possibilities for creative expression. Kids can use smartphones and tablets to
@@ -128,8 +128,8 @@ const FullBlog = () => {
                 through digital media, we can empower them to unleash their full potential and make a
                 positive impact on the world.
               </p>
-              <h2 className="comic-sans-medium text-yellow-100">3. Inspiring Entrepreneurship</h2>
-              <p class="roboto-medium text-xl lead text-yellow-100">
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">3. Inspiring Entrepreneurship</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
                 Entrepreneurship offers a pathway for kids to turn their ideas into reality,
                 develop valuable skills, and make a meaningful contribution to society.
                 With the rise of e-commerce platforms, social media marketing, and online business tools,
@@ -141,7 +141,7 @@ const FullBlog = () => {
                 resourcefulness they need to succeed as entrepreneurs in the digital age.
               </p>
 
-              <p class="roboto-medium-italic text-xl lead text-yellow-100">
+              <p class="roboto-medium-italic text-xl text-gray-700 text-center">
                 While electronics undoubtedly present challenges
                 when it comes to managing screen time and mitigating the negative effects of
                 passive entertainment, they also offer tremendous opportunities for learning,
@@ -578,7 +578,7 @@ const FullBlog = () => {
           </h2>
           <div className="grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <article className="max-w-xs mx-auto">
-              <a href="#">
+              <a href="">
                 <img
                   src={blog2}
                   className="mb-5 rounded-lg"
@@ -586,7 +586,7 @@ const FullBlog = () => {
                 />
               </a>
               <h2 className="mb-2 comic-sans-medium text-xl font-bold leading-tight text-white dark:text-white">
-                <a href="#">Entrepreneurship: A Path to Economic Empowerment in Developing Countries</a>
+                <a href="">Entrepreneurship: A Path to Economic Empowerment in Developing Countries</a>
               </h2>
               <p className="mb-4 roboto-regular text-lg text-gray-800 dark:text-gray-400">
                 In the battle against poverty, entrepreneurship has emerged as a powerful tool to uplift
@@ -609,7 +609,7 @@ const FullBlog = () => {
                 />
               </a>
               <h2 className="mb-2 comic-sans-medium text-xl font-bold leading-tight text-white dark:text-white">
-                <a href="#">Why Kids Should Learn About Entrepreneurship and Business Early On</a>
+                <a href="">Why Kids Should Learn About Entrepreneurship and Business Early On</a>
               </h2>
               <p className="mb-4 roboto-regular text-lg text-gray-800 dark:text-gray-400">
                 In today's rapidly changing world, the importance of entrepreneurship and
@@ -624,7 +624,7 @@ const FullBlog = () => {
               </button>
             </article>
             <article className="max-w-xs mx-auto">
-              <a href="#">
+              <a href="">
                 <img
                   src={blog1}
                   className="mb-5 rounded-lg"
@@ -632,7 +632,7 @@ const FullBlog = () => {
                 />
               </a>
               <h2 className="mb-2 comic-sans-medium text-xl font-bold leading-tight text-white dark:text-white">
-                <a href="#">ለምርታማነት እና ለፈጠራ ኤሌክትሮኒክስ መጠቀም</a>
+                <a href="">ለምርታማነት እና ለፈጠራ ኤሌክትሮኒክስ መጠቀም</a>
               </h2>
               <p className="mb-4 roboto-regular text-lg text-gray-800 dark:text-gray-400">
                 በዚህ በዲጂታል ዘመን፣ ኤሌክትሮኒክስ በልጆች ህይወት ውስጥ ትልቅ ሚና እንደሚጫወት ለማንም ሚስጥር

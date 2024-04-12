@@ -14,6 +14,7 @@ const Hero = () => {
   };
 
   return (
+    // <div className="flex flex-col md:flex-col">
     <div className="container max-w-screen-xl mx-auto flex flex-col md:flex-row justify-center items-center min-h-screen m-7 p-3 md:p-3">
       {/* Container for the hero section into 12 columns */}
       <div className="grid md:grid-cols-12">
@@ -33,7 +34,9 @@ const Hero = () => {
           <img src={background} alt="Kids" className="max-w-full" />
         </div>
       </div>
+      {/* <hr className="w-full h-1 my-8 bg-white border-0 rounded dark:bg-[#E5588D]" /> */}
     </div>
+    // </div>
   );
   // <div id="hero" className="w-full flex flex-row   ">
   //   <div className="flex items-center flex-col p-4">

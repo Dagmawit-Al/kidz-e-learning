@@ -8,25 +8,25 @@ import blog2 from "../../assets/images/Blog2.jpg";
 import profile from "../../assets/images/Filagot pic.jpg";
 
 const Blog2 = () => {
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
-    const goToBlog1 = () => {
-        navigate("./fullBlog");
-    };
+  const goToBlog1 = () => {
+    navigate("./fullBlog");
+  };
 
-    const goToBlog3 = () => {
-        navigate("./blog3");
-    };
+  const goToBlog3 = () => {
+    navigate("./blog3");
+  };
 
-    const goToBlog4 = () => {
-        navigate("./blog4");
-    };
+  const goToBlog4 = () => {
+    navigate("./blog4");
+  };
 
-    return (
-        <div id="blog2">
-            <TobBar />
-            {/* <Navbar /> */}
-            {/* <section className="container relative flex flex-col justify-start items-center mx-auto space-y-10 px-8 py-10 lg:py-28">
+  return (
+    <div id="blog2">
+      <TobBar />
+      {/* <Navbar /> */}
+      {/* <section className="container relative flex flex-col justify-start items-center mx-auto space-y-10 px-8 py-10 lg:py-28">
                 <Typography
                     variant="h2"
                     color="blue-gray"
@@ -46,122 +46,122 @@ const Blog2 = () => {
                 </div>
             </section> */}
 
-            <main className="container relative flex flex-col justify-start items-center mx-auto space-y-8 sm:space-y-10 mt-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28 antialiased">
-                <div className="flex justify-between w-full px-0 md:px-4">
-                    <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
-                        <header className="mb-4 lg:mb-6 not-format">
-                            <address className="flex items-center mb-6 not-italic">
-                                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-                                    <img
-                                        className="mr-4 w-24 h-24 rounded-full"
-                                        src={profile}
-                                    />
-                                    <div>
-                                        <a
-                                            href="#"
-                                            rel="author"
-                                            className="text-md md:text-xl font-bold text-yellow-100 dark:text-white"
-                                        >
-                                            Filagot Tesfaye
-                                        </a>
-                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
-                                            Entrepreneur, Engineer & International Advisor
-                                        </p>
-                                        <p className="text-sm md:text-xl text-base text-white dark:text-white">
-                                            <time pubdate datetime="2022-02-08" title="February 8th, 2022">
-                                                Apr. 10, 2024
-                                            </time>
-                                        </p>
-                                    </div>
-                                </div>
-                            </address>
-                            <h1 className="comic-sans-medium mb-4 text-yellow-100 font-extrabold leading-tight dark:text-white">
-                                Entrepreneurship: A Path to Economic Empowerment <br /> in Developing Countries
-                            </h1>
-                        </header>
-                        <figure className="mb-6">
-                            <img
-                                src={blog2}
-                                alt=""
-                                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
-                            />
-                        </figure>
-                        <div className="space-y-6 text-lg">
-                            <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                In the battle against poverty, entrepreneurship has emerged as a powerful
-                                tool to uplift communities and drive economic growth in developing countries.
-                                By empowering individuals to create their businesses and generate income,
-                                entrepreneurship not only provides solutions to local challenges but also fosters sustainable
-                                development.
-                            </p>
-                            <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                In this blog, we'll explore how entrepreneurship is making a difference in eradicating
-                                economic poverty in some of the world's poorest countries, with inspiring examples of
-                                success stories.
-                            </p>
+      <main className="container relative flex flex-col justify-start items-center mx-auto space-y-8 sm:space-y-10 mt-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28 antialiased">
+        <div className="flex justify-between w-full px-0 md:px-4">
+          <article className="mx-auto w-full p-5 md:w-[75%] p-10 md:p-20 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert bg-white shadow-2xl rounded-lg">
+            <header className="mb-4 lg:mb-6 not-format">
+              <address className="flex items-center mb-6 not-italic">
+                <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                  <img
+                    className="mr-4 w-24 h-24 rounded-full"
+                    src={profile}
+                  />
+                  <div>
+                    <a
+                      href="#"
+                      rel="author"
+                      className="text-md md:text-xl font-bold text-black dark:text-black"
+                    >
+                      Filagot Tesfaye
+                    </a>
+                    <p className="text-sm md:text-xl text-base text-black dark:text-black">
+                      Entrepreneur, Engineer & International Advisor
+                    </p>
+                    <p className="text-sm md:text-xl text-base text-black dark:text-black">
+                      <time pubdate datetime="2022-02-08" title="February 8th, 2022">
+                        Apr. 10, 2024
+                      </time>
+                    </p>
+                  </div>
+                </div>
+              </address>
+              <h1 className="comic-sans-medium md:comic-sans-large mb-4 text-gray-700 font-extrabold leading-tight md:leading-normal dark:text-gray-7000 text-center">
+                Entrepreneurship: A Path to Economic Empowerment <br /> in Developing Countries
+              </h1>
+            </header>
+            <figure className="mb-6">
+              <img
+                src={blog2}
+                alt=""
+                className="w-full rounded-lg shadow-lg dark:shadow-black/30"
+              />
+            </figure>
+            <div className="space-y-10 text-lg">
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
+                In the battle against poverty, entrepreneurship has emerged as a powerful
+                tool to uplift communities and drive economic growth in developing countries.
+                By empowering individuals to create their businesses and generate income,
+                entrepreneurship not only provides solutions to local challenges but also fosters sustainable
+                development.
+              </p>
+              <p class="roboto-medium-italic text-xl lead text-gray-700 text-center">
+                In this blog, we'll explore how entrepreneurship is making a difference in eradicating
+                economic poverty in some of the world's poorest countries, with inspiring examples of
+                success stories.
+              </p>
 
-                            <h2 className="comic-sans-medium text-yellow-100">1. Empowering Local Communities</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                In many developing countries, entrepreneurship catalyzes empowering local communities.
-                                By providing individuals with the opportunity to start their own businesses, entrepreneurship
-                                creates jobs, stimulates economic activity, and reduces dependence on external aid.
-                                For example, in Bangladesh, Muhammad Yunus pioneered the concept of microfinance
-                                through the Grameen Bank, providing small loans to impoverished individuals, particularly women,
-                                to start their own businesses. Today, microfinance institutions around the world continue to
-                                empower millions of people to lift themselves out of poverty through entrepreneurship.
-                            </p>
-                            <h2 className="comic-sans-medium text-yellow-100">2. Fostering Innovation and Technology</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                Entrepreneurship is driving innovation and technological advancements in developing
-                                countries, paving the way for economic growth and prosperity. Countries like India and
-                                Kenya have seen a surge in tech startups leveraging mobile technology to address local
-                                challenges and improve livelihoods. For instance, in Kenya, the mobile payment platform
-                                M-Pesa has revolutionized financial inclusion, allowing millions of people, particularly
-                                those in rural areas, to access banking services and participate in the formal economy.
-                                Similarly, India's thriving startup ecosystem is fostering innovation across various
-                                sectors, from healthcare and agriculture to education and e-commerce, creating
-                                opportunities for economic advancement.
-                            </p>
-                            <h2 className="comic-sans-medium text-yellow-100">3. Promoting Sustainable Development</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                Entrepreneurship plays a crucial role in promoting sustainable development by
-                                addressing environmental and social challenges while fostering economic growth.
-                                In countries like Brazil, social entrepreneurs are leading initiatives to tackle
-                                issues such as poverty, inequality, and environmental degradation.
-                                One notable example is the Cooperativa Central dos Assentamentos do MST (COCAMAR),
-                                a cooperative movement in Brazil that supports landless farmers by providing training,
-                                resources, and market access to produce organic and fair-trade products.
-                                By promoting sustainable farming practices and empowering marginalized communities,
-                                initiatives like COCAMAR contribute to both economic development and environmental
-                                conservation.
-                            </p>
-                            <h2 className="comic-sans-medium text-yellow-100">4. Creating Resilient Economies</h2>
-                            <p class="roboto-medium text-xl lead text-yellow-100">
-                                Entrepreneurship cultivates resilience in developing countries by diversifying
-                                economies and reducing vulnerability to external shocks. In Rwanda, the government
-                                has prioritized entrepreneurship as a key driver of economic growth and poverty
-                                reduction following the devastating genocide in 1994. Through initiatives like the
-                                Rwanda Development Board and the Kigali Innovation City, Rwanda has fostered a
-                                vibrant startup ecosystem, attracting investment, promoting innovation, and
-                                creating opportunities for youth entrepreneurship. Today, Rwanda's resilient
-                                economy continues to grow, driven by entrepreneurship and innovation across
-                                various sectors.
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">1. Empowering Local Communities</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
+                In many developing countries, entrepreneurship catalyzes empowering local communities.
+                By providing individuals with the opportunity to start their own businesses, entrepreneurship
+                creates jobs, stimulates economic activity, and reduces dependence on external aid.
+                For example, in Bangladesh, Muhammad Yunus pioneered the concept of microfinance
+                through the Grameen Bank, providing small loans to impoverished individuals, particularly women,
+                to start their own businesses. Today, microfinance institutions around the world continue to
+                empower millions of people to lift themselves out of poverty through entrepreneurship.
+              </p>
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">2. Fostering Innovation and Technology</h2>
+              <p class="roboto-medium text-xl lead text-gray-700 text-center">
+                Entrepreneurship is driving innovation and technological advancements in developing
+                countries, paving the way for economic growth and prosperity. Countries like India and
+                Kenya have seen a surge in tech startups leveraging mobile technology to address local
+                challenges and improve livelihoods. For instance, in Kenya, the mobile payment platform
+                M-Pesa has revolutionized financial inclusion, allowing millions of people, particularly
+                those in rural areas, to access banking services and participate in the formal economy.
+                Similarly, India's thriving startup ecosystem is fostering innovation across various
+                sectors, from healthcare and agriculture to education and e-commerce, creating
+                opportunities for economic advancement.
+              </p>
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">3. Promoting Sustainable Development</h2>
+              <p class="roboto-medium text-xl text-gray-700 text-center">
+                Entrepreneurship plays a crucial role in promoting sustainable development by
+                addressing environmental and social challenges while fostering economic growth.
+                In countries like Brazil, social entrepreneurs are leading initiatives to tackle
+                issues such as poverty, inequality, and environmental degradation.
+                One notable example is the Cooperativa Central dos Assentamentos do MST (COCAMAR),
+                a cooperative movement in Brazil that supports landless farmers by providing training,
+                resources, and market access to produce organic and fair-trade products.
+                By promoting sustainable farming practices and empowering marginalized communities,
+                initiatives like COCAMAR contribute to both economic development and environmental
+                conservation.
+              </p>
+              <h2 className="comic-sans-medium text-gray-700 text-start md:text-center leading-tight md:leading-normal">4. Creating Resilient Economies</h2>
+              <p class="roboto-medium text-xl text-gray-700 text-center">
+                Entrepreneurship cultivates resilience in developing countries by diversifying
+                economies and reducing vulnerability to external shocks. In Rwanda, the government
+                has prioritized entrepreneurship as a key driver of economic growth and poverty
+                reduction following the devastating genocide in 1994. Through initiatives like the
+                Rwanda Development Board and the Kigali Innovation City, Rwanda has fostered a
+                vibrant startup ecosystem, attracting investment, promoting innovation, and
+                creating opportunities for youth entrepreneurship. Today, Rwanda's resilient
+                economy continues to grow, driven by entrepreneurship and innovation across
+                various sectors.
 
-                            </p>
+              </p>
 
-                            <p class="roboto-medium-italic text-xl lead text-yellow-100">
-                                Entrepreneurship holds immense potential as a tool for eradicating economic poverty in
-                                developing countries. By empowering individuals, fostering innovation, promoting
-                                sustainable development, and creating resilient economies, entrepreneurship not
-                                only provides pathways out of poverty but also cultivates prosperity and opportunity
-                                for future generations. As we continue to witness the transformative impact of
-                                entrepreneurship in countries around the world, let us support and celebrate the
-                                entrepreneurial spirit as a driving force for positive change and inclusive growth
-                                on a global scale. Together, we can build a brighter and more prosperous future for all.
-                            </p>
-                        </div>
+              <p class="roboto-medium-italic text-xl text-gray-700 text-center">
+                Entrepreneurship holds immense potential as a tool for eradicating economic poverty in
+                developing countries. By empowering individuals, fostering innovation, promoting
+                sustainable development, and creating resilient economies, entrepreneurship not
+                only provides pathways out of poverty but also cultivates prosperity and opportunity
+                for future generations. As we continue to witness the transformative impact of
+                entrepreneurship in countries around the world, let us support and celebrate the
+                entrepreneurial spirit as a driving force for positive change and inclusive growth
+                on a global scale. Together, we can build a brighter and more prosperous future for all.
+              </p>
+            </div>
 
-                        {/* <section class="not-format">
+            {/* <section class="not-format">
               <div class="flex justify-between items-center mb-6">
                 <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">
                   Discussion (20)
@@ -572,11 +572,11 @@ const Blog2 = () => {
                 </div>
               </article>
             </section> */}
-                    </article>
-                </div>
-            </main>
+          </article>
+        </div>
+      </main>
 
-            {/* <aside
+      {/* <aside
                 aria-label="Related articles"
                 class="py-8 lg:py-24 bg-[#e293ac] dark:bg-gray-800"
             >
@@ -657,9 +657,9 @@ const Blog2 = () => {
                     </div>
                 </div>
             </aside> */}
-            <Footer />
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default Blog2;

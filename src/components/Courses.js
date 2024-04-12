@@ -120,9 +120,9 @@ const Courses = () => {
       </div>
 
       {/* Separator */}
-      <div className="relative w-full my-8 pt-10">
-        <hr className="w-full h-1 my-8 bg-white border-0 rounded dark:bg-[#E5588D]" />
-        <div className="absolute left-1/2 transform -translate-x-1/2 dark:bg-gray-900 p-1">
+      <div className="relative w-full my-12 pt-10 mb-15">
+        {/* <hr className="w-full h-1 my-8 bg-black border-0 rounded dark:bg-black" /> */}
+        {/* <div className="flex justify-center items-center dark:bg-gray-900 p-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -137,7 +137,7 @@ const Courses = () => {
               d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
             />
           </svg>
-        </div>
+        </div> */}
       </div>
     </div>
   );
