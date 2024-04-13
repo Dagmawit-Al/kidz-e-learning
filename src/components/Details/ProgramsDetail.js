@@ -13,7 +13,7 @@ function ProgramsDetail() {
       <TobBar />
       <section className="container flex flex-col items-center mx-auto space-y-10 px-4 md:px-8 py-10 mt-10 lg:py-20 xl:py-28">
         <div className="flex flex-col space-y-8 items-center">
-          <Card className="flex flex-col justify-center items-center bg-green-200 px-10 pb-10 sm:px-20">
+          <Card className="flex flex-col justify-center items-center bg-green-200 px-10 pb-10 sm:px-20 shadow-2xl rounded-lg">
             <h1 className="comic-sans-medium text-black text-center p-8">
               Grow with Ethiopia: Kids Green Legacy Planting Day!
             </h1>
@@ -41,7 +41,7 @@ function ProgramsDetail() {
         </div>
 
         <div className="flex flex-col space-y-8 items-center">
-          <Card className="flex flex-col justify-center items-center bg-yellow-100 px-10 pb-10 sm:px-20">
+          <Card className="flex flex-col justify-center items-center bg-yellow-100 px-10 pb-10 sm:px-20 shadow-2xl rounded-lg">
             <h1 className="comic-sans-medium text-black text-center p-8">
             Experience Ethiopia Like Never Before! (for Ethiopian diaspora)
             </h1>
@@ -69,7 +69,7 @@ function ProgramsDetail() {
         </div>
 
         <div className="flex flex-col space-y-8 items-center">
-          <Card className="flex flex-col justify-center items-center bg-orange-100 px-10 py-10 sm:px-20">
+          <Card className="flex flex-col justify-center items-center bg-orange-100 px-10 py-10 sm:px-20 shadow-2xl rounded-lg">
             <h1 className="comic-sans-medium text-black text-center p-8">
               SummerBiz Startup Camp!
             </h1>

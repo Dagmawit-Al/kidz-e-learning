@@ -49,7 +49,7 @@ const Blog4 = () => {
                   />
                   <div>
                     <a
-                      href="#"
+                      // href="#"
                       rel="author"
                       className="text-md md:text-xl text-xl font-bold text-black dark:text-black"
                     >
