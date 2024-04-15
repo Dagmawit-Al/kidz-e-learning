@@ -12,7 +12,7 @@ const OurStory = () => {
 
             <main className="container relative flex flex-col justify-start items-center mx-auto space-y-8 sm:space-y-10 mt-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28 antialiased">
                 <div className="flex justify-between w-full px-4 sm:px-0">
-                    <article className="mx-auto w-[75%] p-10 md:p-20 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert bg-white shadow-2xl rounded-lg">
+                    <article className="mx-auto w-[75%] p-5 md:p-20 format format-sm sm:format-base lg:format-lg format-blue dark:format-invert bg-white shadow-2xl rounded-lg">
                         <header className="mb-4 lg:mb-6 not-format">
 
                             <h1 className="mystery-quest-header w-full text-black text-4xl text-center font-bold font-header leading-tight md:leading-normal">

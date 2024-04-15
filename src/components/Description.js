@@ -7,7 +7,7 @@ function Description() {
   return (
     // text-lg md:text-xl  
     <div className="flex flex-col">
-      <h2 className="mystery-quest-header my-5 text-yellow-100 text-center dark:text-white leading-tight md:leading-normal">
+      <h2 className="comic-sans-medium md:text-5xl my-5 text-yellow-100 text-center dark:text-white leading-tight md:leading-normal">
         What happens when kids use our resources?
       </h2>
       <div className="grid grid-cols-1 space-y-10 md:space-y-0 sm:grid-cols-2 md:grid-cols-3 gap-3 p-10 mx-10">

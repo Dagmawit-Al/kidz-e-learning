@@ -12,6 +12,7 @@ import TobBar from "./TobBar";
 import Testimony from "./Testimony";
 import Description from "./Description";
 import MentorableVideo from "./MentorableVideo";
+import DiasporaEvent from "./DiasporaEvent";
 
 function Home() {
   return (
@@ -27,6 +28,7 @@ function Home() {
         <Description />
         {/* <div className="row-span-10 ..."></div> */}
         <Testimony />
+        <DiasporaEvent />
         <SummerCamp />
         <PediatricianApproved />
         <Divider />

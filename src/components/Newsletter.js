@@ -31,7 +31,7 @@ function Newsletter() {
     <section className="bg-green dark:bg-gray-900">
       <div className="rounded-lg py-5 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto space-y-10 sm:text-center">
-          <h2 className="mystery-quest-header w-full text-yellow-100 text-4xl text-center font-bold font-header leading-tight md:leading-normal">
+          <h2 className="comic-sans-medium md:text-5xl w-full text-yellow-100 text-4xl text-center font-bold font-header leading-tight md:leading-normal">
             Sign up for our newsletter!
           </h2>
           <p className="bubblegum-sans-subheader mx-auto mb-8 max-w-2xl font-light text-yellow-100 text-center md:mb-12 sm:text-xl dark:text-gray-400">

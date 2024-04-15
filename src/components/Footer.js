@@ -19,7 +19,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#blog"
+                    href="/blogs"
                     className="hover:underline bubblegum-sans-link text-[#F7F9F3]"
                   >
                     Blog
@@ -27,7 +27,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#products"
+                    href="/courses"
                     className="hover:underline bubblegum-sans-link text-[#F7F9F3]"
                   >
                     Products
@@ -35,7 +35,7 @@ function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/Programs"
+                    href="/programs"
                     className="hover:underline bubblegum-sans-link text-[#F7F9F3]"
                   >
                     Programs
@@ -74,7 +74,7 @@ function Footer() {
                 </li>
                 <li>
                   <a href="" className="hover:underline bubblegum-sans-link text-black">
-                    Twitter
+                    TikTok
                   </a>
                 </li>
               </ul>
@@ -127,7 +127,7 @@ function Footer() {
               </svg>
               <span className="sr-only">Facebook page</span>
             </a>
-            <a
+            {/* <a
               href=""
               className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
             >
@@ -145,8 +145,8 @@ function Footer() {
                 />
               </svg>
               <span className="sr-only">Twitter page</span>
-            </a>
-            <a className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+            </a> */}
+            {/* <a className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"
@@ -165,7 +165,7 @@ function Footer() {
               >
                 <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
               </svg>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

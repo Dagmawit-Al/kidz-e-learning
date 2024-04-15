@@ -43,11 +43,11 @@ const Blogs = () => {
             />
           </svg>
         </div>
-      <h1 className="mystery-quest-header w-full text-black text-4xl text-center font-bold font-header leading-tight md:leading-normal">
+      <h1 className="comic-sans-medium md:text-5xl text-black text-4xl text-center font-bold font-header leading-tight md:leading-normal">
         Latest Articles And Updates
       </h1>
       <p className="bubblegum-sans-subheader text-black text-center">
-        Entertaining and educational weekly posts that inspire kids te reach for
+        Entertaining and educational weekly posts that inspire kids the reach for
         the stars.
       </p>
       <BlogBody data={blogData} />

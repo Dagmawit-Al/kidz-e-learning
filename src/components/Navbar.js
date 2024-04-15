@@ -185,29 +185,32 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-    <div
-          onClick={handleNavClick}
-          className={
-            nav
-              ? "overflow-y-hidden md:hidden ease-in duration-300 absolute text-black left-0 w-full top-0 h-screen bg-logo/80 px-4 py-7 mt-5 flex flex-col"
-              : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
-          }
-        >
-          <ul className="h-full w-full text-center pt-12">
-            <li className="text-2xl py-8">
-              <a href="/story">Our Story</a>
-            </li>
-            <li className="text-2xl py-8">
-              <a href="/blogs">Blog</a>
-            </li>
-            <li className="text-2xl py-8">
-              <NavLink to="/courses">Courses</NavLink>
-            </li>
-            <li className="text-2xl py-8">
-              <a href="/programs">Programs</a>
-            </li>
-          </ul>
-        </div>
+      <div
+        onClick={handleNavClick}
+        className={
+          nav
+            ? "overflow-y-hidden md:hidden ease-in duration-300 absolute text-black left-0 w-full top-0 h-screen bg-logo/80 px-4 py-7 mt-5 flex flex-col"
+            : "absolute top-0 h-screen left-[-100%] ease-in duration-500"
+        }
+      >
+        <ul className="h-full w-full text-center pt-12">
+          <li className="text-2xl py-8">
+            <a href="/">Home</a>
+          </li>
+          <li className="text-2xl py-8">
+            <a href="/story">Our Story</a>
+          </li>
+          <li className="text-2xl py-8">
+            <a href="/blogs">Blog</a>
+          </li>
+          <li className="text-2xl py-8">
+            <NavLink to="/courses">Courses</NavLink>
+          </li>
+          <li className="text-2xl py-8">
+            <a href="/programs">Programs</a>
+          </li>
+        </ul>
+      </div>
       {/* {nav && (
         <div className="flex justify-evenly items-center md:hidden  ">
           <ul className="space-y-4">

@@ -9,7 +9,7 @@ function Testimony() {
   };
   return (
     <div className="flex flex-col items-center space-y-10 md:space-y-10">
-      <h2 className="mystery-quest-header text-center font-extrabold text-yellow-100 dark:text-yellow-100">
+      <h2 className="comic-sans-medium md:text-5xl text-center font-extrabold text-yellow-100 dark:text-yellow-100">
         Helping Parents and Teachers
       </h2>
       <div className="sm:flex flex-col items-center sm:flex-row sm:justify-between justify-center space-y-8 sm:space-y-0 sm:space-x-20 px-10 flex md:items-center">

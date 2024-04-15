@@ -1,8 +1,8 @@
 import React from "react";
 import lesson1image from "../assets/images/cover.png";
-import lesson2image from "../assets/images/cover.jpeg";
-import lesson3image from "../assets/images/cover.jpeg";
-import lesson4image from "../assets/images/cover.jpeg";
+import lesson2image from "../assets/images/climateCover.png";
+import lesson3image from "../assets/images/financialCover.jpg";
+import lesson4image from "../assets/images/socialCover.jpg";
 
 import CourseList from "../container/CourseList";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ const Courses = () => {
       status: true
     },
     {
-      src: lesson1image,
+      src: lesson2image,
       id: 26,
       date: new Date(),
       title: t("course2"),
@@ -33,7 +33,7 @@ const Courses = () => {
       status: false,
     },
     {
-      src: lesson1image,
+      src: lesson3image,
       id: 27,
       date: new Date(),
       title: t("course3"),
@@ -42,7 +42,7 @@ const Courses = () => {
       status: false,
     },
     {
-      src: lesson1image,
+      src: lesson4image,
       id: 28,
       date: new Date(),
       title: t("course4"),
@@ -81,7 +81,7 @@ const Courses = () => {
   return (
 
     <div id="products" className="pt-10 space-y-8 md:flex flex-col items-center space-y-8">
-      <h1 className="mystery-quest-header w-full text-yellow-100 text-center text-4xl font-bold font-header leading-tight md:leading-normal">
+      <h1 className="comic-sans-medium md:text-5xl w-full text-yellow-100 text-center text-4xl font-bold font-header leading-tight md:leading-normal">
         {t('shopTitle')}
       </h1>
       <p className="text-xl text-yellow-100 font-paragraph m-5">

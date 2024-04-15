@@ -49,7 +49,7 @@ function PediatricianApproved() {
       </blockquote>
 
       <PopupProfile />
-      <div className="flex flex-row m-5 flex items-center justify-center w-full">
+      <div className="flex flex-row flex justify-center items-center w-full">
         {/* <hr className="w-64 h-1 my-8 bg-green-300 border-0 rounded dark:bg-[#E5588D]" /> */}
         {/* <div className="absolute px-4 -translate-x-1/2 left-1/2 dark:bg-gray-900"> */}
         <svg xmlns="http://www.w3.org/2000/svg"
