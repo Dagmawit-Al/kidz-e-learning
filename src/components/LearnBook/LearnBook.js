@@ -31,7 +31,7 @@ const LearnBook = () => {
         </div>
       </div>
       <div id="worksheet" className="w-full ">
-        <Worksheet />
+        {/* <Worksheet /> */}
       </div>
     </div>
   );

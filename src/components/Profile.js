@@ -1,5 +1,5 @@
 import React from "react";
-import profile from "../assets/images/instructor.jpeg";
+import profile from "../assets/images/Filagot pic.jpg";
 import profile2 from "../assets/images/instructor2.jpeg";
 
 const Profile = () => {
@@ -15,12 +15,12 @@ const Profile = () => {
           />
           <div className="p-4">
             <h3 className="text-center text-xl text-gray leading-8">
-              Seble Doez
+              Filagot Tesfaye
             </h3>
-            <p className="text-center">Author, Photographer</p>
+            <p className="text-center">Author</p>
           </div>
         </div>
-        <div className="flex items-center border-t-2 p-4 ">
+        {/* <div className="flex items-center border-t-2 p-4 ">
           <img
             className="w-16 h-16 rounded-full mx-auto object-cover"
             src={profile2}
@@ -32,7 +32,7 @@ const Profile = () => {
             </h3>
             <p className="text-center">Author, Photographer</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

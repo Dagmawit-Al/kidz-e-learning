@@ -27,8 +27,10 @@ function PdfViewr() {
     }
   };
   return (
-    <div className="m-8 flex flex-col m-auto h-[1000px] p-8 ">
-      <nav className="p-4 justify-between flex ">
+    <div className="mt-20 flex flex-col m-auto h-[1000px] p-8 border rounded-lg">
+              <h1 className="comic-sans-large text-center text-yellow-100">Content Coming Very Soon!</h1>
+
+      {/* <nav className="p-4 justify-between flex ">
         <button
           className="bg-transparent hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4  hover:border-black rounded"
           onClick={handlePrev}
@@ -69,7 +71,7 @@ function PdfViewr() {
             next
           </button>
         </nav>
-      </div>
+      </div> */}
     </div>
   );
 }

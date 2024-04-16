@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useParams, useNavigate } from "react-router-dom";
-import book from "../assets/images/book.png";
+import book from "../assets/images/cover.png";
 import logoImage from "../assets/images/logoAndText.png";
-import profile from "../assets/images/instructor.jpeg";
+import profile from "../assets/images/Filagot pic.jpg";
 import profile2 from "../assets/images/instructor2.jpeg";
 import Chapters from "./Chapters";
 import Header from "./Header";
@@ -39,17 +39,17 @@ const Book = () => {
     navigate(`/course/${bookId}`);
   };
   return (
-    <div className="w-[100%] sm:flex flex-col">
+    <div className="container flex flex-col items-center mx-auto space-y-10 px-4 sm:px-8 py-10 lg:py-20 xl:py-28">
       <div className="m-4 sm:flex flex-col h-[700px] mt-20">
         <div className="sm:flex justify-around">
           <img
-            className="object-cover sm:w-[25%] h-[100%] object-cover sm:w-[50%] md:w-[50%] lg:w-[25%] mb-4 sm:mb-0"
+            className="object-cover sm:w-[25%] h-[100%] object-cover sm:w-[60%] md:w-[60%] lg:w-[25%] mb-4 sm:mb-0"
             src={book}
             alt="bookimage"
           />
           <div className="sm:w-[40%] flex flex-col items-start">
             <h1 className="comic-sans-large font-bold text-yellow-100 mb-4">
-              Real World Money Lessons
+              Business for Kids
             </h1>
             <div className="sm:photo-wrapper p-2 flex items-center border-t-2 w-full mb-4">
             <div className="flex items-center">
@@ -72,7 +72,7 @@ const Book = () => {
               <h1 className="font-bold text-xl mr-2">DIGITAL</h1>
               <p className="font-bold text-xl">$5.84</p>
             </div>
-            <p className="mb-4">
+            <p className="text-sm mb-4">
               The Real World Money Lessons Digital Academy is an interactive and
               practical guide to financial literacy for kids and teens. We break
               down terms and concepts related to money so that kids can understand
@@ -137,9 +137,9 @@ const Book = () => {
           <div className="p-4">
             <button
               onClick={handlePurchase}
-              className="bg-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4 hover:border-black rounded"
+              className="btn outline-button hover:bg-middlesection text-black font-semibold hover:text-black py-2 px-4 hover:border-black rounded"
             >
-              Purchase Courses
+              Purchase Course
             </button>
           </div>
         </div>

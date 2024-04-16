@@ -14,6 +14,7 @@ import { setPathName, listPathName } from "../../redux/slices/locationSlice";
 
 import Signup from "../Modal";
 import Header from "../Header";
+import TobBar from "../TobBar";
 
 function Chapter(props) {
   const { bookId } = useParams();
@@ -53,6 +54,8 @@ function Chapter(props) {
   };
 
   return (
+    <>
+    {/* <TobBar/> */}
     <div className="w-[100%] sm:flex flex-col">
       {/* <Header /> */}
       <div className="h-full m-4 sm:flex flex-col mt-40">
@@ -113,7 +116,7 @@ function Chapter(props) {
     handleshowLoginModal={setShowLoginModal}
   /> */}
     </div>
-
+    </>
   );
 }
 
