@@ -176,7 +176,7 @@ export function TabsDefault() {
         {
           src: middlesection,
           id: 1,
-          des: "Learn the basics on being a business wizard!",
+          des: "Become a mini-mogul! This book shows you how to turn your ideas into cash.",
           age: "6-12 years",
           page: "64 pages",
           incluede: true,
