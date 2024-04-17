@@ -1,6 +1,6 @@
 import React from "react";
-import book from "../../assets/images/book.png";
-import profile from "../../assets/images/instructor.jpeg";
+import book from "../../assets/images/cover.png";
+import profile from "../../assets/images/Filagot pic.jpg";
 
 const PaymentDetail = () => {
   return (
@@ -13,7 +13,7 @@ const PaymentDetail = () => {
         /> */}
         <div className="sm:w-[65%] flex flex-col items-start">
           <h1 className="comic-sans-small sm:text-3xl font-bold w-full">
-            Real World Money Lessons
+            Business for Kids
           </h1>
           <div className="sm:photo-wrapper p-2 flex items-center border-t-2 w-full">
             <div className="flex items-center">
@@ -24,10 +24,10 @@ const PaymentDetail = () => {
               />
               <div className="sm:p-4">
                 <h3 className="text-center sm:text-center text-xl text-gray leading-8">
-                  Seble Doez
+                  Filagot Tesfaye
                 </h3>
                 <p className="text-center text-xs sm:text-center">
-                  Author, Photographer
+                  Author
                 </p>
               </div>
             </div>
@@ -39,10 +39,10 @@ const PaymentDetail = () => {
             </div>
           </div>
           <img
-          className="object-cover sm:w-[35%] md:w-[50%] h-full object-cover"
-          src={book}
-          alt="bookimage"
-        />
+            className="object-cover sm:w-[35%] md:w-[50%] h-full object-cover"
+            src={book}
+            alt="bookimage"
+          />
           {/* <div className="sm:w-full">
             <p className="comic-sans-small">
               The Real World Money Lessons Digital Academy is an interactive and

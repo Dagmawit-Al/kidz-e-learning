@@ -43,7 +43,7 @@ const Book = () => {
       <div className="m-4 sm:flex flex-col h-[700px] mt-20">
         <div className="sm:flex justify-around">
           <img
-            className="object-cover sm:w-[25%] h-[100%] object-cover sm:w-[60%] md:w-[60%] lg:w-[25%] mb-4 sm:mb-0"
+            className="object-cover sm:w-[25%] h-[100%] object-cover sm:w-[60%] md:w-[60%] lg:w-[25%] mb-4 sm:mb-0 rounded-2xl"
             src={book}
             alt="bookimage"
           />

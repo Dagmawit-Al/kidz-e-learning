@@ -130,7 +130,7 @@ function CoursesDetail() {
       <div className="flex items-center flex-col md:flex items-center flex-row border-t-4 border-black w-full h-auto">
         <div className="md:flex justify-around p-5 m-2 w-full md:w-5/6 max-w-6xl">
           <img
-            className="object-cover "
+            className="object-cover rounded-lg"
             width="30%"
             height={100}
             src={middlesection}

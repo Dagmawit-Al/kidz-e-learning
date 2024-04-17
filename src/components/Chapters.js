@@ -25,7 +25,7 @@ const Chapters = ({ id, chaptersData }) => {
               </h1>
             </NavLink>
             <p className="comic-sans-small pt-2 flex items-center">
-              Course {item.chapternumber} | {item.hours} hours{" "}
+              Chapter {item.chapternumber} | {item.hours} hours{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
